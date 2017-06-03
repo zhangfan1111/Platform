@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>test</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <!--[if lte IE 7]>
+    <script type="text/javascript" src="javascripts/json2.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="javascripts/socket.io-1.3.5.min.js"></script>
+    <script type="text/javascript" src="javascripts/yunba-js-sdk.js"></script>
+    <script type="text/javascript" src="javascripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="javascripts/test.js"></script>
+    <style>
+        input {
+            height: 30px;
+            font-weight: bold;
+        }
+
+        input[type="radio"] {
+            height: 15px;
+        }
+
+        .green {
+            color: green;
+        }
+
+        fieldset {
+            margin-top: 20px;
+        }
+
+        b {
+            margin-left: 10px;
+        }
+
+        .clear {
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div style="float:left;width:50%">
+        <fieldset style="height:100px;">
+            <legend>WebSocket Info</legend>
+            <div id="msg"></div>
+        </fieldset>
+    </div>
+    <div style="float:left;width:50%">
+        <fieldset style="height:100px;">
+            <legend>Connect & Disconnect</legend>
+            <div id="connect_status"></div>
+            <input type="button" value="Connect" onclick="mqtt_connect();"/>
+            <input type="button" value="Disconnect" onclick="mqtt_disconnect();"/>
+        </fieldset>
+    </div>
+    <div class="clear"></div>
+    <input type="button" value="按频道发布消息" onclick="mqtt_publish();"/>
+</body>
+</html>

@@ -1,0 +1,95 @@
+.imagebox {
+	display:-webkit-box;
+	-webkit-flex-flow: row wrap;
+	border: 2px dashed red;
+	font-size: 10px;
+	overflow-x:auto;/* winphone8和android4+ */
+	-webkit-overflow-scrolling: touch; /* ios5+ */
+	overflow-y: hidden;
+}
+
+.imageitem {
+	width: 5em;
+	height: 5em;
+	margin: 1.5em 1em 0.5em 0.5em;
+	border: 1px solid green;
+	display: -webkit-box;
+	position: relative;
+	background:url(../jzo2o/weixin/images/file.jpg);
+	background-size: cover;
+	background-position: center;
+	-webkit-box-align: start;
+	-webkit-box-pack: end;
+}
+
+.delete {
+	width: 2em;
+	height: 2em;
+	background: url(../jzo2o/weixin/images/delete.png);
+	background-size: contain;
+	border-radius: 15px;
+	font-weight: bold;
+	display: -webkit-box;
+	-webkit-box-align: center;
+	-webkit-box-pack: center;
+	position: relative;
+	top: -12px;
+	right: -12px;
+}
+.deleteHidden {
+	display: none;
+}
+.addfile {
+	width: 5em;
+	height: 5em;
+	margin: 1.5em 1em 0.5em 0.5em;
+	border: 0.2em dashed #F8BB00;
+	display: -webkit-box;
+	position: relative;
+	background: url(../jzo2o/weixin/images/plus_2.png);
+	background-size: contain;
+	-webkit-box-align: center;
+	-webkit-box-pack: center;
+}
+.loading {
+	width: 5em;
+	height: 5em;
+	margin: 1.5em 1em 0.5em 0.5em;
+	border: 0.2em dashed #F8BB00;
+	display: -webkit-box;
+	position: relative;
+	background: url(../jzo2o/weixin/images/loading.gif);
+	background-size: contain;
+	display: -webkit-box;
+	-webkit-box-align: center;
+	-webkit-box-pack: center;
+	font-weight: bold;
+}
+.file {
+	width: 1.2em;
+	height: 1.2em;
+	background: red;
+	opacity: 0;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	/*display: none;*/
+}
+.speed {
+	line-height:1em;
+	display:none;
+}
+.loading .speed {
+	display:block;
+}
+.r1{
+	 -moz-transform:rotate(-3deg);
+    -webkit-transform:rotate(-3deg);
+	-o-transform:rotate(-3deg);
+}
+
+.r2{
+	 -moz-transform:rotate(2deg);
+    -webkit-transform:rotate(2deg);
+	-o-transform:rotate(2deg);
+}

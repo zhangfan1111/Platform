@@ -1,0 +1,90 @@
+html,body {
+	height: 100%;
+	margin: 0;
+	font-family: "arial,helvetica,sans-serif", "microsoft yahei";
+}
+
+body,textarea {
+	scrollbar-arrow-color: #f4ae21; /*图6,三角箭头的颜色*/
+	scrollbar-face-color: #333; /*图5,立体滚动条的颜色*/
+	scrollbar-3dlight-color: #666; /*图1,立体滚动条亮边的颜色*/
+	scrollbar-highlight-color: #666; /*图2,滚动条空白部分的颜色*/
+	scrollbar-shadow-color: #999; /*图3,立体滚动条阴影的颜色*/
+	scrollbar-darkshadow-color: #666; /*图4,立体滚动条强阴影的颜色*/
+	scrollbar-track-color: #666; /*图7,立体滚动条背景颜色*/
+	scrollbar-base-color: #f8f8f8; /*滚动条的基本颜色*/
+}
+
+a {
+	text-decoration: none;
+	color: red;
+}
+
+/****easyui css*****/
+.lines-no .datagrid-body td {
+	border-right: 1px solid transparent;
+	border-bottom: 1px solid transparent;
+}
+
+.datagrid-body td {
+	border-right: 1px solid transparent;
+}
+
+.datagrid-pager {
+	background-color: transparent;
+}
+
+.datagrid-header-row {
+	height: 35px;
+}
+
+.datagrid-header td {
+	height: 35px;
+}
+
+.datagrid-header .datagrid-cell span {
+	font-size: 12px;
+	text-align: center;
+}
+
+.datagrid-header .datagrid-cell {
+	font-size: 12px;
+}
+
+.datagrid-row-alt {
+	background: #fff;
+}
+
+.datagrid-header-row {
+	height: 35px;
+}
+
+.datagrid-row {
+	height: 50px;
+	color: #178EBB;
+}
+
+.datagrid-row-selected {
+	background: transparent;
+}
+
+.datagrid-header,.datagrid-td-rownumber {
+	background: linear-gradient(to bottom, #ffffff 0, #ffffff 100%);
+}
+
+.datagrid-toolbar {
+	background-color: #EEEEEE;
+}
+
+.tree-line {
+	background: none;
+}
+
+.tree-folder,.tree-folder-open,.tree-file {
+	width: 0px;
+	height: 0px;
+}
+
+.tree li div {
+	padding: 10px;
+}

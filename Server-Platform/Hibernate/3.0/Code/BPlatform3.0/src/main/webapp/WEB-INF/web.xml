@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="EOTA_WebApp_ID" version="2.5" >
+	
+	<display-name>基础开发平台</display-name>
+	
+	<!-- session超时定义,单位为分钟 -->
+	<session-config>
+		<session-timeout>200</session-timeout>
+	</session-config>
+	
+	
+	<!-- rest路由器 -->
+	<!-- Restlet adapter, used to expose modeler functionality through REST -->
+	<servlet>
+	    <servlet-name>RestletServlet</servlet-name>
+	    <servlet-class>org.restlet.ext.servlet.ServerServlet</servlet-class>
+	    <init-param>
+	        <!-- Application class name -->
+	        <param-name>org.restlet.application</param-name>
+	        <param-value>org.activiti.rest.explorer.application.ExplorerRestApplication</param-value>
+	    </init-param>
+	</servlet>
+	 
+	<!-- Catch all service requests -->
+	<servlet-mapping>
+	    <servlet-name>RestletServlet</servlet-name>
+	    <url-pattern>/service/*</url-pattern>
+	</servlet-mapping>
+	
+	
+	<!-- Spring ApplicationContext配置文件的路径 ,可使用通配符，多个路径用,号分隔 -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:/config/spring/spring.xml,classpath:/config/spring/application-security.xml</param-value>
+	</context-param>
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	
+	
+	<!-- 添加javamelody监控 -->
+	<filter>
+		<filter-name>monitoring</filter-name>
+		<filter-class>net.bull.javamelody.MonitoringFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>monitoring</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+
+	<!-- druid数据源Web监控配置 -->
+	<filter>
+		<filter-name>druidWebStat</filter-name>
+		<filter-class>com.alibaba.druid.support.http.WebStatFilter</filter-class>
+		<init-param>
+			<param-name>exclusions</param-name>
+			<param-value>/css/*,/style/*,/jslib/*,*.js,*.css,/druid*,/attached/*,/uploadFile/*,*.jsp</param-value>
+		</init-param>
+		<init-param>
+			<param-name>principalSessionName</param-name>
+			<param-value>sessionInfo</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>druidWebStat</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<!-- springSecurity -->
+	<filter>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<url-pattern>/appservice/**</url-pattern>
+	</filter-mapping>
+	
+	<!-- Spring MVC start -->
+	<servlet>
+		<description>spring mvc servlet</description>
+		<servlet-name>SpringMVC</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<!-- 默认所对应的配置文件是WEB-INF下的{servlet-name}-servlet.xml，这里可以自定义路径 -->
+		<init-param>
+			<description>spring mvc 配置文件</description>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath:/config/spring/springmvc-servlet.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SpringMVC</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+	<!-- Spring MVC end -->
+	
+	<!-- 著名 Character Encoding filter -->
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+		<init-param>
+			<!-- 强制进行转码 -->
+			<param-name>forceEncoding</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	
+	<!-- plUpload上传 -->
+	<servlet>
+		<servlet-name>PlUpload</servlet-name>
+		<servlet-class>com.sunny.gcrcs.product.web.controller.PlUploadServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>PlUpload</servlet-name>
+		<url-pattern>/plupload</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Highcharts下载图表工具类 -->
+	<servlet>
+		<servlet-name>Highcharts</servlet-name>
+		<servlet-class>com.sunny.gcrcs.product.web.controller.HighchartsUtil</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Highcharts</servlet-name>
+		<url-pattern>/downloadChart</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 解决不能识别*.ico的图片-->
+	<servlet-mapping>
+	    <servlet-name>default</servlet-name>
+	    <url-pattern>*.ico</url-pattern>
+	</servlet-mapping>
+	
+	<!-- javamelody监听器 -->
+	<listener>
+		<listener-class>net.bull.javamelody.SessionListener</listener-class>
+	</listener>
+	
+	<!-- 用户上下线监听器
+	<listener>
+		<listener-class>sy.util.base.OnlineListener</listener-class>
+	</listener>
+	 -->
+	 
+	 <!-- druid监控页面，使用${pageContext.request.contextPath}/druid/index.html访问 -->
+	<servlet>
+		<servlet-name>druidStatView</servlet-name>
+		<servlet-class>com.alibaba.druid.support.http.StatViewServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>druidStatView</servlet-name>
+		<url-pattern>/druid/*</url-pattern>
+	</servlet-mapping>
+	 
+	<!-- 使Spring支持request与session的scope,如:<bean id="loginAction" class="com.foo.LoginAction" scope="request"/> -->
+	<listener>
+	  <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+	</listener>
+	<!-- Spring 刷新Introspector防止内存泄露 -->
+	<listener>
+		<listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
+	</listener>
+	
+	<!-- hibernateOpenSessionInViewFilter 暂时不开，如果lazy用的多再开
+	<filter>
+		<filter-name>hibernateOpenSessionInViewFilter</filter-name>
+		<filter-class>org.springframework.orm.hibernate4.support.OpenSessionInViewFilter</filter-class>
+		<init-param>
+			<param-name>singleSession</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>hibernateOpenSessionInViewFilter</filter-name>
+		<servlet-name>SpringMVC</servlet-name>
+		<url-pattern>/</url-pattern>
+	</filter-mapping>
+	-->
+	
+	<!-- js文件过滤解压 
+	<filter>
+		<filter-name>GzipJsFilter</filter-name>
+		<filter-class>framework.core.util.GzipJsFilter</filter-class>
+		<init-param>
+			<param-name>headers</param-name>
+			<param-value>Content-Encoding=gzip</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>GzipJsFilter</filter-name>
+		<url-pattern>*.gzjs</url-pattern>
+	</filter-mapping>
+	-->
+	
+	<!-- Error Page定义 -->
+	<!-- 配置了java.lang.Throwable后，500错误有可能就会被该片拦截了-->
+	<error-page>   
+        <exception-type>java.lang.Throwable</exception-type>   
+        <location>/jsp/common/errors/error.jsp</location>   
+    </error-page> 
+	<error-page>
+		<error-code>500</error-code>
+		<location>/jsp/common/errors/500.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>405</error-code>
+		<location>/jsp/common/errors/405.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>404</error-code>
+		<location>/jsp/common/errors/404.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>403</error-code>
+		<location>/jsp/common/errors/403.jsp</location>
+	</error-page>
+	
+	<!-- 项目起始页面 -->
+	<welcome-file-list>
+		<welcome-file>/index.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>
