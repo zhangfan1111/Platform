@@ -14,6 +14,17 @@ Project_Path : [BPlatform](https://github.com/ShareTeam/Platform)
 
 [切换至中文](readme_cn.md)
 
+#### Catalog ####
+    	Android-Platform   Android framework related
+    	IOS-Platform       IOS basic framework relevant
+    	Plan               Project development plan
+    	Plugins            Plugins and tools
+    	Server-Platform    Background infrastructure
+    	Testing            Test base framework
+    	Web-Platform       Anterior basal frame correlation
+    	README.md          English edition introduction
+    	readme_cn.md       Chinese edition introduction
+
 #### Warning ####
 
 - Please do a good job of version maintenance,related projects placed in the relevant folder, and do version maintenance
