@@ -36,7 +36,7 @@ Project_Path : [BPlatform](https://github.com/ShareTeam/Platform)
 Here mainly introduces two ways to pull the project
 
 1. You can download it directly on GitHub, and you can easily clone or download it by clicking on "clone" or "downloading".
-2. Use the GitHub for windows tool to pull the project. [Reference](http://www.cnblogs.com/SKuang/p/gitDetails.html)
+2. Use the GitHub for windows tool to pull the project. [Reference1](http://www.cnblogs.com/SKuang/p/gitDetails.html) [Reference2](http://www.cnblogs.com/jiqing9006/p/3987702.html)
 
 The essence of the two approaches is consistent:To pull the project to the local warehouse.
 
