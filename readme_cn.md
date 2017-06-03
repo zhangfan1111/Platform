@@ -12,7 +12,7 @@
 
 #### 文 档 ####
 
-[切换至中文](readme_cn.md)
+[切换至英文](README.md)
 
 #### 目 录 ####
     	Android-Platform   安卓基础框架相关
