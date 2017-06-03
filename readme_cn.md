@@ -36,7 +36,7 @@
 这里主要有两种方式拉取项目
 
 1. 你可以直接在GitHub上下载，只需要点击“克隆”或“下载”就可以轻松完成克隆或下载。
-2. 使用GitHub for Windows工具拉项目。 [参考](http://www.cnblogs.com/SKuang/p/gitDetails.html)
+2. 使用GitHub for Windows工具拉项目。 [参考1](http://www.cnblogs.com/SKuang/p/gitDetails.html) [参考2](http://www.cnblogs.com/jiqing9006/p/3987702.html)
 
 这两种方法的本质是一致的：把项目拉取到当地仓库。
 
