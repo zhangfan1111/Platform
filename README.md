@@ -1,8 +1,34 @@
-# Platform
-https://github.com/ShareTeam/Platform
+## Platform ##
 
-1、请大家做好版本维护，相关项目放置相关文件夹下，并做好版本维护
+A project for everyone to learn and share
 
-2、请不要随意删除相关文件
+Project_Path : [BPlatform](https://github.com/ShareTeam/Platform)
 
-3、及时更新和维护好相关项目和资料
+----------
+
+#### Overview ####
+
+`Platform` is a shared project, the purpose is to facilitate communication and learning, while promoting themselves. On the other hand, we hope you will be able to take an active part in this project and add more possibilities to this project.
+
+#### Document ####
+
+[切换至中文](readme_cn.md)
+
+#### Warning ####
+
+- Please do a good job of version maintenance,related projects placed in the relevant folder, and do version maintenance
+- Please do not delete relevant documents at will
+- Update and maintain relevant projects and materials in time
+
+#### Install ####
+
+Here mainly introduces two ways to pull the project
+
+1. You can download it directly on GitHub, and you can easily clone or download it by clicking on "clone" or "downloading".
+2. Use the GitHub for windows tool to pull the project. [Reference](http://www.cnblogs.com/SKuang/p/gitDetails.html)
+
+The essence of the two approaches is consistent:To pull the project to the local warehouse.
+
+#### Examples ####
+
+Please pull the item for details
