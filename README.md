@@ -1,5 +1,5 @@
 # Platform
-https://github.com/MemoryLemon/Platform
+https://github.com/ShareTeam/Platform
 
 1、请大家做好版本维护，相关项目放置相关文件夹下，并做好版本维护
 
