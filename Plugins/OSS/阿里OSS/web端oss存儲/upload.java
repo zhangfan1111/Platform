@@ -1,21 +1,22 @@
-说明
+/** 
+说 明
   OSS文件上传需要调用OSS的client对象，这个对象封装了对象存储的所有方法，需要详细了解朋友可以去研究。 
   本示例主要演示文件上传流程
 
-阿里OSS文件上传步骤
+OSS文件上传
   1. 准备需要上传的form表
   2. 编写文件上传方法(本例中form表单以easyUI框架为例)
   3. 编写SpringMVC控制层
   4. 调用编写的OSSUtils类中OSS文件上传方法（包括文件上传及上传成功后获取url）
-  
-----------
+**/  
+
     // 1: 需要上传的form
     <form method="post" class="file-form">
-    	<input id="logo_filebox" class="easyui-filebox file-input" data-options="buttonText:'选择图片',onChange:OSSfileUpload,width:250,height:30,accept:'image/png,image/jpeg'," name="file" ><br>
-    	// 当然，这里也可以有其他的一些标签，上传时放到formData中后台去接收就行了
+    	<input id="logo_filebox" class="easyui-filebox file-input" data-options="buttonText:'选择图片',
+        onChange:OSSfileUpload,width:250,height:30,accept:'image/png,image/jpeg'," name="file" ><br>
+    	// 当然，这里也可以有其他的一些标签，上传时放到formData中后台去接收就行了，Controller层根据name进行接收即可
     </form>
-    
-----------
+
     // 2: OSS文件上传方法
     function OSSfileUpload(newValue, oldValue){
     	if(!extend.isblank(newValue)){
@@ -41,7 +42,6 @@
     	}
     }
     
-----------
     // 3: Controller层
     @RequestMapping(value = "/uploadOSSImage")
     @ResponseBody
@@ -81,7 +81,6 @@
     	return data;
     }
 
-----------
     // 5: 通过key获取文件url
     public static String getResourceUrl(String key) {
     	OSSClient client = new OSSClient(EDP_POINT, ACCESS_KEY_ID, ACCESS_KEY_ID_SCRECT);
