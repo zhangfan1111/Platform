@@ -36,7 +36,6 @@ OSS文件删除
 		OSSClient ossClient = new OSSClient(EDP_POINT, ACCESS_KEY_ID, ACCESS_KEY_ID_SCRECT);
 		// 删除Object
 		ossClient.deleteObject(BUCKET_NAME, key);
-		// 关闭client
 		ossClient.shutdown();
 		return 1;
 	}
@@ -50,20 +49,41 @@ OSS文件删除
 	public static int deleteObjects(DeleteObjectsRequest deleteObjectsRequest) {
 		// 创建OSSClient实例
 		OSSClient ossClient = new OSSClient(EDP_POINT, ACCESS_KEY_ID, ACCESS_KEY_ID_SCRECT);
-		// 解析keys并执行OSS删除
+		// 如果放入deleteObjectsRequest是一个List<String>就不需要解析了；这里因为传过来的是一个字符串所以必须解析keys再执行OSS删除
 		String keys = deleteObjectsRequest.getKey();
 		keys = keys.replaceAll("\'", "");
 		List<String> objectKeys = new ArrayList<String>();
-	    String arrs [] = keys.split(",");
-	    for(int i=0; i<arrs.length; i++) {
-	    	objectKeys.add(arrs[i]);
-	    }
+	        String arrs [] = keys.split(",");
+	        for(int i=0; i<arrs.length; i++) {
+	     		objectKeys.add(arrs[i]); // 这才是批量删除用到的真正的keys，它必须是一个List
+	        }
+		// 解析完成执行OSSClient的deleteObjects方法
 		DeleteObjectsResult deleteObjectsResult = ossClient.deleteObjects(new DeleteObjectsRequest(BUCKET_NAME).withKeys(objectKeys));
-		// List<String> deletedObjects = deleteObjectsResult.getDeletedObjects(); // 获取删除的对象
-		// System.out.println(deletedObjects);
 		// 关闭client
 		ossClient.shutdown();
 		return 1;
 	}
+----------
+	/**
+	 * 下面例子说明 执行批量删除时传入的DeleteObjectsRequest对象
+	 */
+	@SuppressWarnings("null")
+	@Override
+	public int confirmDelAll(HttpServletRequest request, String id, String keys) {
+		// 将所有id解析并执行本地数据库的相关记录的删除
+		String arrays = id;
+		// 执行本地数据库删除
+		executeSql("DELETE FROM `vr_source` WHERE `vr_source`.`id` IN(" + arrays + ")"); // id格式为  '2','4','5','7' 这种
+		// 执行OSS批量删除
+	    	DeleteObjectsRequest deleteObjectsRequest = new DeleteObjectsRequest("hekunlin"); // 传入的“hekunlin”为你的BUCKET_NAME
+	   	/** 将需要删除的key放入DeleteObjectsRequest对象，在OSSUtils去解析keys （本例的做法）; 
+		    当然你也可以直接在这里将keys封装为List、name在代用OSSUtils方法是就不需要再多做处理了（推荐）。
+		    如果需要自己进行更加完善的封装，请参考阿里云对象存储相关API
+		*/
+		deleteObjectsRequest.setKey(keys); 
+		OssUtils.deleteObjects(deleteObjectsRequest);
+		return 1;
+	}
+
 
 
