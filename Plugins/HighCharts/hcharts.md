@@ -1,40 +1,38 @@
-/**
-说 明
+#### 说 明 ####
+```
   hcharts是一个 兼容 IE6+、完美支持移动端、图表类型丰富、方便快捷的 HTML5 交互性图表库。
   Highcharts 在 4.2.0 开始已经不依赖 jQuery 了，直接用其构造函数既可创建图表。
   主要类型分为以下几大类：
-    1：线图（折线图及曲线图）
-    2：面积图
-    3：柱形图（柱状及条形图）
-    4：饼状图（饼状及环形图）
-    5：散点图及气泡图
-    6：混合图
-    7：动态交互图
-    8:3D图
-    9：仪表图
-    10：热力图(热力及矩形树图)
-    11：其他（极地、蜘蛛、瀑布、金字塔等等）
-    详情参考官方介绍 https://www.hcharts.cn/demo/highcharts#line
-*/
+  1. 线图（折线图及曲线图）
+  2. 面积图
+  3. 柱形图（柱状及条形图）
+  4. 饼状图（饼状及环形图）
+  5. 散点图及气泡图
+  6. 混合图
+  7. 动态交互图
+  8. 3D图
+  9. 仪表图
+  10. 热力图(热力及矩形树图)
+  11. 其他（极地、蜘蛛、瀑布、金字塔等等）<br>
+  详情参考官方介绍 https://www.hcharts.cn/demo/highcharts#line
 
-
-// 1: 基础折线图示例
-  /**
+```
+##### 1: 基础折线图示例 #####
+ ```
     Step1 引入需要的js库:基本js、导出功能js(表格、图片等)、中文支持、主题等等根据自己的需求进行引入即可
           参见CDN  https://img.hcharts.cn/index.html#jquery  了解更多插件
     <script src="https://img.hcharts.cn/highcharts/highcharts.js"></script>
     <script src="https://img.hcharts.cn/highcharts/modules/exporting.js"></script>
     <script src="https://img.hcharts.cn/highcharts-plugins/highcharts-zh_CN.js"></script>
     <script src="https://img.hcharts.cn/highcharts/themes/sand-signika.js"></script>
-  */
+ ```
 
-  /** 
+ ``` 
     Step2 需要一个div来显示图形，根据自己的具体需求修改
     <div id="container" style="min-width:400px;height:400px"></div>
-   */
-  
+ ```
+ ```
   // Step3  初始化图并显示,可以根据需求传入参数、但是data和xArray是必不可少的（图表数据、横轴显示信息）,下面是一个hcharts的示例程序
-  /**
     ## ajax发送两个参数、后台查询获取满足条件的数据并对数据进行封装
      $.ajax({
   			type : "POST",
@@ -84,7 +82,6 @@
       List<Map> list = checkCountInfoDao.findBySql(sb.toString());
       return list;
     }
-  */
   // 根据返回的数据绘制图表即可
   function getHighcharts(data,xArray,type){
     if(type == 0){
@@ -169,4 +166,5 @@ var chart = new Highcharts.Chart('container', {
         data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
     }]
 });
-![官方折线图示例](https://code.hcharts.cn/demos/hhhhxL)
+  https://code.hcharts.cn/demos/hhhhxL
+```
