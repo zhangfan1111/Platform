@@ -8,7 +8,24 @@ OSS文件上传
   2. 编写文件上传方法(本例中form表单以easyUI框架为例)
   3. 编写SpringMVC控制层
   4. 调用编写的OSSUtils类中OSS文件上传方法（包括文件上传及上传成功后获取url）
-**/  
+  
+  释 疑
+  你可以自己编写OSSUtils类，然后再里面编写client对象的一些基本参数
+  private static final String EDP_POINT = "oss-cn-shenzhen.aliyuncs.com";					//OSS外网域名
+	private static final String ACCESS_KEY_ID = "LTAIkAN6zDcenx3x";				//AccessKey 获取方法文档中有说明
+	private static final String ACCESS_KEY_ID_SCRECT = "2pZ9Ont3LgHt5WQz3NzRFlC47wPzrG";		//ScrectKey 获取方法文档中有说明
+	private static final String BUCKET_NAME = "hekunlin";				//空间名  创建空间时自定义的名称
+  
+  // 上传方法...
+  // 获取URL方法...
+  // 单个删除方法...
+  // 批量删除方法...
+  // 碎片上传、进度条等等其他方法...
+  
+  初始化cilent很简单，在使用时直接写
+    OSSClient client = new OSSClient(EDP_POINT, ACCESS_KEY_ID, ACCESS_KEY_ID_SCRECT);
+   即可完成client的初始化
+*/  
 
     // 1: 需要上传的form
     <form method="post" class="file-form">
