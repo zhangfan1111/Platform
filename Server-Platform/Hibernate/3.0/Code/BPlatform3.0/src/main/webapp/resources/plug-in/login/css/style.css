@@ -28,7 +28,7 @@
     width: 16px;height: 16px;
     background-size: 100% 100%;
     top: 10px;
-    left: 75px;
+    left: 65px;
 
 }
 .p_logo{
@@ -37,7 +37,7 @@
     background-size: 100% 100%;
     position: absolute;
     top: 20px;
-    left: 75px;
+    left: 65px;
 }
 a{
     text-decoration: none;
@@ -101,7 +101,7 @@ a{
 /*閿欒鎻愮ず鍖哄煙*/
 .error{width: 300px;height:60px;line-height: 40px;color: #fff;box-sizing: border-box;padding: 12px;text-align: center;font-size: 14px;background: url("../images/qipao.png");background-size: 100% 100%;position: absolute;left: 150px;top: -50px;font-family: "Microsoft Yahei", "??锟�", Tahoma, "simsun";display: none;}
 
-.big{width: 100%;height: 100%;background: url("../images/pic_background.png");background-size: 100% 100%;}
+.big{width: 100%;height: 100%;}
 
 #shifou{display: block;width: 80px;cursor: pointer;color: #fff;border-radius: 5px;overflow: hidden;float: left;margin-top: 13px;}
 #shifou i:nth-of-type(1){background-color: #008ead;}
@@ -109,9 +109,29 @@ a{
 #shifou.on i:nth-of-type(2){background-color: #008ead;}
 #shifou.on i:nth-of-type(1){background-color: #ccc;}
 
+.login_panel{
+	background:#ccc;
+	margin: -150px auto auto; 
+	width: 370px; 
+	height: 270px; 
+	text-align: center;
+	border-radius: 16px;
+	filter:alpha(opacity:80); 
+	opacity:0.8;
+	-moz-opacity:0.8;
+	-khtml-opacity: 0.8
+}
 
-
-
+.project_tit{
+	width: 270px; 
+	height: 46px; 
+	font-family: cursive;
+	font-weight: bold;
+	position: relative;
+	top:-40px;
+	left:-10px;
+	color: #ffffff
+}
 
 
 

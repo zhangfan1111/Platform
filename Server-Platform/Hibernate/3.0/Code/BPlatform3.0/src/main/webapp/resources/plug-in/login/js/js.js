@@ -1,4 +1,15 @@
+var panel;
+var form;
+var random = 0;
+
 $(function(){
+	panel = $("#login_panel");
+	form = $("#formLogin");
+	random = Math.ceil(Math.random() * 3);
+	//random = 3;
+	
+	randomEffectShow();		//随机效果显示
+	
 	getCookie();
     var height_ = $(window).height();
     $(".big").height(height_);
@@ -19,9 +30,61 @@ $(function(){
     	reset();
     });
 
-
 });
 
+//随机效果显示
+function randomEffectShow(){
+	if(random == 1){		//淡出
+		panel.hide();
+		panel.fadeIn(1500);
+	}else if(random == 2){		//滑动显示
+		panel.hide();
+		panel.slideDown(900);
+	}else if(random == 3){		//伸展
+		var wid = 0;
+		var hei = 0;
+		var timer = null;
+		
+		timer = setInterval(function(){
+			wid += 10;
+			hei += 7.3;
+			form.hide();
+			
+			panel.css({"width": wid + "px", "height" : hei + "px"});
+			if(wid >= 370){
+				form.show();
+				clearInterval(timer);
+				return;
+			}
+		}, 13);
+	}
+}
+
+//效果隐藏 对应显示效果
+function effectHide(){
+	if(random == 1){	//淡入
+		panel.fadeOut(900);
+	}else if(random == 2){		//滑动隐藏
+		panel.slideUp(900);
+	}else if(random == 3){	
+		var wid = panel.width();
+		var hei = panel.height();
+		form.hide();
+		
+		var timer = null;
+		
+		timer = setInterval(function(){
+			wid -= 10;
+			hei -= 7.3;
+			
+			panel.css({"width": wid + "px", "height" : hei + "px"});
+			if(wid <= 0){
+				clearInterval(timer);
+				return;
+			}
+		}, 13);
+	}
+}
 
 function keyLogin(){
 	if (event.keyCode==13){  //回车键的键值为13
@@ -72,8 +135,11 @@ function Login() {
 		success : function(data) {
 			//var d = $.parseJSON(data);
 			if (data.success) {
+				//隐藏效果
+				effectHide();
+				
 				$("#tishi").html(data.msg);
-				setTimeout("window.location.href='"+actionurl+"'", 1000);
+				setTimeout("window.location.href='" + actionurl + "'", 1200);
 			} else {
 				if(data.msg == "a"){
 					$.dialog.confirm("数据库无数据,是否初始化数据?", function(){
