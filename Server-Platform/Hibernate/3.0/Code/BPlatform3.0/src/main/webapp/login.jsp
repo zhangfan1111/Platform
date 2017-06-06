@@ -19,7 +19,7 @@
     <div class="login_panel" id="login_panel" style="">
         <form name="formLogin" id="formLogin" action="index.jsp" check="<%=path%>/system/loginController/login" method="post" autocomplete="off" >
 	        <div class="project_tit">
-	            <span style="font-size: 30px;font-weight: bold;">菲律宾直播</span><span style="font-size: 18px">后台管理系统</span>
+	            <span style="font-size: 30px;font-weight: bold;">伟航创达</span><span style="font-size: 18px">后台管理系统</span>
 	        </div>
 	        <div style="margin: 0px 0px 10px; position: relative">
 	            <span class="u_logo"></span>
@@ -34,7 +34,7 @@
 	        	记住用户名
 	        </div>
 	        <div style="height: 40px; line-height: 50px;font-size: 12px;">
-	            <a id="login" style="background: #00A2EA; padding: 10px 121px; border-radius: 4px; border-image: none; color: rgb(255, 255, 255); font-weight: bold;" href="#">登录</a>
+	            <a id="login" href="#">登录</a>
 	        </div>
         </form>
     </div>

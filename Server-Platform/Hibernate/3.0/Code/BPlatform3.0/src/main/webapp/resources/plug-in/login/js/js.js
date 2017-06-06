@@ -113,8 +113,14 @@ function submit() {
     Login();
 };
 
+var count = 3;
+var canClick = true;
+
 //登录处理函数
 function Login() {
+	if(!canClick){
+		return alert("请" + count + "秒后重试！");
+	}
 	setCookie();
 	var actionurl=$('form').attr('action');//提交路径
 	var checkurl=$('form').attr('check');//验证路径
@@ -138,17 +144,40 @@ function Login() {
 				//隐藏效果
 				effectHide();
 				
-				$("#tishi").html(data.msg);
 				setTimeout("window.location.href='" + actionurl + "'", 1200);
 			} else {
+				canClick = false;
+				
 				if(data.msg == "a"){
 					$.dialog.confirm("数据库无数据,是否初始化数据?", function(){
 						window.location = "init.jsp";
 					}, function(){
 						//
 					});
-				} else
-					$("#tishi").html(data.msg);
+				} else {
+					var msg = data.msg;
+					
+					$("#login").css("background-color", "red");
+					
+					count = 3;
+					var timer = null;
+					$("#login").html(msg + count);
+					
+					timer = setInterval(function(){
+						count --;
+						
+						$("#login").html(msg + count);
+						
+						if(count == 0){
+							clearInterval(timer);
+							canClick = true;
+							count == 3;
+							
+							$("#login").html("登录");
+							$("#login").css("background-color", "#00A2EA");
+						}
+					}, 1000);
+				}
 			}
 		}
 	});
