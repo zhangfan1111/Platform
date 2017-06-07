@@ -19,6 +19,14 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
+    <bean name="redisApplicationProperties" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:/config/others/redis.properties</value>
+			</list>
+		</property>
+	</bean>
+    
 	<bean id="redisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
 		<!-- 获取连接最大等待时间 -->
 		<property name="maxWaitMillis" value="${redis.pool.maxWait}" />

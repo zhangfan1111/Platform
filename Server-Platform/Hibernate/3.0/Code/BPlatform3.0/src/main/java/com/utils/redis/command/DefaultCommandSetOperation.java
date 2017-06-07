@@ -2,7 +2,6 @@ package com.utils.redis.command;
 
 import java.util.Collection;
 import java.util.List;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import org.springframework.data.redis.core.Cursor;
