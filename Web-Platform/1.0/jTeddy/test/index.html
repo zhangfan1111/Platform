@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en" id="html">
+<head>
+	<meta charset="utf-8">
+	<title>jTeddy Test Suite</title>
+	<link rel="stylesheet" href="../external/qunit/qunit.css" />
+
+
+	<script src="../external/qunit/qunit.js"></script>
+	<script src="sea.js"></script>
+	<script src="util.js"></script>
+
+	<script>
+		var jsFiles = [{url: "../dist/jteddy.js", type: 'js'}];
+		jsFiles.push({url: "unit/arrayPro.js", type: 'js'});
+		jsFiles.push({url: "unit/string.js", type: 'js'});
+		jsFiles.push({url: "unit/date.js", type: 'js'});
+		jsFiles.push({url: "unit/core.js", type: 'js'});
+		jsFiles.push({url: "unit/json.js", type: 'js'});
+		jsFiles.push({url: "unit/hashMap.js", type: 'js'});
+		utils.batchLoadJsFiles(jsFiles);
+	</script>
+
+</head>
+
+<body id="body">
+	<div id="qunit"></div>
+	<div id="qunit-fixture"></div>
+</body>
+</html>

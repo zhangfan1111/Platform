@@ -1,0 +1,76 @@
+{
+  "name": "jteddy",
+  "title": "jTeddy",
+  "description": "JavaScript library for DOM operations",
+  "version": "3.0.0-pre",
+  "main": "dist/jteddy.js",
+  "homepage": "",
+  "author": {
+    "name": "jTeddy Foundation and other contributors",
+    "url": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "jteddy",
+    "javascript",
+    "browser",
+    "library"
+  ],
+  "bugs": {
+    "url": ""
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": ""
+    }
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "commitplease": "2.0.0",
+    "grunt": "0.4.5",
+    "grunt-cli": "0.1.13",
+    "grunt-compare-size": "0.4.0",
+    "grunt-contrib-jshint": "0.10.0",
+    "grunt-contrib-uglify": "0.7.0",
+    "grunt-contrib-watch": "0.6.1",
+    "grunt-git-authors": "2.0.1",
+    "grunt-jscs-checker": "0.8.1",
+    "grunt-jsonlint": "1.0.4",
+    "grunt-npmcopy": "0.1.0",
+    "gzip-js": "0.3.2",
+    "jsdom": "3.1.2",
+    "load-grunt-tasks": "1.0.0",
+    "native-promise-only": "0.7.8-a",
+    "npm": "1.4.28",
+    "promises-aplus-tests": "2.1.0",
+    "q": "1.1.2",
+    "qunitjs": "1.17.1",
+    "requirejs": "2.1.15",
+    "sinon": "1.10.3",
+    "sizzle": "2.1.1",
+    "testswarm": "1.1.0"
+  },
+  "scripts": {
+    "build": "npm install && grunt",
+    "start": "grunt watch",
+    "test": "grunt && grunt test"
+  },
+  "commitplease": {
+    "components": [
+      "Docs",
+      "Tests",
+      "Build",
+      "Release",
+      "Core",
+      "ArrayPro",
+      "Date",
+      "HashMap",
+      "Json",
+      "String"
+    ]
+  }
+}
