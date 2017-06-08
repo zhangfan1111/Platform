@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.memory.platform.core.annotation.Log;
 import com.memory.platform.core.service.IBaseService;
 import com.memory.platform.modules.system.base.model.SystemDept;
 import com.memory.platform.modules.system.base.model.SystemRole;

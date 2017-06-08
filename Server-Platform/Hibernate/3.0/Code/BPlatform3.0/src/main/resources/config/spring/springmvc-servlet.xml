@@ -9,6 +9,19 @@
 	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd"
 	>
 
+    <context:component-scan base-package="com.memory.platform.web.web.aspect" />
+    
+    <!--日志切面-->
+    <bean id="systemLogAspect" class="com.memory.platform.web.web.aspect.SystemLogAspect"></bean> 
+    
+    <!-- 启动对@AspectJ注解的支持 --> 
+    <!-- proxy-target-class等于true是强制使用cglib代理，proxy-target-class默认是false，如果你的类实现了接口 就走JDK代理，如果没有，走cglib代理  -->
+    <!-- 注：对于单利模式建议使用cglib代理，虽然JDK动态代理比cglib代理速度快，但性能不如cglib -->
+    <!--如果不写proxy-target-class="true"这句话也没问题-->
+    <aop:aspectj-autoproxy proxy-target-class="true">
+    	<aop:include name="systemLogAspect" />      
+    </aop:aspectj-autoproxy>
+    
 	<!-- 只搜索@Controller 标注的类 不搜索其他标注的类 -->
 	<context:component-scan base-package="com" use-default-filters="false">
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller" />
@@ -17,7 +30,7 @@
 		<!-- 业务模块的的controller -->
 		<context:include-filter type="regex" expression="com.whcd.*.web.controller" />
 	</context:component-scan>
-
+	
 	<!-- controller层的属性和配置文件读入 ,多个用逗号隔开 <context:property-placeholder location="classpath:/config/others/config.properties" /> -->
 
 	<!-- 避免IE执行AJAX时,返回JSON出现下载文件 这个配置和下面的<mvc:annotation-driven>配置重复，而第45行的配置又好像覆盖了<mvc:annotation-driven>配置，所以

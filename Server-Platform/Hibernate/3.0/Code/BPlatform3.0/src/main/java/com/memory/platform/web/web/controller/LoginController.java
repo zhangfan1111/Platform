@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.memory.platform.core.annotation.Log;
 import com.memory.platform.core.constants.WebConstants;
 import com.memory.platform.core.service.IBaseService;
 import com.memory.platform.core.web.ajax.AjaxReturn;
@@ -85,6 +86,7 @@ public class LoginController {
 	 */
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	@ResponseBody
+	@Log(operationType="登录操作",operationName="用户登录系统")
 	public Object login(@RequestParam(value = "loginName", required = true) String loginName,
 			@RequestParam(value = "password", required = true) String password, HttpSession session,
 			HttpServletRequest request) {

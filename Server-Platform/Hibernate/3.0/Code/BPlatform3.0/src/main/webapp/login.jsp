@@ -23,11 +23,11 @@
 	        </div>
 	        <div style="margin: 0px 0px 10px; position: relative">
 	            <span class="u_logo"></span>
-	            <input class="ipt" id="user" name="user" type="text" iscookie="true" placeholder="请输入用户名" value="admin">
+	            <input class="ipt" id="user" name="user" type="text" iscookie="true" placeholder="请输入用户名" value="">
 	        </div>
 	        <div style="padding: 10px 0px 10px;position: relative;">
 	            <span class="p_logo"></span>
-	            <input class="ipt" id="password" name="password" type="password" placeholder="请输入密码" value="123456">
+	            <input class="ipt" id="password" name="password" type="password" placeholder="请输入密码" value="">
 	        </div>
 	        <div style="font-size: 13px;text-align: left;margin-left: 65px;height: 35px;line-height: 35px">
 	        	<input id="check" type="checkbox" style="position: relative;top: 2px;">

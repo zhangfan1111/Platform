@@ -11,7 +11,6 @@ import org.json.JSONObject;
 
 import com.memory.platform.common.util.HttpTool;
 import com.memory.platform.common.util.IpUtil;
-import com.memory.platform.modules.system.base.service.impl.SystemUserServiceImpl;
 
 public class BasicCore {
 	public static void runCore() {

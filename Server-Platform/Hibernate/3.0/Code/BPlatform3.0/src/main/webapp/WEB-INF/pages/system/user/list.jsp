@@ -175,17 +175,17 @@
 				});
 			},
 			onLoadSuccess : function(data) {
+				var p = $(this).datagrid('getPager');  
+			    $(p).pagination({ 
+			    	layout:['sep','first','prev','links','next','last','sep','refresh']
+			    });
+				
 				$('.iconImg').attr('src', system.pixel_0);
 				parent.$.messager.progress('close');
 			}
 		});
 		
 //		$('#grid').datagrid('getPanel').removeClass('lines-both lines-right lines-bottom').addClass('lines-no');
-		
-		var p = $('#grid').datagrid('getPager');  
-	    $(p).pagination({ 
-	    	layout:['sep','first','prev','links','next','last','sep','refresh']
-	    });
 		
 		$("#sex").combobox({
 	        url: system.contextPath + '/system/systemDictController/getByCode/10.2.3/',

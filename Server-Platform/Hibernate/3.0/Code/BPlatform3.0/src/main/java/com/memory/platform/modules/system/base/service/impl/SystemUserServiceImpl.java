@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.memory.platform.common.util.IpUtil;
+import com.memory.platform.core.annotation.Log;
 import com.memory.platform.core.basic.BasicUHandler;
 import com.memory.platform.core.constants.Globals;
 import com.memory.platform.core.service.impl.BaseServiceImpl;
