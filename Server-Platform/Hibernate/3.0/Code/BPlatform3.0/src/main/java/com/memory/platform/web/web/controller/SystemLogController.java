@@ -19,6 +19,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.memory.platform.core.annotation.Log;
+import com.memory.platform.core.constants.Globals;
 import com.memory.platform.core.web.ajax.ExceptionReturn;
 import com.memory.platform.hibernate4.search.Search;
 import com.memory.platform.hibernate4.search.SearchResult;
@@ -28,8 +30,6 @@ import com.memory.platform.modules.system.base.service.ISystemLogService;
 
 /**
  * 日志处理类
- * 
- * @author 张代浩
  * 
  */
 @Controller
@@ -86,6 +86,7 @@ public class SystemLogController {
 	 */
 	@RequestMapping(value="dataGrid",method = {RequestMethod.POST,RequestMethod.GET})
 	@ResponseBody
+	@Log(operationType="查看操作",operationName="用户查看日志列表", logLevel=Globals.Log_Type_OTHER)
 	public Object dataGrid(HttpServletRequest request,HttpSession session,
 			@RequestParam(required = false) Integer page,
 			@RequestParam(required = false) Integer rows) {

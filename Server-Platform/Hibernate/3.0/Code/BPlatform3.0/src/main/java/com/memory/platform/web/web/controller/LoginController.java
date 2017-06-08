@@ -66,6 +66,7 @@ public class LoginController {
 	 */
 	@RequestMapping("/logout")
 	@ResponseBody
+	@Log(operationType="退出操作",operationName="用户退出系统", logLevel=Globals.Log_Type_EXIT)
 	public Object logout(HttpSession session, Locale locale) {
 		try {
 			session.removeAttribute(WebConstants.CURRENT_USER);

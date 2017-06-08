@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.memory.platform.core.annotation.Log;
+import com.memory.platform.core.constants.Globals;
 import com.memory.platform.core.web.ajax.AjaxReturn;
 import com.memory.platform.modules.system.base.model.SystemRole;
 import com.memory.platform.modules.system.base.service.ISystemBasedataLinkService;
@@ -68,6 +70,7 @@ public class SystemRoleController {
 	 */
 	@RequestMapping(value="treeGrid",method = {RequestMethod.POST,RequestMethod.GET})
 	@ResponseBody
+	@Log(operationType="查询操作",operationName="查看角色列表", logLevel=Globals.Log_Type_OTHER)
 	public Object treeGrid(@RequestParam(value="id",required=false)String parentId) {
 		List<SystemRole> list = null;
 		if(parentId != null && !"".equals(parentId)) {
@@ -80,6 +83,7 @@ public class SystemRoleController {
 	
 	@RequestMapping(value="/save",method = RequestMethod.POST)
 	@ResponseBody
+	@Log(operationType="更新操作",operationName="更新角色信息", logLevel=Globals.Log_Type_UPDATE)
 	public Object save(@ModelAttribute("systemRole") SystemRole systemRole) {
 		systemRoleService.saveOrUpdate(systemRole);
 		return new AjaxReturn(true,"操作成功！");
@@ -87,6 +91,7 @@ public class SystemRoleController {
 	
 	@RequestMapping(value="/delete/{id}",method = RequestMethod.POST)
 	@ResponseBody
+	@Log(operationType="删除操作",operationName="删除角色", logLevel=Globals.Log_Type_DEL)
 	public Object delete(@PathVariable String id) {
 		if(id != null && !"".equals(id)) {
 			SystemRole s = systemRoleService.getById(id);
@@ -97,6 +102,7 @@ public class SystemRoleController {
 	
 	@RequestMapping(value="/getById/{id}")
 	@ResponseBody
+	@Log(operationType="查询操作",operationName="查看角色详细信息", logLevel=Globals.Log_Type_OTHER)
 	public Object getById(@PathVariable String id) {
 		if(id != null && !"".equals(id)) {
 			SystemRole s = systemRoleService.getById(id);

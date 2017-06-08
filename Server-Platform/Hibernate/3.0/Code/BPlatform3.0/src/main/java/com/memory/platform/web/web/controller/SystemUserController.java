@@ -29,6 +29,8 @@ import org.springframework.web.context.request.WebRequest;
 
 import com.memory.platform.common.util.MD5andKL;
 import com.memory.platform.common.util.StaticMethod;
+import com.memory.platform.core.annotation.Log;
+import com.memory.platform.core.constants.Globals;
 import com.memory.platform.core.constants.WebConstants;
 import com.memory.platform.core.springmvc.DateConvertEditor;
 import com.memory.platform.core.web.ajax.AjaxReturn;
@@ -98,6 +100,7 @@ public class SystemUserController {
 	}
 	@RequestMapping(value="/getById/{id}")
 	@ResponseBody
+	@Log(operationType="查询操作",operationName="查询用户详细信息", logLevel=Globals.Log_Type_OTHER)
 	public Object getById(@PathVariable String id) {
 		try {
 			if(id != null && !"".equals(id)) {
@@ -116,6 +119,7 @@ public class SystemUserController {
 	
 	@RequestMapping(value="/save",method = RequestMethod.POST)
 	@ResponseBody
+	@Log(operationType="更新操作",operationName="查更新用户信息", logLevel=Globals.Log_Type_UPDATE)
 	public Object save(@ModelAttribute("systemUser") SystemUser systemUser) {
 		try {
 			if(systemUser.getId() != null) {				
@@ -138,6 +142,7 @@ public class SystemUserController {
 	
 	@RequestMapping(value="/delete",method = RequestMethod.POST)
 	@ResponseBody
+	@Log(operationType="删除操作",operationName="删除用户", logLevel=Globals.Log_Type_DEL)
 	public Object delete(HttpSession session, Locale locale, @RequestParam(required=false) String id) {
 		try {
 			SystemUser user = systemUserService.getById(id);
@@ -151,6 +156,7 @@ public class SystemUserController {
 	
 	@RequestMapping(value="/updatePwd",method = RequestMethod.POST)
 	@ResponseBody
+	@Log(operationType="更新操作",operationName="修改用户密码", logLevel=Globals.Log_Type_UPDATE)
 	public Object updatePwd(HttpSession session,@RequestParam("pwd") String pwd) {
 		try {
 			SessionInfo sessionInfo = (SessionInfo) session.getAttribute(WebConstants.CURRENT_USER);
@@ -171,6 +177,7 @@ public class SystemUserController {
 	 */
 	@RequestMapping(value="dataGrid",method = {RequestMethod.POST,RequestMethod.GET})
 	@ResponseBody
+	@Log(operationType="查询操作",operationName="查看用户列表", logLevel=Globals.Log_Type_OTHER)
 	public Object dataGrid(HttpServletRequest request,HttpSession session,
 			@RequestParam(required = false) String search,
 			@RequestParam(required = false) Integer page,
@@ -230,16 +237,13 @@ public class SystemUserController {
 	 */
 	@RequestMapping(value="modifyRole",method = {RequestMethod.POST,RequestMethod.GET})
 	@ResponseBody
+	@Log(operationType="更新操作",operationName="用户角色授权", logLevel=Globals.Log_Type_UPDATE)
 	public Object modifyRole(HttpServletRequest request,Model model,
 							@RequestParam(value="userId",required=true)String userId,
 							@RequestParam(value="addRoleIds",required=false)String[]addRoleIds,
 							@RequestParam(value="delRoleIds",required=false)String[]delRoleIds) {
 		Map requestMap = request.getParameterMap();
 		model.addAllAttributes(requestMap);
-		
-		System.out.println(userId);
-		System.out.println(Arrays.toString(addRoleIds));
-		System.out.println(Arrays.toString(delRoleIds));
 		
 		try {
 			if(addRoleIds != null && addRoleIds.length>0) {
@@ -293,6 +297,7 @@ public class SystemUserController {
 	 */
 	@RequestMapping(value="modifyDept",method = {RequestMethod.POST,RequestMethod.GET})
 	@ResponseBody
+	@Log(operationType="更新操作",operationName="用户部门授权", logLevel=Globals.Log_Type_UPDATE)
 	public Object modifyDept(HttpServletRequest request,Model model,
 			@RequestParam(value="userId",required=true)String userId,
 			@RequestParam(value="addDeptIds",required=false)String[]addDeptIds,

@@ -20,6 +20,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.memory.platform.core.annotation.Log;
+import com.memory.platform.core.constants.Globals;
 import com.memory.platform.core.web.ajax.AjaxReturn;
 import com.memory.platform.modules.system.base.datalink.PrivilegeHelper;
 import com.memory.platform.modules.system.base.model.SystemResource;
@@ -105,6 +107,7 @@ public class SystemPrivilegeController {
 	 */
 	@RequestMapping(value="modifyPrivilege",method = {RequestMethod.POST,RequestMethod.GET})
 	@ResponseBody
+	@Log(operationType="更新操作",operationName="更新用户权限", logLevel=Globals.Log_Type_UPDATE)
 	public Object modifyPrivilege(HttpServletRequest request,Model model,
 							@RequestParam(value="master",required=true)String master,
 							@RequestParam(value="masterValue",required=true)String masterValue,
@@ -113,9 +116,6 @@ public class SystemPrivilegeController {
 							@RequestParam(value="delAccessIds",required=false)String[]delAccessIds) {
 		Map requestMap = request.getParameterMap();
 		model.addAllAttributes(requestMap);
-		
-		System.out.println(Arrays.toString(addAccessIds));
-		System.out.println(Arrays.toString(delAccessIds));
 		
 		try {
 			Class<?> masterClass = PrivilegeHelper.getClassByDbTypeFlag(master);

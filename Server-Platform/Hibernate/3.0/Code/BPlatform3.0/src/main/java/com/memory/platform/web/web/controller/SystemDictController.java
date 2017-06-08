@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.memory.platform.core.annotation.Log;
+import com.memory.platform.core.constants.Globals;
 import com.memory.platform.core.web.ajax.AjaxReturn;
 import com.memory.platform.modules.system.base.model.SystemDict;
 import com.memory.platform.modules.system.base.service.ISystemDictService;
@@ -71,6 +73,7 @@ public class SystemDictController {
 	
 	@RequestMapping(value="/save",method = RequestMethod.POST)
 	@ResponseBody
+	@Log(operationType="更新操作",operationName="用户更新字典信息", logLevel=Globals.Log_Type_UPDATE)
 	public Object save(@ModelAttribute("systemDict") SystemDict systemDict) {
 		if(systemDict.getType() == null || "".equals(systemDict.getType())) {
 			systemDict.setType(E.DictType.COMMENT.name());
@@ -81,6 +84,7 @@ public class SystemDictController {
 	
 	@RequestMapping(value="/delete/{id}",method = RequestMethod.POST)
 	@ResponseBody
+	@Log(operationType="删除操作",operationName="用户删除字典信息", logLevel=Globals.Log_Type_DEL)
 	public Object delete(@PathVariable String id) {
 		if(id != null && !"".equals(id)) {
 			SystemDict s = systemDictService.getById(id);
@@ -91,6 +95,7 @@ public class SystemDictController {
 	
 	@RequestMapping(value="/getById/{id}")
 	@ResponseBody
+	@Log(operationType="查询操作",operationName="用户查看字典信息", logLevel=Globals.Log_Type_OTHER)
 	public Object getById(@PathVariable String id) {
 		if(id != null && !"".equals(id)) {
 			SystemDict s = systemDictService.getById(id);

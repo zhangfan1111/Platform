@@ -22,6 +22,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.memory.platform.core.annotation.Log;
+import com.memory.platform.core.constants.Globals;
 import com.memory.platform.core.constants.WebConstants;
 import com.memory.platform.modules.system.base.model.SystemResource;
 import com.memory.platform.modules.system.base.model.SystemUser;
@@ -80,6 +82,7 @@ public class SystemResourceController {
 	
 	@RequestMapping(value="/save",method = RequestMethod.POST)
 	@ResponseBody
+	@Log(operationType="更新操作",operationName="更新资源信息", logLevel=Globals.Log_Type_UPDATE)
 	public Object save(@ModelAttribute("systemResource") SystemResource systemResource) {
 		systemResourceService.saveOrUpdate(systemResource);
 		return true;
@@ -87,6 +90,7 @@ public class SystemResourceController {
 	
 	@RequestMapping(value="/delete/{id}",method = RequestMethod.POST)
 	@ResponseBody
+	@Log(operationType="删除操作",operationName="删除资源", logLevel=Globals.Log_Type_DEL)
 	public Object delete(@PathVariable String id) {
 		if(id != null && !"".equals(id)) {
 			SystemResource s = systemResourceService.getById(id);
@@ -97,6 +101,7 @@ public class SystemResourceController {
 	
 	@RequestMapping(value="/getById/{id}")
 	@ResponseBody
+	@Log(operationType="查询操作",operationName="查询资源详细信息", logLevel=Globals.Log_Type_OTHER)
 	public Object getById(@PathVariable String id) {
 		if(id != null && !"".equals(id)) {
 			SystemResource s = systemResourceService.getById(id);
@@ -125,6 +130,7 @@ public class SystemResourceController {
 	
 	@RequestMapping(value="/getAllResource",method = RequestMethod.POST)
 	@ResponseBody
+	@Log(operationType="查询操作",operationName="获取资源列表", logLevel=Globals.Log_Type_OTHER)
 	public Object getAllResource(HttpSession session) {
 		List<SystemResource> list = null;
 		list = systemResourceService.find("From SystemResource s where s.type='1' or s.type='2' order by s.orderCode asc");
@@ -138,7 +144,6 @@ public class SystemResourceController {
 	 */
 	@RequestMapping(method = RequestMethod.POST)
 	public String all(PrintWriter writer) throws IOException {
-		System.out.println("sdf");
 		return "system/resource/systemResource";
 	}
 

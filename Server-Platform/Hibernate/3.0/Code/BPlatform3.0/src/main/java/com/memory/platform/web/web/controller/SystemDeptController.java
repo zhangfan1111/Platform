@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.memory.platform.core.annotation.Log;
+import com.memory.platform.core.constants.Globals;
 import com.memory.platform.core.web.ajax.AjaxReturn;
 import com.memory.platform.modules.system.base.model.SystemDept;
 import com.memory.platform.modules.system.base.service.ISystemDeptService;
@@ -58,6 +60,7 @@ public class SystemDeptController {
 	 */
 	@RequestMapping(value="treeGrid",method = {RequestMethod.POST,RequestMethod.GET})
 	@ResponseBody
+	@Log(operationType="查看操作",operationName="用户查看部门列表", logLevel=Globals.Log_Type_OTHER)
 	public Object treeGrid(@RequestParam(value="id",required=false)String parentId) {
 		List<SystemDept> list = null;
 		if(parentId != null && !"".equals(parentId)) {
@@ -70,6 +73,7 @@ public class SystemDeptController {
 	
 	@RequestMapping(value="/save",method = RequestMethod.POST)
 	@ResponseBody
+	@Log(operationType="更新操作",operationName="用户更新用户部门信息", logLevel=Globals.Log_Type_UPDATE)
 	public Object save(@ModelAttribute("systemDept") SystemDept systemDept) {
 		systemDeptService.saveOrUpdate(systemDept);
 		return new AjaxReturn(true,"操作成功！");
@@ -77,6 +81,7 @@ public class SystemDeptController {
 	
 	@RequestMapping(value="/delete/{id}",method = RequestMethod.POST)
 	@ResponseBody
+	@Log(operationType="删除操作",operationName="用户删除部门", logLevel=Globals.Log_Type_DEL)
 	public Object delete(@PathVariable String id) {
 		if(id != null && !"".equals(id)) {
 			SystemDept s = systemDeptService.getById(id);
@@ -87,6 +92,7 @@ public class SystemDeptController {
 	
 	@RequestMapping(value="/getById/{id}")
 	@ResponseBody
+	@Log(operationType="查询操作",operationName="用户查看部门详情", logLevel=Globals.Log_Type_OTHER)
 	public Object getById(@PathVariable String id) {
 		if(id != null && !"".equals(id)) {
 			SystemDept s = systemDeptService.getById(id);
