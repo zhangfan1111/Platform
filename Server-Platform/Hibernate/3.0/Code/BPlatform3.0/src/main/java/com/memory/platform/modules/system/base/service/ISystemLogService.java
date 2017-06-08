@@ -10,5 +10,5 @@ public interface ISystemLogService extends IBaseService<SystemLog>{
 	 * @param loglevel 级别
 	 * @param operatetype 类型
 	 */
-	public void addLog(String LogContent, Short loglevel,Short operatetype);
+	public void addLog(String LogContent, int loglevel,int operatetype);
 }

@@ -13,17 +13,17 @@ public final class Globals {
 	/**
 	 *日志级别定义
 	 */
-	public static Short Log_Leavel_INFO=1;
-	public static Short Log_Leavel_WARRING=2;
-	public static Short Log_Leavel_ERROR=3;
+	public final static int Log_Leavel_INFO=1;
+	public final static int Log_Leavel_WARRING=2;
+	public final static int Log_Leavel_ERROR=3;
 	 /**
 	  * 日志类型
 	  */
-	 public static Short Log_Type_LOGIN=1; //登陆
-	 public static Short Log_Type_EXIT=2;  //退出
-	 public static Short Log_Type_INSERT=3; //插入
-	 public static Short Log_Type_DEL=4; //删除
-	 public static Short Log_Type_UPDATE=5; //更新
-	 public static Short Log_Type_UPLOAD=6; //上传
-	 public static Short Log_Type_OTHER=7; //其他
+	 public final static int Log_Type_LOGIN=1; //登陆
+	 public final static int Log_Type_EXIT=2;  //退出
+	 public final static int Log_Type_INSERT=3; //插入
+	 public final static int Log_Type_DEL=4; //删除
+	 public final static int Log_Type_UPDATE=5; //更新
+	 public final static int Log_Type_UPLOAD=6; //上传
+	 public final static int Log_Type_OTHER=7; //其他
 }

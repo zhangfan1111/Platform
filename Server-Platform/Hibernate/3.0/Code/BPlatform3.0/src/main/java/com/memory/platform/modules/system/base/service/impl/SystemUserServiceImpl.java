@@ -100,8 +100,8 @@ public class SystemUserServiceImpl extends BaseServiceImpl<SystemUser> implement
 			ClientManager.getInstance().addClinet(sessionId, client);
 			
 			// 添加登陆日志
-			systemLogService.addLog(message, Globals.Log_Type_LOGIN,
-					Globals.Log_Leavel_INFO);
+//			systemLogService.addLog(message, Globals.Log_Type_LOGIN,
+//					Globals.Log_Leavel_INFO);
 		}
 	}
 	

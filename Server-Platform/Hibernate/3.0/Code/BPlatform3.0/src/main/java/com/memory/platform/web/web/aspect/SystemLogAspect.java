@@ -114,6 +114,7 @@ public class SystemLogAspect {
 	private Object doAroundController(JoinPoint joinPoint) throws Throwable {
 		String operationType = "";
 		String operationName = "";
+		int logLevel = Globals.Log_Type_OTHER;
 		try {
 			String targetName = joinPoint.getTarget().getClass().getName();
 			String methodName = joinPoint.getSignature().getName();
@@ -126,6 +127,7 @@ public class SystemLogAspect {
 					if (clazzs.length == arguments.length) {
 						operationType = method.getAnnotation(Log.class).operationType();
 						operationName = method.getAnnotation(Log.class).operationName();
+						logLevel = method.getAnnotation(Log.class).logLevel();
 						break;
 					}
 				}
@@ -135,15 +137,15 @@ public class SystemLogAspect {
 			e.printStackTrace();
 		}
 
-		return doAround(operationType, operationName, joinPoint);
+		return doAround(operationType, operationName, logLevel, joinPoint);
 	}
 
-	protected Object doAround(String operationType, String operationName, JoinPoint pjp) throws Throwable {
+	protected Object doAround(String operationType, String operationName, int logLevel, JoinPoint pjp) throws Throwable {
 		// 日志记录
 		String message = "操作：" + operationName;
 		message += "；操作类型：" + (pjp.getTarget().getClass().getName() + "." + pjp.getSignature().getName() + "()") + "."
 				+ operationType;
-		systemLogService.addLog(message, Globals.Log_Type_OTHER, Globals.Log_Leavel_INFO);
+		systemLogService.addLog(message, logLevel, Globals.Log_Leavel_INFO);
 		return null;
 	}
 }

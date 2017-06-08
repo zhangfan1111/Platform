@@ -23,7 +23,7 @@ public class SystemLogServiceImpl extends BaseServiceImpl<SystemLog> implements 
 	private IBaseDao baseDao;
 
 	@Override
-	public void addLog(String logcontent, Short loglevel, Short operatetype) {
+	public void addLog(String logcontent, int loglevel, int operatetype) {
 
 		HttpServletRequest request = WebContextUtils.getRequest();
 		String broswer = BrowserUtils.checkBrowse(request);

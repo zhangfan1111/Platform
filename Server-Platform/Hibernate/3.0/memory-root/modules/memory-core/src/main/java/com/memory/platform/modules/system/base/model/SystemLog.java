@@ -28,9 +28,9 @@ public class SystemLog extends IdEntity implements java.io.Serializable {
 	
 	private SystemUser systemUser;
 	private String systemUserId;
-	private Short logLevel;
+	private int logLevel;
 	private Timestamp operateTime;
-	private Short operateType;
+	private int operateType;
 	private String logContent;
 	private String broswer;//用户浏览器类型
 	private String note;
@@ -55,11 +55,11 @@ public class SystemLog extends IdEntity implements java.io.Serializable {
 	}
 
 	@Column(name = "log_level")
-	public Short getLogLevel() {
+	public int getLogLevel() {
 		return this.logLevel;
 	}
 
-	public void setLogLevel(Short loglevel) {
+	public void setLogLevel(int loglevel) {
 		this.logLevel = loglevel;
 	}
 
@@ -75,11 +75,11 @@ public class SystemLog extends IdEntity implements java.io.Serializable {
 	}
 
 	@Column(name = "operate_type")
-	public Short getOperateType() {
+	public int getOperateType() {
 		return this.operateType;
 	}
 
-	public void setOperateType(Short operateType) {
+	public void setOperateType(int operateType) {
 		this.operateType = operateType;
 	}
 
