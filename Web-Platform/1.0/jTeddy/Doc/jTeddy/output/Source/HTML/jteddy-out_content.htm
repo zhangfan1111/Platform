@@ -1,0 +1,291 @@
+﻿<!DOCTYPE HTML>
+<html><head>
+   <title>jteddy</title>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+   <!-- This line includes the general project style sheet (not required) -->
+   <link type="text/css" href="default.css" rel="stylesheet" />
+
+   <!-- This block defines the styles of the TOC headings, change them as needed -->
+   <style type="text/css">
+       body { background:#FFF; }
+       .navbar   { font-size: 120%; }
+
+       .heading1 { font-family: Arial,Helvetica; font-weight: normal; font-size: 10pt; color: #000000; text-decoration: none; }
+       .heading2 { font-family: Arial,Helvetica; font-weight: normal; font-size: 10pt; color: #000000; text-decoration: none; }
+       .heading3 { font-family: Arial,Helvetica; font-weight: normal; font-size: 10pt; color: #000000; text-decoration: none; }
+       .heading4 { font-family: Arial,Helvetica; font-weight: normal; font-size: 10pt; color: #000000; text-decoration: none; }
+       .heading5 { font-family: Arial,Helvetica; font-weight: normal; font-size: 10pt; color: #000000; text-decoration: none; }
+       .heading6 { font-family: Arial,Helvetica; font-weight: normal; font-size: 10pt; color: #000000; text-decoration: none; }
+
+       .hilight1 { font-family: Arial,Helvetica; font-weight: normal; font-size: 10pt; color: #FFFFFF; background: #002682; text-decoration: none; }
+       .hilight2 { font-family: Arial,Helvetica; font-weight: normal; font-size: 10pt; color: #FFFFFF; background: #002682; text-decoration: none; }
+       .hilight3 { font-family: Arial,Helvetica; font-weight: normal; font-size: 10pt; color: #FFFFFF; background: #002682; text-decoration: none; }
+       .hilight4 { font-family: Arial,Helvetica; font-weight: normal; font-size: 10pt; color: #FFFFFF; background: #002682; text-decoration: none; }
+       .hilight5 { font-family: Arial,Helvetica; font-weight: normal; font-size: 10pt; color: #FFFFFF; background: #002682; text-decoration: none; }
+       .hilight6 { font-family: Arial,Helvetica; font-weight: normal; font-size: 10pt; color: #FFFFFF; background: #002682; text-decoration: none; }
+
+       /* TOC LIST CSS */
+       #toc    { padding: 0; margin: 0; }
+       #toc li { margin-top: 2px; }
+       #toc ul { padding-left:0; padding-right:0 }
+       /* TOC LIST CSS */
+   </style>
+   <script type="text/javascript" src="jquery.js"></script>
+   <script type="text/javascript" src="helpman_settings.js"></script>
+   <script type="text/javascript">
+     var parentScope = (parent.hmNavigationFrame);
+     if (!parentScope) {
+		      var s = document.createElement("script");
+		      s.setAttribute("type","text/javascript");
+		      s.setAttribute("src", "helpman_navigation.js");
+		      document.getElementsByTagName("head")[0].appendChild(s);
+	    }
+     else {
+       if (initialtocstate != "expandall") parent.hmAddCss(document, "#toc li ul { display: none }");
+     }
+     function loadicons() { var icons = new Array(); for (i=0; i<arguments.length; i++) { icons[i] = new Image(); icons[i].src = arguments[i]; } }
+     function loadtoc() { if (parentScope) parent.loadstate(document.getElementById("toc")); else loadstate(document.getElementById("toc")); }
+     function savetoc() { if (parentScope) parent.savestate(document.getElementById("toc")); else savestate(document.getElementById("toc")); }
+     function clicked(node, event) { deselect(); if (parentScope) parent.hmNodeClicked(node, event); else hmNodeClicked(node, event); }
+     function dblclicked(node) { if (parentScope) parent.hmNodeDblclicked(node); else hmNodeDblclicked(node); }
+     function deselect() { if (window.getSelection) window.getSelection().removeAllRanges(); else if (document.selection) document.selection.empty(); }
+     $(document).ready(function(){
+       loadtoc();
+       $(window).onunload = savetoc;
+     });
+   </script>
+</head>
+<body>
+<p class="navbar"><b>Contents</b>
+ | <a href="jteddy-out_kwindex.htm">Index</a>
+ | <a href="jteddy-out_ftsearch.htm">Search</a>
+</p>
+<hr/>
+
+
+  <!-- Place holder for the TOC - this variable is REQUIRED! -->
+  <ul id="toc" style="list-style-type:none;display:block;padding-left:0">
+<li class="heading1" id="i1" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a1" href="topic.htm" target="hmcontent"><span class="heading1" id="s1">速查表</span></a>
+</li>
+<li class="heading1" id="i2" data-bg="cicon1.gif;cicon2.gif" style="background:url(cicon2.gif) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a2" href="jteddy3.htm" target="hmcontent"><span class="heading1" id="s2" ondblclick="return dblclicked(this)">jTeddy</span></a>
+<ul id="ul2" style="list-style-type:none">
+<li class="heading2" id="i2.1" data-bg="cicon1.gif;cicon2.gif" style="background:url(cicon2.gif) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a2.1" href="jteddy.htm" target="hmcontent"><span class="heading2" id="s2.1" ondblclick="return dblclicked(this)">jteddy对象</span></a>
+<ul id="ul2.1" style="list-style-type:none">
+<li class="heading3" id="i2.1.1" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a2.1.1" href="jteddy2.htm" target="hmcontent"><span class="heading3" id="s2.1.1">jTeddy(selector)</span></a>
+</li>
+<li class="heading3" id="i2.1.2" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a2.1.2" href="t.htm" target="hmcontent"><span class="heading3" id="s2.1.2">$T</span></a>
+</li>
+</ul>
+</li>
+<li class="heading2" id="i2.2" data-bg="cicon1.gif;cicon2.gif" style="background:url(cicon2.gif) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a2.2" href="topic2.htm" target="hmcontent"><span class="heading2" id="s2.2" ondblclick="return dblclicked(this)">数组和对象操作</span></a>
+<ul id="ul2.2" style="list-style-type:none">
+<li class="heading3" id="i2.2.1" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a2.2.1" href="t_eachobject__callback_.htm" target="hmcontent"><span class="heading3" id="s2.2.1">$T.each(Object, [callback]);</span></a>
+</li>
+<li class="heading3" id="i2.2.2" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a2.2.2" href="t_extenddeep__target__object1_.htm" target="hmcontent"><span class="heading3" id="s2.2.2">$T.extend([deep], target, object1, [objectN])</span></a>
+</li>
+<li class="heading3" id="i2.2.3" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a2.2.3" href="t_greparray__callback__invert.htm" target="hmcontent"><span class="heading3" id="s2.2.3">$T.grep(array, callback, [invert])</span></a>
+</li>
+<li class="heading3" id="i2.2.4" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a2.2.4" href="t_makearrayobj.htm" target="hmcontent"><span class="heading3" id="s2.2.4">$T.makeArray(obj)</span></a>
+</li>
+<li class="heading3" id="i2.2.5" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a2.2.5" href="t_maparrobj_callback.htm" target="hmcontent"><span class="heading3" id="s2.2.5">$T.map(arr|obj,callback)</span></a>
+</li>
+<li class="heading3" id="i2.2.6" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a2.2.6" href="t_inarrayvalue_array_fromindex.htm" target="hmcontent"><span class="heading3" id="s2.2.6">$T.inArray(value,array,[fromIndex])</span></a>
+</li>
+<li class="heading3" id="i2.2.7" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a2.2.7" href="t_mergefirst_second.htm" target="hmcontent"><span class="heading3" id="s2.2.7">$T.merge(first,second)</span></a>
+</li>
+</ul>
+</li>
+<li class="heading2" id="i2.3" data-bg="cicon1.gif;cicon2.gif" style="background:url(cicon2.gif) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a2.3" href="topic3.htm" target="hmcontent"><span class="heading2" id="s2.3" ondblclick="return dblclicked(this)">测试操作</span></a>
+<ul id="ul2.3" style="list-style-type:none">
+<li class="heading3" id="i2.3.1" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a2.3.1" href="t_typeobj.htm" target="hmcontent"><span class="heading3" id="s2.3.1">$T.type(obj)</span></a>
+</li>
+<li class="heading3" id="i2.3.2" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a2.3.2" href="t_isarrayobj.htm" target="hmcontent"><span class="heading3" id="s2.3.2">$T.isArray(obj)</span></a>
+</li>
+<li class="heading3" id="i2.3.3" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a2.3.3" href="t_isfunctionobj.htm" target="hmcontent"><span class="heading3" id="s2.3.3">$T.isFunction(obj)</span></a>
+</li>
+<li class="heading3" id="i2.3.4" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a2.3.4" href="t_isemptyobjectobj.htm" target="hmcontent"><span class="heading3" id="s2.3.4">$T.isEmptyObject(obj)</span></a>
+</li>
+<li class="heading3" id="i2.3.5" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a2.3.5" href="t_isplainobjectobj.htm" target="hmcontent"><span class="heading3" id="s2.3.5">$T.isPlainObject(obj)</span></a>
+</li>
+<li class="heading3" id="i2.3.6" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a2.3.6" href="t_isnumericvalue.htm" target="hmcontent"><span class="heading3" id="s2.3.6">$T.isNumeric(value)</span></a>
+</li>
+</ul>
+</li>
+<li class="heading2" id="i2.4" data-bg="cicon1.gif;cicon2.gif" style="background:url(cicon2.gif) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a2.4" href="topic4.htm" target="hmcontent"><span class="heading2" id="s2.4" ondblclick="return dblclicked(this)">字符串操作</span></a>
+<ul id="ul2.4" style="list-style-type:none">
+<li class="heading3" id="i2.4.1" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a2.4.1" href="t_trimstr.htm" target="hmcontent"><span class="heading3" id="s2.4.1">$T.trim(str)</span></a>
+</li>
+</ul>
+</li>
+<li class="heading2" id="i2.5" data-bg="cicon1.gif;cicon2.gif" style="background:url(cicon2.gif) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a2.5" href="topic5.htm" target="hmcontent"><span class="heading2" id="s2.5" ondblclick="return dblclicked(this)">函数操作</span></a>
+<ul id="ul2.5" style="list-style-type:none">
+<li class="heading3" id="i2.5.1" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a2.5.1" href="t_proxyfunction_context.htm" target="hmcontent"><span class="heading3" id="s2.5.1">$T.proxy(function,context)</span></a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="heading1" id="i3" data-bg="cicon1.gif;cicon2.gif" style="background:url(cicon2.gif) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a3" href="array.htm" target="hmcontent"><span class="heading1" id="s3" ondblclick="return dblclicked(this)">Array</span></a>
+<ul id="ul3" style="list-style-type:none">
+<li class="heading2" id="i3.1" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a3.1" href="t2.htm" target="hmcontent"><span class="heading2" id="s3.1">$T([])</span></a>
+</li>
+<li class="heading2" id="i3.2" data-bg="cicon1.gif;cicon2.gif" style="background:url(cicon2.gif) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a3.2" href="prototype.htm" target="hmcontent"><span class="heading2" id="s3.2" ondblclick="return dblclicked(this)">prototype</span></a>
+<ul id="ul3.2" style="list-style-type:none">
+<li class="heading3" id="i3.2.1" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a3.2.1" href="getnum.htm" target="hmcontent"><span class="heading3" id="s3.2.1">get(num)</span></a>
+</li>
+<li class="heading3" id="i3.2.2" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a3.2.2" href="indexofel.htm" target="hmcontent"><span class="heading3" id="s3.2.2">indexOf(el)</span></a>
+</li>
+<li class="heading3" id="i3.2.3" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a3.2.3" href="removeelel.htm" target="hmcontent"><span class="heading3" id="s3.2.3">removeEl(el)</span></a>
+</li>
+<li class="heading3" id="i3.2.4" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a3.2.4" href="removebyindexnum.htm" target="hmcontent"><span class="heading3" id="s3.2.4">removeByIndex(num)</span></a>
+</li>
+<li class="heading3" id="i3.2.5" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a3.2.5" href="clear.htm" target="hmcontent"><span class="heading3" id="s3.2.5">clear()</span></a>
+</li>
+<li class="heading3" id="i3.2.6" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a3.2.6" href="containsel.htm" target="hmcontent"><span class="heading3" id="s3.2.6">contains(el)</span></a>
+</li>
+<li class="heading3" id="i3.2.7" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a3.2.7" href="unique.htm" target="hmcontent"><span class="heading3" id="s3.2.7">unique()</span></a>
+</li>
+<li class="heading3" id="i3.2.8" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a3.2.8" href="intersectionarr.htm" target="hmcontent"><span class="heading3" id="s3.2.8">intersection(arr)</span></a>
+</li>
+<li class="heading3" id="i3.2.9" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a3.2.9" href="unionsetarr.htm" target="hmcontent"><span class="heading3" id="s3.2.9">unionset(arr)</span></a>
+</li>
+<li class="heading3" id="i3.2.10" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a3.2.10" href="diffsetarr.htm" target="hmcontent"><span class="heading3" id="s3.2.10">diffset(arr)</span></a>
+</li>
+<li class="heading3" id="i3.2.11" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a3.2.11" href="suppsetarr.htm" target="hmcontent"><span class="heading3" id="s3.2.11">suppset(arr)</span></a>
+</li>
+<li class="heading3" id="i3.2.12" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a3.2.12" href="clone.htm" target="hmcontent"><span class="heading3" id="s3.2.12">clone()</span></a>
+</li>
+<li class="heading3" id="i3.2.13" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a3.2.13" href="compact.htm" target="hmcontent"><span class="heading3" id="s3.2.13">compact()</span></a>
+</li>
+<li class="heading3" id="i3.2.14" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a3.2.14" href="flatten.htm" target="hmcontent"><span class="heading3" id="s3.2.14">flatten()</span></a>
+</li>
+<li class="heading3" id="i3.2.15" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a3.2.15" href="maxcallback.htm" target="hmcontent"><span class="heading3" id="s3.2.15">max(callback)</span></a>
+</li>
+<li class="heading3" id="i3.2.16" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a3.2.16" href="mincallback.htm" target="hmcontent"><span class="heading3" id="s3.2.16">min(callback)</span></a>
+</li>
+<li class="heading3" id="i3.2.17" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a3.2.17" href="first.htm" target="hmcontent"><span class="heading3" id="s3.2.17">first()</span></a>
+</li>
+<li class="heading3" id="i3.2.18" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a3.2.18" href="last.htm" target="hmcontent"><span class="heading3" id="s3.2.18">last()</span></a>
+</li>
+<li class="heading3" id="i3.2.19" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a3.2.19" href="counttel__pro.htm" target="hmcontent"><span class="heading3" id="s3.2.19">countT(el, pro)</span></a>
+</li>
+<li class="heading3" id="i3.2.20" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a3.2.20" href="getindexel__pro.htm" target="hmcontent"><span class="heading3" id="s3.2.20">getIndex(el, pro)</span></a>
+</li>
+<li class="heading3" id="i3.2.21" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a3.2.21" href="lastindexofel__offset__pro.htm" target="hmcontent"><span class="heading3" id="s3.2.21">lastIndexOf(el, offset, pro)</span></a>
+</li>
+<li class="heading3" id="i3.2.22" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a3.2.22" href="pushuniqueel__pro.htm" target="hmcontent"><span class="heading3" id="s3.2.22">pushUnique(el, pro)</span></a>
+</li>
+<li class="heading3" id="i3.2.23" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a3.2.23" href="unshiftunique_el__pro.htm" target="hmcontent"><span class="heading3" id="s3.2.23">unShiftUnique (el, pro)</span></a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="heading1" id="i4" data-bg="cicon1.gif;cicon2.gif" style="background:url(cicon2.gif) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a4" href="string.htm" target="hmcontent"><span class="heading1" id="s4" ondblclick="return dblclicked(this)">String</span></a>
+<ul id="ul4" style="list-style-type:none">
+<li class="heading2" id="i4.1" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a4.1" href="tstring.htm" target="hmcontent"><span class="heading2" id="s4.1">$T(&quot;String&quot;)</span></a>
+</li>
+<li class="heading2" id="i4.2" data-bg="cicon1.gif;cicon2.gif" style="background:url(cicon2.gif) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a4.2" href="prototype2.htm" target="hmcontent"><span class="heading2" id="s4.2" ondblclick="return dblclicked(this)">prototype</span></a>
+<ul id="ul4.2" style="list-style-type:none">
+<li class="heading3" id="i4.2.1" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a4.2.1" href="toarray.htm" target="hmcontent"><span class="heading3" id="s4.2.1">toArray()</span></a>
+</li>
+</ul>
+</li>
+<li class="heading2" id="i4.3" data-bg="cicon1.gif;cicon2.gif" style="background:url(cicon2.gif) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a4.3" href="fn.htm" target="hmcontent"><span class="heading2" id="s4.3" ondblclick="return dblclicked(this)">fn</span></a>
+<ul id="ul4.3" style="list-style-type:none">
+<li class="heading3" id="i4.3.1" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a4.3.1" href="formatterstrstr__len__v.htm" target="hmcontent"><span class="heading3" id="s4.3.1">String.fn.formatterstr(str, len, v)</span></a>
+</li>
+<li class="heading3" id="i4.3.2" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a4.3.2" href="string_fn_formatterval__c__s.htm" target="hmcontent"><span class="heading3" id="s4.3.2">String.fn.formatter(val, c, s)</span></a>
+</li>
+<li class="heading3" id="i4.3.3" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a4.3.3" href="string_fn_nulltostrvalue.htm" target="hmcontent"><span class="heading3" id="s4.3.3">String.fn.nullToStr(value)</span></a>
+</li>
+<li class="heading3" id="i4.3.4" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a4.3.4" href="string_fn_trimstr.htm" target="hmcontent"><span class="heading3" id="s4.3.4">String.fn.trim(str)</span></a>
+</li>
+<li class="heading3" id="i4.3.5" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a4.3.5" href="string_fn_isemptystr.htm" target="hmcontent"><span class="heading3" id="s4.3.5">String.fn.isEmpty(str)</span></a>
+</li>
+<li class="heading3" id="i4.3.6" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a4.3.6" href="string_fn_isblankstr.htm" target="hmcontent"><span class="heading3" id="s4.3.6">String.fn.isBlank(str)</span></a>
+</li>
+<li class="heading3" id="i4.3.7" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a4.3.7" href="string_fn_toggleval__v1__v2.htm" target="hmcontent"><span class="heading3" id="s4.3.7">String.fn.toggle(val, v1, v2)</span></a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="heading1" id="i5" data-bg="cicon1.gif;cicon2.gif" style="background:url(cicon2.gif) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a5" href="hashmap.htm" target="hmcontent"><span class="heading1" id="s5" ondblclick="return dblclicked(this)">HashMap</span></a>
+<ul id="ul5" style="list-style-type:none">
+<li class="heading2" id="i5.1" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a5.1" href="t_hashmap.htm" target="hmcontent"><span class="heading2" id="s5.1">$T.hashMap()</span></a>
+</li>
+<li class="heading2" id="i5.2" data-bg="cicon1.gif;cicon2.gif" style="background:url(cicon2.gif) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a5.2" href="function.htm" target="hmcontent"><span class="heading2" id="s5.2" ondblclick="return dblclicked(this)">function</span></a>
+<ul id="ul5.2" style="list-style-type:none">
+<li class="heading3" id="i5.2.1" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a5.2.1" href="arr.htm" target="hmcontent"><span class="heading3" id="s5.2.1">arr</span></a>
+</li>
+<li class="heading3" id="i5.2.2" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a5.2.2" href="putkey__value.htm" target="hmcontent"><span class="heading3" id="s5.2.2">put(key, value)</span></a>
+</li>
+<li class="heading3" id="i5.2.3" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a5.2.3" href="getkey.htm" target="hmcontent"><span class="heading3" id="s5.2.3">get(key)</span></a>
+</li>
+<li class="heading3" id="i5.2.4" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a5.2.4" href="eachcallback.htm" target="hmcontent"><span class="heading3" id="s5.2.4">each(callback)</span></a>
+</li>
+<li class="heading3" id="i5.2.5" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a5.2.5" href="getkeys.htm" target="hmcontent"><span class="heading3" id="s5.2.5">getKeys()</span></a>
+</li>
+<li class="heading3" id="i5.2.6" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a5.2.6" href="size.htm" target="hmcontent"><span class="heading3" id="s5.2.6">size()</span></a>
+</li>
+<li class="heading3" id="i5.2.7" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a5.2.7" href="toarray2.htm" target="hmcontent"><span class="heading3" id="s5.2.7">toArray()</span></a>
+</li>
+<li class="heading3" id="i5.2.8" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a5.2.8" href="isempty.htm" target="hmcontent"><span class="heading3" id="s5.2.8">isEmpty()</span></a>
+</li>
+<li class="heading3" id="i5.2.9" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a5.2.9" href="removekey.htm" target="hmcontent"><span class="heading3" id="s5.2.9">remove(key)</span></a>
+</li>
+<li class="heading3" id="i5.2.10" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a5.2.10" href="clear2.htm" target="hmcontent"><span class="heading3" id="s5.2.10">clear()</span></a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="heading1" id="i6" data-bg="cicon1.gif;cicon2.gif" style="background:url(cicon2.gif) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a6" href="date.htm" target="hmcontent"><span class="heading1" id="s6" ondblclick="return dblclicked(this)">Date</span></a>
+<ul id="ul6" style="list-style-type:none">
+<li class="heading2" id="i6.1" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a6.1" href="tdate.htm" target="hmcontent"><span class="heading2" id="s6.1">$T(Date)</span></a>
+</li>
+<li class="heading2" id="i6.2" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a6.2" href="cs.htm" target="hmcontent"><span class="heading2" id="s6.2">CS</span></a>
+</li>
+<li class="heading2" id="i6.3" data-bg="cicon1.gif;cicon2.gif" style="background:url(cicon2.gif) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a6.3" href="prototype3.htm" target="hmcontent"><span class="heading2" id="s6.3" ondblclick="return dblclicked(this)">prototype</span></a>
+<ul id="ul6.3" style="list-style-type:none">
+<li class="heading3" id="i6.3.1" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a6.3.1" href="patternfmt.htm" target="hmcontent"><span class="heading3" id="s6.3.1">pattern(fmt)</span></a>
+</li>
+</ul>
+</li>
+<li class="heading2" id="i6.4" data-bg="cicon1.gif;cicon2.gif" style="background:url(cicon2.gif) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a6.4" href="fn2.htm" target="hmcontent"><span class="heading2" id="s6.4" ondblclick="return dblclicked(this)">fn</span></a>
+<ul id="ul6.4" style="list-style-type:none">
+<li class="heading3" id="i6.4.1" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a6.4.1" href="date_fn_differenceinterval__da.htm" target="hmcontent"><span class="heading3" id="s6.4.1">Date.fn.difference(interval, date1, date2)</span></a>
+</li>
+<li class="heading3" id="i6.4.2" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a6.4.2" href="date_fn_betweenval__start__end.htm" target="hmcontent"><span class="heading3" id="s6.4.2">Date.fn.between(val, start, end)</span></a>
+</li>
+<li class="heading3" id="i6.4.3" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a6.4.3" href="date_fn_adddatedate__mill.htm" target="hmcontent"><span class="heading3" id="s6.4.3">Date.fn.addDate(date, mill)</span></a>
+</li>
+<li class="heading3" id="i6.4.4" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a6.4.4" href="date_fn_isequalval1__val2.htm" target="hmcontent"><span class="heading3" id="s6.4.4">Date.fn.isEqual(val1, val2)</span></a>
+</li>
+<li class="heading3" id="i6.4.5" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a6.4.5" href="date_fn_isleapyearyear.htm" target="hmcontent"><span class="heading3" id="s6.4.5">Date.fn.isLeapYear(year)</span></a>
+</li>
+<li class="heading3" id="i6.4.6" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a6.4.6" href="date_fn_getydaysyear.htm" target="hmcontent"><span class="heading3" id="s6.4.6">Date.fn.getYDays(year)</span></a>
+</li>
+<li class="heading3" id="i6.4.7" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a6.4.7" href="date_fn_getmdaysmonth__year.htm" target="hmcontent"><span class="heading3" id="s6.4.7">Date.fn.getMDays(month, year)</span></a>
+</li>
+<li class="heading3" id="i6.4.8" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a6.4.8" href="date_fn_formatmillmill.htm" target="hmcontent"><span class="heading3" id="s6.4.8">Date.fn.formatMill(mill)</span></a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="heading1" id="i7" data-bg="cicon1.gif;cicon2.gif" style="background:url(cicon2.gif) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a7" href="json.htm" target="hmcontent"><span class="heading1" id="s7" ondblclick="return dblclicked(this)">Json</span></a>
+<ul id="ul7" style="list-style-type:none">
+<li class="heading2" id="i7.1" style="background:url(cicon17.gif) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a7.1" href="t_parsejsondata.htm" target="hmcontent"><span class="heading2" id="s7.1">$T.parseJSON(data)</span></a>
+</li>
+</ul>
+</li>
+</ul>
+<script type="text/javascript">loadicons('cicon17.gif','cicon2.gif','cicon1.gif');</script>
+
+
+</body>
+</html>
