@@ -119,7 +119,7 @@ public class SystemUserController {
 	
 	@RequestMapping(value="/save",method = RequestMethod.POST)
 	@ResponseBody
-	@Log(operationType="更新操作",operationName="查更新用户信息", logLevel=Globals.Log_Type_UPDATE)
+	@Log(operationType="更新操作",operationName="更新用户信息", logLevel=Globals.Log_Type_UPDATE)
 	public Object save(@ModelAttribute("systemUser") SystemUser systemUser) {
 		try {
 			if(systemUser.getId() != null) {				

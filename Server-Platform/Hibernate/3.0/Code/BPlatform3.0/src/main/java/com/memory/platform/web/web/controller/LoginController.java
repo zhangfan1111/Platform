@@ -2,6 +2,7 @@ package com.memory.platform.web.web.controller;
 
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -13,6 +14,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.MessageSource;
+import org.springframework.data.redis.hash.DecoratingStringHashMapper;
+import org.springframework.data.redis.hash.HashMapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -29,6 +32,8 @@ import com.memory.platform.modules.system.base.model.SystemUser;
 import com.memory.platform.modules.system.base.service.ISystemLogService;
 import com.memory.platform.modules.system.base.service.ISystemUserService;
 import com.memory.platform.web.session.SessionInfo;
+import com.utils.redis.command.CommandHashOperation;
+import com.utils.redis.hash.BeanUtilsHashMapper2;
 
 /**
  * 用户登录相关
@@ -60,6 +65,9 @@ public class LoginController {
 
 	@Autowired
 	private MessageSource messageSource;
+	
+	@Autowired
+	private CommandHashOperation commandHashOperation;
 
 	/**
 	 * 退出登录
@@ -109,13 +117,21 @@ public class LoginController {
 
 				systemUserService.saveClientInfo(user, request, session.getId());
 
-//				HashOperations<String, String, Object> hashOps = redisTemplate.opsForHash();
-//				Map<String, Object> m = BeanToMapUtil.convertBean(user);
-//				hashOps.putAll("userinfo" + user.getId(), m);
-//				logger.info("用户信息：", hashOps.entries("userinfo").toString());
-//				Map<String, Object> userMap = hashOps.entries("userinfo" + user.getId());
-//				SystemUser u = new SystemUser();
-//				BeanToMapUtil.convertMap(userMap, u);
+				/*HashOperations<String, String, Object> hashOps = redisTemplate.opsForHash();
+				Map<String, Object> m = BeanToMapUtil.convertBean(user);
+				hashOps.putAll("userinfo" + user.getId(), m);
+				logger.info("用户信息：", hashOps.entries("userinfo").toString());
+				Map<String, Object> userMap = hashOps.entries("userinfo" + user.getId());
+				SystemUser u = new SystemUser();
+				BeanToMapUtil.convertMap(userMap, u);*/
+				
+				/*HashMapper<SystemUser, String, String> mapper = new DecoratingStringHashMapper<SystemUser>(new BeanUtilsHashMapper2<SystemUser>(SystemUser.class));
+				Map m = mapper.toHash(user);
+				commandHashOperation.HMSET("userinfo" + user.getId(), m);
+				logger.info("用户信息：", commandHashOperation.HGETALL("userinfo" + user.getId()).toString());
+				Map userMap = commandHashOperation.HGETALL("userinfo" + user.getId());
+				SystemUser u = mapper.fromHash(userMap);
+				logger.info("用户信息u：", u.toString());*/
 
 				SessionInfo sessinoInfo = new SessionInfo();
 				sessinoInfo.setUser(user);
