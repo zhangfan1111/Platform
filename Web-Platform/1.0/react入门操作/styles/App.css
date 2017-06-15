@@ -1,0 +1,72 @@
+/* Base Application Styles */
+body {
+  color: #fff;
+  background: #222;
+  margin: 0;
+  padding: 0;
+}
+
+.index img {
+  margin: 40px auto;
+  border-radius: 4px;
+  background: #fff;
+  display: block;
+}
+
+.index .notice {
+  margin: 20px auto;
+  padding: 15px 0;
+  text-align: center;
+  border: 1px solid #000;
+  border-width: 1px 0;
+  background: #666;
+}
+
+.all {
+	overflow: hidden;
+}
+
+.content {
+	width: 78%;
+	height: 650px;
+	border: 1px solid red;
+	float: left;
+}
+
+.list {
+	width: 20%;
+	float: left;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	border: 1px solid red;
+	text-align: center;
+}
+
+.list li {
+	border: 1px solid red;
+	height: 50px;
+	line-height: 50px;
+}
+
+.loginForm{
+	text-align: center;
+}
+
+.loginForm div{
+	margin-top: 30px;
+}
+
+.loginForm input {
+	margin-left: 20px;
+}
+
+.loginForm .register_btn{
+	width: 120px;
+	height: 40px;
+	text-align: center;
+	background-color: lightblue;
+	margin: 30px auto;
+	line-height: 40px;
+	border-radius: 6px;
+}
