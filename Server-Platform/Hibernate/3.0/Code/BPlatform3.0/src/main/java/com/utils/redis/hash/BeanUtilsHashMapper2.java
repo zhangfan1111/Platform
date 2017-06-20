@@ -22,6 +22,7 @@ public class BeanUtilsHashMapper2<T> implements HashMapper<T, String, String> {
 		this.type = type;
 	}
 
+	@Override
 	public T fromHash(Map<String, String> hash) {
 
 		T instance = org.springframework.beans.BeanUtils.instantiate(type);
