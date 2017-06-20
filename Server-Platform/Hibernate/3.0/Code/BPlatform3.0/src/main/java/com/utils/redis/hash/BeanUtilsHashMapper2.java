@@ -14,6 +14,17 @@ import org.apache.commons.beanutils.ConvertUtils;
 import org.apache.commons.beanutils.Converter;
 import org.springframework.data.redis.hash.HashMapper;
 
+/**
+ * <p>HashMapper based on Apache Commons BeanUtils project. Does NOT supports nested properties.</p>
+ * <p>Supports util Date.</p>
+ * 
+ * @author memory 2017年6月20日 下午2:17:22
+ * @version V1.0   
+ * @param <T>
+ * @modificationHistory=========================逻辑或功能性重大变更记录
+ * @modify by user: {修改人} 2017年6月20日
+ * @modify by reason:{方法名}:{原因}
+ */
 public class BeanUtilsHashMapper2<T> implements HashMapper<T, String, String> {
 
 	private Class<T> type;

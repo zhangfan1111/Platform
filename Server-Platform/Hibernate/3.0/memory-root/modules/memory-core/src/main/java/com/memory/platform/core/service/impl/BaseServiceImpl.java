@@ -25,7 +25,7 @@ import com.memory.platform.hibernate4.search.SearchResult;
  * @param <T>
  */
 @Service("baseServiceImpl")
-public class BaseServiceImpl<T> implements IBaseService<T> {
+public class BaseServiceImpl<T> extends ExtendServiceImpl<T> implements IBaseService<T> {
 
 	@Autowired
 	@Qualifier("baseDaoImpl")

@@ -16,7 +16,7 @@ import com.memory.platform.hibernate4.search.SearchResult;
  * 
  * @param <T>
  */
-public interface IBaseService<T> {
+public interface IBaseService<T> extends IExtendService<T>{
 
 	/**
 	 * 保存一个对象

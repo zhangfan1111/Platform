@@ -20,7 +20,7 @@ import com.memory.platform.hibernate4.search.SearchResult;
  * @param <T>
  *            模型
  */
-public interface IBaseDao<T> {
+public interface IBaseDao<T> extends IExtendDao<T>{
 
 	public Session getCurrentSession();
 	

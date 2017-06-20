@@ -13,7 +13,7 @@ import com.memory.platform.hibernate4.dao.IExtendDao;
 
 @Service("extendService")
 @SuppressWarnings("rawtypes")
-public class ExtendServiceImpl<T> extends BaseServiceImpl<T> implements IExtendService<T>{
+public class ExtendServiceImpl<T> implements IExtendService<T>{
 
 	@Autowired
 	@Qualifier("extendDao")

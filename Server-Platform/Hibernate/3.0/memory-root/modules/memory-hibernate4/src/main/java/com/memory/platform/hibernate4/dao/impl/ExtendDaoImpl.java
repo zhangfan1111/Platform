@@ -5,15 +5,30 @@ import java.util.List;
 import java.util.Map;
 
 import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.hibernate.transform.Transformers;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.memory.platform.hibernate4.dao.IExtendDao;
 
 @Repository("extendDao")
 @SuppressWarnings({ "rawtypes", "unchecked" })
-public class ExtendDaoImpl<T> extends BaseDaoImpl<T> implements IExtendDao<T>{
+public class ExtendDaoImpl<T> implements IExtendDao<T>{
 
+	@Autowired
+	private SessionFactory sessionFactory;
+
+	/**
+	 * 获得当前事物的session
+	 * 
+	 * @return org.hibernate.Session
+	 */
+	public Session getCurrentSession() {
+		return sessionFactory.getCurrentSession();
+	}
+	
 	@Override
 	public T getByHql(String hql, String... params) {
 		Query q = getCurrentSession().createQuery(hql);

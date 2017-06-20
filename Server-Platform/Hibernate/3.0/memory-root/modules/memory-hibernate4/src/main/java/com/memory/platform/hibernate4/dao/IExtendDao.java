@@ -7,7 +7,7 @@ import java.util.Map;
 import com.memory.platform.hibernate4.dao.IBaseDao;
 
 @SuppressWarnings("rawtypes")
-public interface IExtendDao<T> extends IBaseDao<T> {
+public interface IExtendDao<T>{
 	
 	/**
 	 * 根据hql语句获取单个对象 

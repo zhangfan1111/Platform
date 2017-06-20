@@ -7,7 +7,7 @@ import java.util.Map;
 import com.memory.platform.core.service.IBaseService;
 
 @SuppressWarnings("rawtypes")
-public interface IExtendService<T> extends IBaseService<T>{
+public interface IExtendService<T>{
 
 	/**
 	 * 根据hql语句获取单个对象 

@@ -19,19 +19,7 @@ import com.memory.platform.hibernate4.search.SearchResult;
 
 
 @Repository("baseDaoImpl")
-public class BaseDaoImpl<T> implements IBaseDao<T> {
-
-	@Autowired
-	private SessionFactory sessionFactory;
-
-	/**
-	 * 获得当前事物的session
-	 * 
-	 * @return org.hibernate.Session
-	 */
-	public Session getCurrentSession() {
-		return sessionFactory.getCurrentSession();
-	}
+public class BaseDaoImpl<T> extends ExtendDaoImpl<T> implements IBaseDao<T> {
 
 	@Override
 	public Serializable save(T o) {
