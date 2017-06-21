@@ -10,7 +10,7 @@ public interface RedisHashOperation {
 	 * @param o 需要缓存的对象
 	 * @param key 键值
 	 */
-	public <T> void saveBeanObject(T o, String key);
+	public <T> void saveBeanObject(T o, Class<T> clazz, String key);
 	
 	/**
 	 * 如果对象key以及hashkey不存在，缓存该对象
@@ -62,7 +62,7 @@ public interface RedisHashOperation {
 	 * @param key 键值
 	 * @param o bean对象
 	 */
-	public <T> void getBeanEntry(String key, T o);
+	public <T> void getBeanEntry(T o, Class<T> clazz, String key);
 	
 	/**
 	 * 根据键值key和hash键值判断是否已经包含相关缓存值

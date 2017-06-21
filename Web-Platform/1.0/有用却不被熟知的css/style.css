@@ -1,0 +1,262 @@
+/*重置*/
+
+    @charset "utf-8";
+    html {
+        -webkit-text-size-adjust: none;
+    }
+    html,
+    body,
+    div,
+    span,
+    applet,
+    object,
+    iframe,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    blockquote,
+    pre,
+    a,
+    abbr,
+    acronym,
+    address,
+    big,
+    cite,
+    code,
+    del,
+    dfn,
+    em,
+    font,
+    img,
+    ins,
+    kbd,
+    q,
+    s,
+    samp,
+    small,
+    strike,
+    strong,
+    sub,
+    sup,
+    tt,
+    var,
+    b,
+    u,
+    i,
+    center,
+    dl,
+    dt,
+    dd,
+    ol,
+    ul,
+    li,
+    fieldset,
+    form,
+    label,
+    legend,
+    table,
+    caption,
+    tbody,
+    tfoot,
+    thead,
+    tr,
+    th,
+    td,
+    textarea {
+        margin: 0;
+        padding: 0;
+        outline: none;
+        list-style-image: none;
+        list-style-type: none;
+        border-top-width: 0;
+        border-right-width: 0;
+        border-bottom-width: 0;
+        border-left-width: 0;
+    }
+    body {
+        font-size: 14px;
+        margin: 0 auto;
+        color: #666666;
+        font-family: "microsoft yahei";
+    }
+    .clear {
+        clear: both;
+        display: block;
+        overflow: hidden;
+        visibility: hidden;
+        width: 0;
+        height: 0;
+    }
+    a {
+        text-decoration: none;
+        color: #333;
+    }
+    a:hover {
+        color: #333;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    i,
+    em {
+        font-weight: normal;
+        font-style: normal;
+    }
+    input,
+    textarea {
+        font-family: "microsoft yahei";
+        outline: none;
+    }
+    .indent {
+        text-indent: 2em;
+    }
+
+
+/*垂直居中（不用写高度）*/
+
+css {
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-flex;
+    display: flex;
+}
+
+
+/*单行超出隐藏*/
+
+css {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+/*多行超出隐藏*/
+
+css {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+
+/*垂直居中于div中(注：父级div得有定位)*/
+
+css {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+}
+
+
+/*获取元素里面的第3个子元素*/
+css:nth-child(3){
+    color: red;
+}
+
+/*获取元素里面的第3个span子元素*/
+span:nth-of-type(3){
+    color: red;
+}
+
+/*获取元素里面的第最后一个子元素*/
+span:last-child{
+    color: red;
+}
+
+/*块级元素和行级元素互相转换*/
+css{
+    /*行内（不换行，不能设置宽高）*/
+    display: inline;
+    /*块级（换行，能设置宽高）*/
+    display: block;
+
+    /*行内（不换行，能设置宽高）*/
+    display: inline-block;
+}
+
+/*控制元素添加padding不撑开宽高*/
+css{
+    box-sizing: border-box;
+}
+
+
+/*去除掉img标签图片间的间隙*/
+img{
+    display: block;
+}
+
+/*文字之间的字符间距*/
+css{
+    letter-spacing: 3px;
+}
+
+/*兼容透明度*/
+css{
+    filter: alpha(opacity=80);
+    opacity:0.8;
+}
+
+
+/*只给元素背景透明 元素里面的内容不透明*/
+css{
+    background-color: rgba(0, 0, 0, 0.5)
+}
+
+/*选中type=text的input*/
+input[type="text"]{
+    color: red;
+}
+
+/*选取ul下面偶数li(第2，4，6，8...个li)*/
+
+li:nth-of-type(even){
+    color: red;
+}
+
+/*选取ul下面奇数li(第1，3，5，7...个li)*/
+
+li:nth-of-type(odd){
+    color: red;
+}
+
+/*ul下面隔3取1的li(第1，4，7，10...个li)*/
+li:nth-of-type(3n+1){
+    color: red;
+}
+
+
+/*定义背景图片*/
+css{
+    /*不平铺*/
+    background: url("11.png") no-repeat;
+
+    /*x平铺*/
+    background: url("11.png") repeat-x;
+
+    /*y平铺*/
+    background: url("11.png") repeat-y;
+
+    /*设置背景图片大小*/
+    background-size: 100% 100%;
+
+    /*设置背景图片偏移位置*/
+    background-position: 100px 100px;
+}
+
+/*设置显示在最表面不被覆盖(z-index值最大的会显示在最表面)*/
+css{
+    z-index: 99;
+}

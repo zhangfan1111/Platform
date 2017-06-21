@@ -61,6 +61,7 @@
 	<import resource="classpath:/config/spring/spring-redis.xml" />
 	<import resource="classpath:/config/spring/spring-druid.xml" />
 	<import resource="classpath:/config/spring/spring-tasks.xml" />
+	<import resource="classpath:/config/spring/spring-batch.xml" />
 	<import resource="classpath:/config/spring/spring-javamelody.xml" />
 	<import resource="classpath:/config/spring/spring-ehcache.xml" />
 </beans>

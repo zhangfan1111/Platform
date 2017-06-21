@@ -59,6 +59,13 @@
 			<version>${spring.security.version}</version>
 		</dependency>
 
+		<!-- spring batch -->
+		<dependency>
+		    <groupId>org.springframework.batch</groupId>
+		    <artifactId>spring-batch-core</artifactId>
+		    <version>3.0.7.RELEASE</version>
+		</dependency>
+		
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-core</artifactId>

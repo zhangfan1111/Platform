@@ -72,9 +72,13 @@ public class SystemUser implements java.io.Serializable {
 	public String getLoginName() {
 		return this.loginName;
 	}
+//	@Column(name = "last_login_time")
+//	@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
+//	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
+	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "last_login_time")
 	@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
-//	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
+	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
 	public Date getLastLoginTime() {
 		return this.lastLoginTime;
 	}
