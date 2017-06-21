@@ -2,6 +2,7 @@ package com.memory.platform.core.service.impl;
 
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
+import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.List;
 import java.util.Map;
@@ -200,4 +201,80 @@ public class BaseServiceImpl<T> implements IBaseService<T> {
 		return baseDao.searchBySql(search);
 	}
 
+	@Override
+	public T getByHql(String hql, String... params) {
+		return baseDao.getByHql(hql, params);
+	}
+
+	@Override
+	public List<T> find(String hql, String... params) {
+		return baseDao.find(hql, params);
+	}
+
+	@Override
+	public List<T> find(String hql, int page, int rows, String... params) {
+		return baseDao.find(hql, page, rows, params);
+	}
+
+	@Override
+	public Long count(String hql, String... params) {
+		return baseDao.count(hql, params);
+	}
+
+	@Override
+	public int executeHql(String hql, String... params) {
+		return baseDao.executeHql(hql, params);
+	}
+
+	@Override
+	public List<Map> findBySql(String sql, String... params) {
+		return baseDao.findBySql(sql, params);
+	}
+
+	@Override
+	public List<Map> findBySql(String sql, int page, int rows, String... params) {
+		return baseDao.findBySql(sql, page, rows, params);
+	}
+
+	@Override
+	public int executeSql(String sql, String... params) {
+		return baseDao.executeSql(sql, params);
+	}
+
+	@Override
+	public BigInteger countBySql(String sql, String... params) {
+		return baseDao.countBySql(sql, params);
+	}
+
+	@Override
+	public Map uniqueBySql(String sql) {
+		return baseDao.uniqueBySql(sql);
+	}
+
+	@Override
+	public Map uniqueBySql(String sql, String... params) {
+		return baseDao.uniqueBySql(sql, params);
+	}
+
+	@Override
+	public BigDecimal mathBySql(String sql) {
+		return baseDao.mathBySql(sql);
+	}
+
+	@Override
+	public BigDecimal mathBySql(String sql, String... params) {
+		return baseDao.mathBySql(sql, params);
+	}
+
+	@Override
+	public Long mathByHql(String hql) {
+		return baseDao.mathByHql(hql);
+	}
+
+	@Override
+	public Long mathByHql(String hql, String... params) {
+		return baseDao.mathByHql(hql, params);
+	}
+	
+	
 }

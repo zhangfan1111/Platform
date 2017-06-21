@@ -1,6 +1,8 @@
 package com.memory.platform.hibernate4.dao.impl;
 
 import java.io.Serializable;
+import java.lang.reflect.ParameterizedType;
+import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.List;
 import java.util.Map;
@@ -19,6 +21,7 @@ import com.memory.platform.hibernate4.search.SearchResult;
 
 
 @Repository("baseDaoImpl")
+@SuppressWarnings({ "rawtypes", "unchecked", "hiding"})
 public class BaseDaoImpl<T> implements IBaseDao<T> {
 
 	@Autowired
@@ -32,7 +35,7 @@ public class BaseDaoImpl<T> implements IBaseDao<T> {
 	public Session getCurrentSession() {
 		return sessionFactory.getCurrentSession();
 	}
-
+	
 	@Override
 	public Serializable save(T o) {
 		if (o != null) {
@@ -43,6 +46,12 @@ public class BaseDaoImpl<T> implements IBaseDao<T> {
 
 	@Override
 	public T getById(Class<T> c, Serializable id) {
+		return (T) getCurrentSession().get(c, id);	
+	}
+	
+	@Override
+	public T getById(Serializable id) {
+		Class<T> c = (Class<T>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
 		return (T) getCurrentSession().get(c, id);
 	}
 
@@ -254,4 +263,139 @@ public class BaseDaoImpl<T> implements IBaseDao<T> {
 		}
 		return list.get(0);
 	}
+	
+	@Override
+	public T getByHql(String hql, String... params) {
+		Query q = getCurrentSession().createQuery(hql);
+		for (int i = 0; i < params.length; i++) {
+			q.setParameter(i, params[i]);
+		}
+	    List l = q.list();
+	    if (l == null || l.size() == 0) {
+	      return null;
+	    }
+	    return (T) l.get(0);
+	}
+
+	@Override
+	public List<T> find(String hql, String... params) {
+		Query q = getCurrentSession().createQuery(hql);
+		for (int i = 0; i < params.length; i++) {
+			q.setParameter(i, params[i]);
+		}
+	    return q.list();
+	}
+
+	@Override
+	public List<T> find(String hql, int page, int rows, String... params) {
+		Query q = getCurrentSession().createQuery(hql);
+		for (int i = 0; i < params.length; i++) {
+			q.setParameter(i, params[i]);
+		}
+		return q.setFirstResult((page - 1) * rows).setMaxResults(rows).list();
+	}
+
+	@Override
+	public Long count(String hql, String... params) {
+		Query q = getCurrentSession().createQuery(hql);
+		for (int i = 0; i < params.length; i++) {
+			q.setParameter(i, params[i]);
+		}
+		return (Long)q.uniqueResult();
+	}
+
+	@Override
+	public int executeHql(String hql, String... params) {
+		Query q = getCurrentSession().createQuery(hql);
+		for (int i = 0; i < params.length; i++) {
+			q.setParameter(i, params[i]);
+		}
+		return q.executeUpdate();
+	}
+
+	@Override
+	public List<Map> findBySql(String sql, String... params) {
+		Query q = getCurrentSession().createSQLQuery(sql);
+		for (int i = 0; i < params.length; i++) {
+			q.setParameter(i, params[i]);
+		}
+		return q.setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP).list();
+	}
+
+	@Override
+	public List<Map> findBySql(String sql, int page, int rows, String... params) {
+		Query q = getCurrentSession().createSQLQuery(sql);
+		for (int i = 0; i < params.length; i++) {
+			q.setParameter(i, params[i]);
+		}
+		return q.setFirstResult((page - 1) * rows).setMaxResults(rows).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP).list();
+	}
+
+	@Override
+	public int executeSql(String sql, String... params) {
+		Query q = getCurrentSession().createSQLQuery(sql);
+		for (int i = 0; i < params.length; i++) {
+			q.setParameter(i, params[i]);
+		}
+		return q.executeUpdate();
+	}
+
+	@Override
+	public BigInteger countBySql(String sql, String... params) {
+		Query q = getCurrentSession().createSQLQuery(sql);
+		for (int i = 0; i < params.length; i++) {
+			q.setParameter(i, params[i]);
+		}
+		return (BigInteger) q.uniqueResult();
+	}
+
+	@Override
+	public Map uniqueBySql(String sql) {
+		List<Map> result = findBySql(sql);
+		if(result == null || result.size() == 0)
+			return null;
+		else
+			return result.get(0);
+	}
+	
+	@Override
+	public Map uniqueBySql(String sql, String... params) {
+		List<Map> result = findBySql(sql, params);
+		if(result == null || result.size() == 0)
+			return null;
+		else
+			return result.get(0);
+	}
+
+	@Override
+	public BigDecimal mathBySql(String sql) {
+		Query q = getCurrentSession().createSQLQuery(sql);
+		return (BigDecimal) q.uniqueResult();
+	}
+
+	@Override
+	public BigDecimal mathBySql(String sql, String... params) {
+		Query q = getCurrentSession().createSQLQuery(sql);
+		for (int i = 0; i < params.length; i++) {
+			q.setParameter(i, params[i]);
+		}
+		return (BigDecimal) q.uniqueResult();
+	}
+
+	@Override
+	public Long mathByHql(String hql) {
+		Query q = getCurrentSession().createQuery(hql);
+		return (Long) q.uniqueResult();
+	}
+
+	@Override
+	public Long mathByHql(String hql, String... params) {
+		Query q = getCurrentSession().createQuery(hql);
+		for (int i = 0; i < params.length; i++) {
+			q.setParameter(i, params[i]);
+		}
+		return (Long)q.uniqueResult();
+	}
+	
+	
 }
