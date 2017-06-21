@@ -42,6 +42,33 @@
 			} ]
 		});
 	};
+	
+	var addBatch = function($this) {
+		var _form = $($this).parent().find("form")[0];
+		$(_form).find(".btn_file")[0].click();
+	};
+	
+	var fileUpload = function($this){
+		var from = $($this).parent();
+		var formData = new FormData(from[0]);
+		$.ajax({
+	        type: "POST",
+	        url: system.contextPath + '/system/systemUserController/uploadFile', 
+	        data: formData,
+	        async: false,
+	        cache: false,  
+	        contentType: false,
+	        processData: false,
+	        dataType: "json",
+	        error: function(data) {
+	        	parent.$.messager.show({title : "提示",msg : "上传失败",timeout : 3000});
+	        },
+	        success: function(data) {
+	        	grid.datagrid('reload');
+	        }
+	    });
+	};
+	
 	var removeFun = function(id) {
 		parent.$.messager.confirm('询问', '您确定要删除此记录？', function(r) {
 			if (r) {
@@ -175,11 +202,10 @@
 				});
 			},
 			onLoadSuccess : function(data) {
-				var p = $(this).datagrid('getPager');  
-			    $(p).pagination({ 
-			    	layout:['sep','first','prev','links','next','last','sep','refresh']
-			    });
 				
+				/* $('#grid').datagrid('getPager').pagination({ 
+			    	layout:['sep','first','prev','links','next','last','sep','refresh']
+			    }); */
 				$('.iconImg').attr('src', system.pixel_0);
 				parent.$.messager.progress('close');
 			}
@@ -198,29 +224,29 @@
 </script>
 </head>
 <body class="easyui-layout" data-options="fit:true,border:false">
-	<div data-options="region:'north',border:false" style="height:40px">
-		<table>
+	<div data-options="region:'north',border:false" style="height:40px; padding: 3px;">
+		<table style="width: 100%;">
 			<tr>
+				<%if (securityUtil.havePermission("/base/syuser!save")) {%>
+				<td width="70"><a href="javascript:void(0);" class="easyui-linkbutton c1" data-options="plain:true" onclick="addFun();"><img style="margin: 1px 3px 0 0;border: 0" src="<%=request.getContextPath()%>/resources/style/images/icon_tianjia.png" />添加</a></td>
+				<%}%>
+				<td width="5"><div class="datagrid-btn-separator"></div></td>
+				<td width="160">
+					<input id="searchBox" class="easyui-textbox" style="width: 150px;height: 27px"
+						data-options="prompt:'搜索用户名'"/>
+				</td>
 				<td>
-					<table>
-						<tr>
-							<%if (securityUtil.havePermission("/base/syuser!save")) {%>
-							<td><a href="javascript:void(0);" class="easyui-linkbutton c1" data-options="plain:true" onclick="addFun();"><img style="margin: 1px 3px 0 0;border: 0" src="<%=request.getContextPath()%>/resources/style/images/icon_tianjia.png" />添加</a></td>
-							<%}%>
-							<td><div class="datagrid-btn-separator"></div></td>
-							<td>
-								<input id="searchBox" class="easyui-textbox" style="width: 150px;height: 27px"
-									data-options="prompt:'搜索用户名'"/>
-							</td>
-							<td>
-								<a href="javascript:void(0);" class="easyui-linkbutton c1"
-								data-options="plain:true"
-								onclick="grid.datagrid('load',{'search':$('#searchBox').textbox('getValue')});">
-									查询
-								</a>
-							</td>
-						</tr>
-					</table>
+					<a href="javascript:void(0);" class="easyui-linkbutton c1"
+					data-options="plain:true"
+					onclick="grid.datagrid('load',{'search':$('#searchBox').textbox('getValue')});">
+						查询
+					</a>
+				</td>
+				<td valign="middle" align="right">
+					<a href="javascript:void(0);" class="easyui-linkbutton c1" data-options="plain:true" onclick="addBatch(this);">批量导入</a>
+					<form method="post">
+						<input type="file" class="btn_file" name="file" style="display:none" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" onchange="fileUpload(this)">
+					</form>
 				</td>
 			</tr>
 		</table>

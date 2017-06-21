@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.memory.platform.common.util.IpUtil;
+import com.memory.platform.common.util.MD5andKL;
 import com.memory.platform.core.annotation.Log;
 import com.memory.platform.core.basic.BasicUHandler;
 import com.memory.platform.core.constants.Globals;
@@ -27,6 +28,7 @@ import com.memory.platform.modules.system.base.model.SystemUser;
 import com.memory.platform.modules.system.base.service.ISystemBasedataLinkService;
 import com.memory.platform.modules.system.base.service.ISystemLogService;
 import com.memory.platform.modules.system.base.service.ISystemUserService;
+import com.utils.file.model.SysUser;
 
 @Service("systemUserServiceImpl")
 public class SystemUserServiceImpl extends BaseServiceImpl<SystemUser> implements ISystemUserService, InitializingBean{
@@ -129,5 +131,21 @@ public class SystemUserServiceImpl extends BaseServiceImpl<SystemUser> implement
 			ip = request.getRemoteAddr();
 		}
 		return ip;
+	}
+	@Override
+	public void saveUsers(List<SysUser> list) {
+		for(SysUser sysUser : list) {
+			SystemUser user = getByHql("from SystemUser where loginName = '" + sysUser.getLogin_name() + "'");
+			if(user == null) {
+				user = new SystemUser();
+			}
+			user.setLoginName(sysUser.getLogin_name());
+			user.setPwd(MD5andKL.MD5("123456"));
+			user.setAge(Integer.valueOf(sysUser.getAge()));
+			user.setName(sysUser.getName());
+			user.setEmail(sysUser.getEmail());
+			user.setRemark(sysUser.getRemark());
+			saveOrUpdate(user);
+		}
 	}
 }

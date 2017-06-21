@@ -65,30 +65,32 @@ system.setIframeHeight = function(iframe, height) {
  * 
  */
 system.dictCode2Name = function(code) {
-	var parentCode =  code.substr(0,code.lastIndexOf('.'));
-	if(system.dictMap[parentCode]) {
-		return system.dictMap[parentCode][code].name;
-	} else {
-		system.dictMap[parentCode] = [];
-		var request = $.ajax({
-			type: "POST"
-			,cache : false
-			//非阻塞
-			,async : false
-			,dataType: "json"
-			,url: system.contextPath + '/system/systemDictController/getByCode/'+parentCode+'/'
-		}).success(function(data,result,resp){
-			if(data) {
-				for(var index in data) {
-					system.dictMap[parentCode][data[index].code] = data[index];
-				}
-			}
-		});
-		if(system.dictMap[parentCode][code]) {
-			var name = system.dictMap[parentCode][code].name;
-			return name;
+	if(code) {
+		var parentCode =  code.substr(0,code.lastIndexOf('.'));
+		if(system.dictMap[parentCode]) {
+			return system.dictMap[parentCode][code].name;
 		} else {
-			return '';
+			system.dictMap[parentCode] = [];
+			var request = $.ajax({
+				type: "POST"
+					,cache : false
+					//非阻塞
+					,async : false
+					,dataType: "json"
+						,url: system.contextPath + '/system/systemDictController/getByCode/'+parentCode+'/'
+			}).success(function(data,result,resp){
+				if(data) {
+					for(var index in data) {
+						system.dictMap[parentCode][data[index].code] = data[index];
+					}
+				}
+			});
+			if(system.dictMap[parentCode][code]) {
+				var name = system.dictMap[parentCode][code].name;
+				return name;
+			} else {
+				return '';
+			}
 		}
 	}
 };
