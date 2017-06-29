@@ -35,22 +35,22 @@ public class DefaultCommandHyperLogLogOperation extends DefaultCommandRedisOpera
 	protected HyperLogLogOperations<String, String> hllOps = super.opsForHyperLogLog();
 
 	@Override
-	public Long PFADD(String key, String... values) {
+	public Long pfAdd(String key, String... values) {
 		return hllOps.add(key, values);
 	}
 
 	@Override
-	public Long PFCOUNT(String... keys) {
+	public Long pfCount(String... keys) {
 		return hllOps.size(keys);
 	}
 
 	@Override
-	public void PFDEL(String key) {
+	public void pfDel(String key) {
 		hllOps.delete(key);
 	}
 
 	@Override
-	public Long PFMERGE(String destinationKey, String... sourceKeys) {
+	public Long pfMerge(String destinationKey, String... sourceKeys) {
 		return hllOps.union(destinationKey, sourceKeys);
 	}
 }

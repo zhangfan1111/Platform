@@ -5,8 +5,6 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -35,7 +33,7 @@ import com.memory.platform.modules.system.base.util.E;
 @RequestMapping("/system/systemDictController")
 public class SystemDictController {
 
-	private static final Logger logger = LoggerFactory.getLogger(SystemDictController.class);
+//	private static final Logger logger = LoggerFactory.getLogger(SystemDictController.class);
 	@Autowired
 	@Qualifier("systemDictServiceImpl")
 	private ISystemDictService systemDictService;

@@ -2,7 +2,6 @@ package com.memory.platform.web.web.controller;
 
 import java.util.List;
 import java.util.Locale;
-import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -14,8 +13,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.MessageSource;
-import org.springframework.data.redis.hash.DecoratingStringHashMapper;
-import org.springframework.data.redis.hash.HashMapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -33,7 +30,6 @@ import com.memory.platform.modules.system.base.service.ISystemLogService;
 import com.memory.platform.modules.system.base.service.ISystemUserService;
 import com.memory.platform.web.session.SessionInfo;
 import com.utils.redis.command.CommandHashOperation;
-import com.utils.redis.hash.BeanUtilsHashMapper2;
 
 /**
  * 用户登录相关
@@ -45,7 +41,7 @@ import com.utils.redis.hash.BeanUtilsHashMapper2;
 @RequestMapping("/system/loginController")
 public class LoginController {
 
-	private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(LoginController.class);
 
 	@Autowired
 	@Qualifier("baseServiceImpl")
@@ -86,7 +82,7 @@ public class LoginController {
 			// messageSource.getMessage("common.logout", new
 			// Object[]{"超级管理员","成功！"}, locale));
 		} catch (Exception e) {
-			logger.error("Exception: ", e);
+			LOGGER.error("Exception: ", e);
 			return new ExceptionReturn(e);
 		}
 	}
@@ -136,14 +132,14 @@ public class LoginController {
 				SessionInfo sessinoInfo = new SessionInfo();
 				sessinoInfo.setUser(user);
 				session.setAttribute(WebConstants.CURRENT_USER, sessinoInfo);
-				logger.info("[{}]登陆成功", sessinoInfo.getUser().getName());
+				LOGGER.info("[{}]登陆成功", sessinoInfo.getUser().getName());
 				return new AjaxReturn(true, "登陆成功");
 			}
 
 			return new AjaxReturn(false, "用户名或密码错误！");
 
 		} catch (Exception e) {
-			logger.error("Exception: ", e);
+			LOGGER.error("Exception: ", e);
 			return new ExceptionReturn(e);
 		}
 	}

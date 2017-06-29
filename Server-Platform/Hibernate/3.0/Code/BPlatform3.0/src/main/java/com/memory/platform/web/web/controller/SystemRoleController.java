@@ -5,8 +5,6 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -36,7 +34,7 @@ import com.memory.platform.modules.system.base.service.ISystemRoleService;
 @RequestMapping("/system/systemRoleController")
 public class SystemRoleController {
 
-	private static final Logger logger = LoggerFactory.getLogger(SystemRoleController.class);
+//	private static final Logger logger = LoggerFactory.getLogger(SystemRoleController.class);
 	@Autowired
 	@Qualifier("systemRoleServiceImpl")
 	private ISystemRoleService systemRoleService;

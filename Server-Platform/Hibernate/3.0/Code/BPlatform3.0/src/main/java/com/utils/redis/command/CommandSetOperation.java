@@ -33,7 +33,7 @@ public interface CommandSetOperation {
 	 * @param member
 	 * @return 被添加到集合中的新元素的数量，不包括被忽略的元素。
 	 */
-	Long SADD(String key, String... members);
+	Long sAdd(String key, String... members);
 
 	/**
 	 * Set（集合） 实现命令：SCARD key。返回集合 key 的基数(集合中元素的数量)。
@@ -42,7 +42,7 @@ public interface CommandSetOperation {
 	 * @param key
 	 * @return 集合的基数（长度）。当 key 不存在时，返回 0 。
 	 */
-	Long SCARD(String key);
+	Long sCard(String key);
 
 	/**
 	 * Set（集合） 实现命令：SDIFF key key。返回一个集合的全部成员，该集合是所有给定集合之间的差集。
@@ -52,7 +52,7 @@ public interface CommandSetOperation {
 	 * @param otherKey
 	 * @return 交集成员的列表。
 	 */
-	Set<String> SDIFF(String key, String otherKey);
+	Set<String> sDiff(String key, String otherKey);
 
 	/**
 	 * Set（集合） 实现命令：SDIFF key keys。返回一个集合的全部成员，该集合是所有给定集合之间的差集。
@@ -62,7 +62,7 @@ public interface CommandSetOperation {
 	 * @param otherKeys
 	 * @return 交集成员的列表。
 	 */
-	Set<String> SDIFF(String key, Collection<String> otherKeys);
+	Set<String> sDiff(String key, Collection<String> otherKeys);
 
 	/**
 	 * Set（集合） 实现命令：SDIFFSTORE destination key key。这个命令的作用和 SDIFF 类似，但它将结果保存到 destination 集合，而不是简单地返回结果集。
@@ -77,7 +77,7 @@ public interface CommandSetOperation {
 	 * @param otherKey
 	 * @return 结果集中的元素数量。
 	 */
-	Long SDIFFSTORE(String destinationKey, String key, String otherKey);
+	Long sDiffStore(String destinationKey, String key, String otherKey);
 
 	/**
 	 * Set（集合） 实现命令：SDIFFSTORE destination key [key ...]。这个命令的作用和 SDIFF 类似，但它将结果保存到 destination 集合，而不是简单地返回结果集。
@@ -92,7 +92,7 @@ public interface CommandSetOperation {
 	 * @param otherKeys
 	 * @return 结果集中的元素数量。
 	 */
-	Long SDIFFSTORE(String destinationKey, String key, Collection<String> otherKeys);
+	Long sDiffStore(String destinationKey, String key, Collection<String> otherKeys);
 
 	/**
 	 * Set（集合） 实现命令：SINTER key key。返回一个集合的全部成员，该集合是所有给定集合的交集。
@@ -106,7 +106,7 @@ public interface CommandSetOperation {
 	 * @param otherKey
 	 * @return 交集成员的列表。
 	 */
-	Set<String> SINTER(String key, String otherKey);
+	Set<String> sInter(String key, String otherKey);
 
 	/**
 	 * Set（集合） 实现命令：SINTER key [key ...]。返回一个集合的全部成员，该集合是所有给定集合的交集。
@@ -120,7 +120,7 @@ public interface CommandSetOperation {
 	 * @param otherKeys
 	 * @return 交集成员的列表。
 	 */
-	Set<String> SINTER(String key, Collection<String> otherKeys);
+	Set<String> sInter(String key, Collection<String> otherKeys);
 
 	/**
 	 * Set（集合） 实现命令：SINTERSTORE destination key key。这个命令类似于 SINTER 命令，但它将结果保存到 destination 集合，而不是简单地返回结果集。
@@ -135,7 +135,7 @@ public interface CommandSetOperation {
 	 * @param otherKey
 	 * @return 结果集中的成员数量。
 	 */
-	Long SINTERSTORE(String destinationKey, String key, String otherKey);
+	Long sInterStore(String destinationKey, String key, String otherKey);
 
 	/**
 	 * Set（集合） 实现命令：SINTERSTORE destination key [key...]。这个命令类似于 SINTER 命令，但它将结果保存到 destination 集合，而不是简单地返回结果集。
@@ -150,7 +150,7 @@ public interface CommandSetOperation {
 	 * @param otherKeys
 	 * @return 结果集中的成员数量。
 	 */
-	Long SINTERSTORE(String destinationKey, String key, Collection<String> otherKeys);
+	Long sInterStore(String destinationKey, String key, Collection<String> otherKeys);
 
 	/**
 	 * Set（集合） 实现命令：SISMEMBER key member。判断 member 元素是否集合 key 的成员。
@@ -160,7 +160,7 @@ public interface CommandSetOperation {
 	 * @param member
 	 * @return 如果 member 元素不是集合的成员，或 key 不存在，返回false；否则返回true。
 	 */
-	Boolean SISMEMBER(String key, String member);
+	Boolean sisMember(String key, String member);
 
 	/**
 	 * Set（集合） 实现命令：SMEMBERS key，返回集合 key 中的所有成员
@@ -169,7 +169,7 @@ public interface CommandSetOperation {
 	 * @param key
 	 * @return 集合中的所有成员。
 	 */
-	Set<String> SMEMEBERS(String key);
+	Set<String> sMembers(String key);
 
 	/**
 	 * Set（集合） 实现命令：SMOVE source destination member。将 member 元素从 source 集合移动到 destination 集合。
@@ -188,7 +188,7 @@ public interface CommandSetOperation {
 	 * @param member
 	 * @return 如果 member 元素被成功移除，返回 true 。如果 member 元素不是 source 集合的成员，并且没有任何操作对 destination 集合执行，那么返回 false 。
 	 */
-	Boolean SMOVE(String source, String destination, String member);
+	Boolean sMove(String source, String destination, String member);
 
 	/**
 	 * Set（集合） 实现命令：SPOP key。移除并返回集合中的一个随机元素。
@@ -201,7 +201,7 @@ public interface CommandSetOperation {
 	 * @param key
 	 * @return 被移除的随机元素。
 	 */
-	String SPOP(String key);
+	String sPop(String key);
 
 	/**
 	 * Set（集合） 实现命令：SRANDMEMBER key。如果命令执行时，只提供了 key 参数，那么返回集合中的一个随机元素。
@@ -210,7 +210,7 @@ public interface CommandSetOperation {
 	 * @param key
 	 * @return 返回集合中的一个随机元素
 	 */
-	String SRANDMEMBER(String key);
+	String sRandMember(String key);
 
 	/**
 	 * Set（集合） 实现命令：SRANDMEMBER key [count]。
@@ -232,7 +232,7 @@ public interface CommandSetOperation {
 	 * @param count
 	 * @return 返回一个集合；如果集合为空，返回空集合。
 	 */
-	List<String> SRANDMEMBER(String key, long count);
+	List<String> sRandMember(String key, long count);
 
 	/**
 	 * Set（集合） 实现命令：SREM key member [member ...]。移除集合 key 中的一个或多个 member 元素，不存在的 member 元素会被忽略。
@@ -242,7 +242,7 @@ public interface CommandSetOperation {
 	 * @param members
 	 * @return 被成功移除的元素的数量，不包括被忽略的元素。
 	 */
-	Long SREM(String key, Object... members);
+	Long sRem(String key, Object... members);
 
 	/**
 	 * Set（集合） 实现命令：SUNION key key。返回一个集合的全部成员，该集合是所有给定集合的并集。不存在的 key 被视为空集。
@@ -252,7 +252,7 @@ public interface CommandSetOperation {
 	 * @param otherKey
 	 * @return 并集成员的列表。
 	 */
-	Set<String> SUNION(String key, String otherKey);
+	Set<String> sUnion(String key, String otherKey);
 
 	/**
 	 * Set（集合） 实现命令：SUNION key [key...]。返回一个集合的全部成员，该集合是所有给定集合的并集。不存在的 key 被视为空集。
@@ -262,7 +262,7 @@ public interface CommandSetOperation {
 	 * @param otherKeys
 	 * @return 并集成员的列表。
 	 */
-	Set<String> SUNION(String key, Collection<String> otherKeys);
+	Set<String> sUnion(String key, Collection<String> otherKeys);
 
 	/**
 	 * Set（集合） 实现命令：SUNIONSTORE destination key key。这个命令类似于 SUNION 命令，但它将结果保存到 destination 集合，而不是简单地返回结果集。如果 destination
@@ -274,7 +274,7 @@ public interface CommandSetOperation {
 	 * @param otherKey
 	 * @return 结果集中的元素数量。
 	 */
-	Long SUNIONSTORE(String destination, String key, String otherKey);
+	Long sUnionStore(String destination, String key, String otherKey);
 
 	/**
 	 * Set（集合） 实现命令：SUNIONSTORE destination key [key...]。这个命令类似于 SUNION 命令，但它将结果保存到 destination 集合，而不是简单地返回结果集。如果 destination
@@ -285,7 +285,7 @@ public interface CommandSetOperation {
 	 * @param otherKeys
 	 * @return 结果集中的元素数量
 	 */
-	Long SUNIONSTORE(String destination, String key, Collection<String> otherKeys);
+	Long sUnionStore(String destination, String key, Collection<String> otherKeys);
 	
 	/**
 	 * Set（集合） 实现命令：SSCAN key cursor [MATCH pattern] [COUNT count] 具体信息请参考 SCAN 命令。
@@ -296,5 +296,5 @@ public interface CommandSetOperation {
 	 *            ScanOptions:Long count匹配长度；String pattern匹配值。
 	 * @return 返回对象游标
 	 */
-	Cursor<String> SSCAN(String key, ScanOptions options);
+	Cursor<String> sScan(String key, ScanOptions options);
 }

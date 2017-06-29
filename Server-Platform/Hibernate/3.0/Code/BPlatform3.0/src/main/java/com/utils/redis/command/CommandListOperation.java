@@ -38,7 +38,7 @@ public interface CommandListOperation {
 	 * @param key
 	 * @param timeout
 	 */
-	void BLPOP(String key, long timeout);
+	void bLPop(String key, long timeout);
 
 	/**
 	 * List（列表） 实现命令：BRPOP key [key ...] timeout。
@@ -54,7 +54,7 @@ public interface CommandListOperation {
 	 * @param key
 	 * @param timeout
 	 */
-	void BRPOP(String key, long timeout);
+	void bRPop(String key, long timeout);
 
 	/**
 	 * List（列表） 实现命令：BRPOPLPUSH source destination timeout。
@@ -79,7 +79,7 @@ public interface CommandListOperation {
 	 * @param timeout
 	 *            阻塞时间
 	 */
-	void BRPOPLPUSH(String sourceKey, String destinationKey, long timeout);
+	void bRPopLPush(String sourceKey, String destinationKey, long timeout);
 
 	/**
 	 * List（列表） 实现命令：LINDEX key index。返回列表 key 中，下标为 index 的元素。
@@ -97,7 +97,7 @@ public interface CommandListOperation {
 	 *            下标
 	 * @return 列表中下标为 index 的元素。
 	 */
-	String LINDEX(String key, long index);
+	String lIndex(String key, long index);
 
 	/**
 	 * List（列表） 实现命令：LINSERT key BEFORE|AFTER pivot value。将值 value 插入到列表 key 当中，位于值 pivot 之前或之后。
@@ -119,7 +119,7 @@ public interface CommandListOperation {
 	 *            待插入值
 	 * @return 返回插入操作完成之后，列表的长度。如果没有找到 pivot ，返回 -1 。
 	 */
-	Long LINSERT(String key, String position, String pivot, String value);
+	Long lInsert(String key, String position, String pivot, String value);
 
 	/**
 	 * List（列表） 实现命令：LLEN key。
@@ -128,7 +128,7 @@ public interface CommandListOperation {
 	 * @param key
 	 * @return 返回列表 key 的长度。如果 key 不存在，则 key 被解释为一个空列表，返回 0 。
 	 */
-	Long LLEN(String key);
+	Long lLen(String key);
 
 	/**
 	 * List（列表） 实现命令：LPOP key，移除并返回列表 key的头元素
@@ -137,7 +137,7 @@ public interface CommandListOperation {
 	 * @param key
 	 * @return 列表key的头元素
 	 */
-	String LPOP(String key);
+	String lPop(String key);
 
 	/**
 	 * List（列表） 实现命令：LPUSH key value，将一个值 value插入到列表 key的表头。
@@ -151,7 +151,7 @@ public interface CommandListOperation {
 	 * @param value
 	 * @return 执行 LPUSH命令后，列表的长度
 	 */
-	Long LPUSH(String key, String value);
+	Long lPush(String key, String value);
 
 	/**
 	 * List（列表） 实现命令：LPUSH key value，将多个值 value插入到列表 key的表头。
@@ -166,7 +166,7 @@ public interface CommandListOperation {
 	 * @param values
 	 * @return 列表的长度
 	 */
-	Long LPUSH(String key, Collection<String> values);
+	Long lPush(String key, Collection<String> values);
 
 	/**
 	 * List（列表） 实现命令：LPUSH key value，将多个值 value插入到列表 key的表头。
@@ -181,7 +181,7 @@ public interface CommandListOperation {
 	 * @param values
 	 * @return 列表的长度
 	 */
-	Long LPUSH(String key, String... values);
+	Long lPush(String key, String... values);
 
 	/**
 	 * List（列表） 实现命令：LPUSHX key value。将值 value 插入到列表 key 的表头，当且仅当 key 存在并且是一个列表。
@@ -195,7 +195,7 @@ public interface CommandListOperation {
 	 * @param value
 	 * @return 表的长度
 	 */
-	Long LPUSHX(String key, String value);
+	Long lPushX(String key, String value);
 
 	/**
 	 * List（列表） 实现命令：LRANGE key start stop。返回列表 key 中指定区间内的元素，区间以偏移量 start 和 stop 指定。
@@ -230,7 +230,7 @@ public interface CommandListOperation {
 	 * @param stop
 	 * @return 一个列表，包含指定区间内的元素。
 	 */
-	List<String> LRANGE(String key, long start, long stop);
+	List<String> lRange(String key, long start, long stop);
 
 	/**
 	 * List（列表） 实现命令：LREM key count value。根据参数 count 的值，移除列表中与参数 value 相等的元素。
@@ -257,7 +257,7 @@ public interface CommandListOperation {
 	 * @param value
 	 * @return 被移除元素的数量。因为不存在的 key 被视作空表(empty list)，所以当 key 不存在时， LREM 命令总是返回 0 。
 	 */
-	Long LREM(String key, long count, Object value);
+	Long lRem(String key, long count, Object value);
 
 	/**
 	 * List（列表） 实现命令：LSET key index value。将列表 key 下标为 index 的元素的值设置为 value 。
@@ -267,7 +267,7 @@ public interface CommandListOperation {
 	 * @param index
 	 * @param value
 	 */
-	void LSET(String key, long index, String value);
+	void lSet(String key, long index, String value);
 
 	/**
 	 * List（列表） 实现命令：LTRIM key start stop。对一个列表进行修剪(trim)，就是说，让列表只保留指定区间内的元素，不在指定区间之内的元素都将被删除。
@@ -299,7 +299,7 @@ public interface CommandListOperation {
 	 * @param start
 	 * @param stop
 	 */
-	void LTRIM(String key, long start, long stop);
+	void lTrim(String key, long start, long stop);
 
 	/**
 	 * List（列表） 实现命令：RPOP key，移除并返回列表 key的尾元素
@@ -308,7 +308,7 @@ public interface CommandListOperation {
 	 * @param key
 	 * @return 列表key的头元素
 	 */
-	String RPOP(String key);
+	String rPop(String key);
 
 	/**
 	 * List（列表） 实现命令：RPOPLPUSH source destination。
@@ -334,7 +334,7 @@ public interface CommandListOperation {
 	 * @param destination
 	 * @return 被弹出的元素
 	 */
-	String RPOPLPUSH(String source, String destination);
+	String rPopLPush(String source, String destination);
 
 	/**
 	 * List（列表） 实现命令：RPUSH key value，将一个值 value插入到列表 key的表尾(最右边)
@@ -344,7 +344,7 @@ public interface CommandListOperation {
 	 * @param value
 	 * @return 执行 LPUSH命令后，列表的长度
 	 */
-	Long RPUSH(String key, String value);
+	Long rPush(String key, String value);
 
 	/**
 	 * List（列表） 实现命令：RPUSHX key value。将值 value 插入到列表 key 的表尾，当且仅当 key 存在并且是一个列表。
@@ -358,5 +358,5 @@ public interface CommandListOperation {
 	 * @param value
 	 * @return 表的长度
 	 */
-	Long RPUSHX(String key, String value);
+	Long rPushX(String key, String value);
 }

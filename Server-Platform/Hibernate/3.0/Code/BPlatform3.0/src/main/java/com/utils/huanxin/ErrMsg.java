@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ErrMsg {
-	public static final Map<Integer, String> errorMap;
+	public static Map<Integer, String> errorMap;
 	static {
 		errorMap = new HashMap<Integer, String>();
 		
@@ -24,8 +24,8 @@ public class ErrMsg {
 		
 	}
 	
-	public static String printErrorMsg(int errorCode) {
-		String eMsg = errorMap.get(errorCode);
+	public static String printErrorMsg(final int errorCode) {
+		final String eMsg = errorMap.get(errorCode);
 		System.out.println("环信错误信息码：" + errorCode + "，错误信息：" + eMsg);
 		return eMsg;
 	}

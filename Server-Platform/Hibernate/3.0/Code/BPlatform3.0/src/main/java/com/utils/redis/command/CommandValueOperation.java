@@ -29,7 +29,7 @@ public interface CommandValueOperation {
 	 * @param value
 	 * @return 追加 value 之后， key 中字符串的长度。
 	 */
-	Integer APPEND(String key, String value);
+	Integer append(String key, String value);
 
 	/**
 	 * String（字符串） 实现命令：DECR key。将 key 中储存的数字值减一。
@@ -45,7 +45,7 @@ public interface CommandValueOperation {
 	 * @param key
 	 * @return 执行之后， key 的值。
 	 */
-	Long DECR(String key);
+	Long decr(String key);
 
 	/**
 	 * String（字符串） 实现命令：DECRBY key decrement。将 key 中储存的数字值减decrement 。
@@ -63,7 +63,7 @@ public interface CommandValueOperation {
 	 *            数字值减量
 	 * @return 减去 decrement 之后， key 的值。
 	 */
-	Long DECRBY(String key, long decrement);
+	Long decrBy(String key, long decrement);
 
 	/**
 	 * String（字符串） 实现命令，拓展命令：DECRBYFloat key decrement。将 key 中储存的数字值减decrement 。
@@ -81,7 +81,7 @@ public interface CommandValueOperation {
 	 *            数字值减量
 	 * @return 减去 decrement 之后， key 的值。
 	 */
-	Double DECRBYFloat(String key, double decrement);
+	Double decrByFloat(String key, double decrement);
 
 	/**
 	 * String（字符串） 实现命令：GET key。返回 key 所关联的字符串值。
@@ -90,7 +90,7 @@ public interface CommandValueOperation {
 	 * @param key
 	 * @return
 	 */
-	String GET(Object key);
+	String redisGet(Object key);
 
 	/**
 	 * String（字符串） 实现命令：GETBIT key offset。对 key 所储存的字符串值，获取指定偏移量上的位(bit)。
@@ -100,7 +100,7 @@ public interface CommandValueOperation {
 	 * @param offset
 	 * @return 如果存在偏移量，则返回true；否则，返回false
 	 */
-	Boolean GETBIT(String key, long offset);
+	Boolean getBit(String key, long offset);
 
 	/**
 	 * String（字符串） 实现命令：GETRANGE key start end。
@@ -115,7 +115,7 @@ public interface CommandValueOperation {
 	 * @param end
 	 * @return 返回 key 中字符串值的子字符串，字符串的截取范围由 start 和 end 两个偏移量决定(包括 start 和 end 在内)。截取得出的子字符串。
 	 */
-	String GETRANGE(String key, long start, long end);
+	String getRange(String key, long start, long end);
 
 	/**
 	 * String（字符串） 实现命令：GETSET key value。
@@ -129,7 +129,7 @@ public interface CommandValueOperation {
 	 * @param value
 	 * @return 返回给定 key 的旧值。当 key 没有旧值时，也即是， key 不存在时，返回 null 。
 	 */
-	String GETSET(String key, String value);
+	String getSet(String key, String value);
 
 	/**
 	 * String（字符串） 实现命令：INCR key。将 key 中储存的数字值增一。
@@ -145,7 +145,7 @@ public interface CommandValueOperation {
 	 * @param key
 	 * @return
 	 */
-	Long INCR(String key);
+	Long incr(String key);
 
 	/**
 	 * String（字符串） 实现命令：INCRBY key increment。将 key 所储存的值加上增量 increment 。
@@ -161,7 +161,7 @@ public interface CommandValueOperation {
 	 * @param increment
 	 * @return
 	 */
-	Long INCRBY(String key, long increment);
+	Long incrBy(String key, long increment);
 
 	/**
 	 * String（字符串） 实现命令：INCRBYFLOAT key increment。为 key 中所储存的值加上浮点数增量 increment。
@@ -178,7 +178,7 @@ public interface CommandValueOperation {
 	 * @param increment
 	 * @return
 	 */
-	Double INCRBYFLOAT(String key, double increment);
+	Double incrByFloat(String key, double increment);
 
 	/**
 	 * String（字符串） 实现命令：MGET key [key ...]。返回所有(一个或多个)给定 key 的值。
@@ -191,7 +191,7 @@ public interface CommandValueOperation {
 	 * @param keys
 	 * @return
 	 */
-	List<String> MGET(Collection<String> keys);
+	List<String> mGet(Collection<String> keys);
 
 	/**
 	 * String（字符串） 实现命令：MSET key value [key value ...]。同时设置一个或多个 key-value 对。
@@ -206,7 +206,7 @@ public interface CommandValueOperation {
 	 * @author memory 2017年5月31日 下午2:19:56
 	 * @param map
 	 */
-	void MSET(Map<String, String> map);
+	void mSet(Map<String, String> map);
 
 	/**
 	 * String（字符串） 实现命令：MSETNX key value [key value ...]，同时设置一个或多个 key-value 对，当且仅当所有给定 key 都不存在。
@@ -219,17 +219,17 @@ public interface CommandValueOperation {
 	 * @param map
 	 * @return 当所有 key 都成功设置，返回 true；如果所有给定 key 都设置失败(至少有一个 key 已经存在)，那么返回false。
 	 */
-	Boolean MSETNX(Map<String, String> map);
+	Boolean mSetNX(Map<String, String> map);
 
 	/**
-	 * String（字符串） 实现命令：GETSET key value。如果 key 已经持有其他值， SET 就覆写旧值，无视类型。
+	 * String（字符串） 实现命令：SET key value。如果 key 已经持有其他值， SET 就覆写旧值，无视类型。
 	 * 
 	 * @author memory 2017年5月16日 上午11:56:14
 	 * @param key
 	 * @param value
 	 * @return
 	 */
-	void SET(String key, String value);
+	void redisSet(String key, String value);
 
 	/**
 	 * String（字符串） 实现命令：SETBIT key offset value。对 key 所储存的字符串值，设置或清除指定偏移量上的位(bit)。
@@ -253,7 +253,7 @@ public interface CommandValueOperation {
 	 * @param value
 	 * @return
 	 */
-	Boolean SETBIT(String key, long offset, boolean value);
+	Boolean setBit(String key, long offset, boolean value);
 
 	/**
 	 * String（字符串） 实现命令：SETEX key seconds value。将值 value 关联到 key ，并将 key 的生存时间设为 seconds (以秒为单位)。
@@ -274,7 +274,7 @@ public interface CommandValueOperation {
 	 * @param value
 	 * @param timeout
 	 */
-	void SETEX(String key, long timeout, String value);
+	void setEx(String key, long timeout, String value);
 
 	/**
 	 * String（字符串） 实现命令：SETNX key value。将 key 的值设为 value ，当且仅当 key 不存在。
@@ -287,7 +287,7 @@ public interface CommandValueOperation {
 	 * @param key
 	 * @param value
 	 */
-	void SETNX(String key, String value);
+	void setNx(String key, String value);
 
 	/**
 	 * String（字符串） 实现命令：SETRANGE key offset value。用 value 参数覆写(overwrite)给定 key 所储存的字符串值，从偏移量 offset 开始。
@@ -301,7 +301,7 @@ public interface CommandValueOperation {
 	 * @param offset
 	 * @param value
 	 */
-	void SETRANGE(String key, long offset, String value);
+	void setRange(String key, long offset, String value);
 
 	/**
 	 * String（字符串） 实现命令：STRLEN key。返回 key 所储存的字符串值的长度。当 key 储存的不是字符串值时，返回一个错误。
@@ -310,5 +310,5 @@ public interface CommandValueOperation {
 	 * @param key
 	 * @return
 	 */
-	Long STRLEN(String key);
+	Long strLen(String key);
 }

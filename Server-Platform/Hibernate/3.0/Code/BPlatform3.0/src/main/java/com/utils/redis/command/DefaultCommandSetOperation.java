@@ -27,112 +27,112 @@ public class DefaultCommandSetOperation extends DefaultCommandRedisOperation imp
 	protected SetOperations<String, String> setOps = super.opsForSet();
 
 	@Override
-	public Long SADD(String key, String... members) {
+	public Long sAdd(String key, String... members) {
 		return setOps.add(key, members);
 	}
 
 	@Override
-	public Long SCARD(String key) {
+	public Long sCard(String key) {
 		return setOps.size(key);
 	}
 	
 	@Override
-	public Set<String> SDIFF(String key, String otherKey) {
+	public Set<String> sDiff(String key, String otherKey) {
 		return setOps.difference(key, otherKey);
 	}
 
 	@Override
-	public Set<String> SDIFF(String key, Collection<String> otherKeys) {
+	public Set<String> sDiff(String key, Collection<String> otherKeys) {
 		return setOps.difference(key, otherKeys);
 	}
 
 	@Override
-	public Long SDIFFSTORE(String destinationKey, String key, String otherKey) {
+	public Long sDiffStore(String destinationKey, String key, String otherKey) {
 		return setOps.differenceAndStore(key, otherKey, destinationKey);
 	}
 
 	@Override
-	public Long SDIFFSTORE(String destinationKey, String key, Collection<String> otherKeys) {
+	public Long sDiffStore(String destinationKey, String key, Collection<String> otherKeys) {
 		return setOps.differenceAndStore(key, otherKeys, destinationKey);
 	}
 	
 	@Override
-	public Set<String> SINTER(String key, String otherKey) {
+	public Set<String> sInter(String key, String otherKey) {
 		return setOps.intersect(key, otherKey);
 	}
 
 	@Override
-	public Set<String> SINTER(String key, Collection<String> otherKeys) {
+	public Set<String> sInter(String key, Collection<String> otherKeys) {
 		return setOps.intersect(key, otherKeys);
 	}
 	
 	@Override
-	public Long SINTERSTORE(String destinationKey, String key, String otherKey) {
+	public Long sInterStore(String destinationKey, String key, String otherKey) {
 		return setOps.intersectAndStore(key, otherKey, destinationKey);
 	}
 
 	@Override
-	public Long SINTERSTORE(String destinationKey, String key, Collection<String> otherKeys) {
+	public Long sInterStore(String destinationKey, String key, Collection<String> otherKeys) {
 		return setOps.intersectAndStore(key, otherKeys, destinationKey);
 	}
 	
 	@Override
-	public Boolean SISMEMBER(String key, String member) {
+	public Boolean sisMember(String key, String member) {
 		return setOps.isMember(key, member);
 	}
 	
 	@Override
-	public Set<String> SMEMEBERS(String key) {
+	public Set<String> sMembers(String key) {
 		return setOps.members(key);
 	}
 
 	@Override
-	public Boolean SMOVE(String source, String destination, String member) {
+	public Boolean sMove(String source, String destination, String member) {
 		return setOps.move(source, member, destination);
 	}
 
 	@Override
-	public String SPOP(String key) {
+	public String sPop(String key) {
 		return setOps.pop(key);
 	}
 
 	@Override
-	public String SRANDMEMBER(String key) {
+	public String sRandMember(String key) {
 		return setOps.randomMember(key);
 	}
 
 	@Override
-	public List<String> SRANDMEMBER(String key, long count) {
+	public List<String> sRandMember(String key, long count) {
 		return setOps.randomMembers(key, count);
 	}
 
 	@Override
-	public Long SREM(String key, Object... members) {
+	public Long sRem(String key, Object... members) {
 		return setOps.remove(key, members);
 	}
 
 	@Override
-	public Set<String> SUNION(String key, String otherKey) {
+	public Set<String> sUnion(String key, String otherKey) {
 		return setOps.union(key, otherKey);
 	}
 
 	@Override
-	public Set<String> SUNION(String key, Collection<String> otherKeys) {
+	public Set<String> sUnion(String key, Collection<String> otherKeys) {
 		return setOps.union(key, otherKeys);
 	}
 
 	@Override
-	public Long SUNIONSTORE(String destination, String key, String otherKey) {
+	public Long sUnionStore(String destination, String key, String otherKey) {
 		return setOps.unionAndStore(key, otherKey, destination);
 	}
 
 	@Override
-	public Long SUNIONSTORE(String destination, String key, Collection<String> otherKeys) {
+	public Long sUnionStore(String destination, String key, Collection<String> otherKeys) {
 		return setOps.unionAndStore(key, otherKeys, destination);
 	}
 
 	@Override
-	public Cursor<String> SSCAN(String key, ScanOptions options) {
+	public Cursor<String> sScan(String key, ScanOptions options) {
 		return setOps.scan(key, options);
 	}
 

@@ -1,30 +1,53 @@
 package com.utils.file.model;
 
+/**
+ * <p></p>
+ * @author memory 2017年6月29日 下午5:13:09
+ * @version V1.0   
+ * @modificationHistory=========================逻辑或功能性重大变更记录
+ * @modify by user: {修改人} 2017年6月29日
+ * @modify by reason:{方法名}:{原因}
+ */
 public class SysUser {
-	private String login_name;
+	/**
+	 * 账号
+	 */
+	private String loginName;
+	/**
+	 * 姓名
+	 */
 	private String name;
+	/**
+	 * 年龄
+	 */
 	private String age;
+	/**
+	 * 邮箱
+	 */
 	private String email;
+	/**
+	 * 备注
+	 */
 	private String remark;
 
 	public SysUser() {
 
 	}
 
-	public SysUser(String login_name, String name, String age, String email, String remark) {
-		this.login_name = login_name;
+	public SysUser(String loginName, String name, String age, String email, String remark) {
+		this.loginName = loginName;
 		this.name = name;
 		this.age = age;
 		this.email = email;
 		this.remark = remark;
 	}
 
-	public String getLogin_name() {
-		return login_name;
+	public String getLoginName() {
+		return loginName;
 	}
 
-	public void setLogin_name(String login_name) {
-		this.login_name = login_name;
+	public void setLoginName(String loginName) {
+		this.loginName = loginName;
 	}
 
 	public String getName() {

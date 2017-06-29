@@ -15,9 +15,7 @@ import org.springframework.stereotype.Service;
 
 import com.memory.platform.common.util.IpUtil;
 import com.memory.platform.common.util.MD5andKL;
-import com.memory.platform.core.annotation.Log;
 import com.memory.platform.core.basic.BasicUHandler;
-import com.memory.platform.core.constants.Globals;
 import com.memory.platform.core.service.impl.BaseServiceImpl;
 import com.memory.platform.modules.online.Client;
 import com.memory.platform.modules.online.ClientManager;
@@ -35,7 +33,7 @@ public class SystemUserServiceImpl extends BaseServiceImpl<SystemUser> implement
 
 	@Autowired
 	@Qualifier("systemUserDaoImpl")
-	private ISystemUserDao SystemUserDao;
+	private ISystemUserDao systemUserDao;
 	
 	@Autowired
 	@Qualifier("systemBasedataLinkServiceImpl")
@@ -47,8 +45,7 @@ public class SystemUserServiceImpl extends BaseServiceImpl<SystemUser> implement
 
 	@Override
 	public List<SystemDept> listUserDepts(String userId) {
-		List<SystemDept> userDeptList = null;
-		userDeptList = systemBasedataLinkService.listLinkData(SystemDept.class, SystemUser.class, userId);
+		List<SystemDept> userDeptList = systemBasedataLinkService.listLinkData(SystemDept.class, SystemUser.class, userId);
 		return userDeptList;
 	}
 	@Override
@@ -135,11 +132,11 @@ public class SystemUserServiceImpl extends BaseServiceImpl<SystemUser> implement
 	@Override
 	public void saveUsers(List<SysUser> list) {
 		for(SysUser sysUser : list) {
-			SystemUser user = getByHql("from SystemUser where loginName = '" + sysUser.getLogin_name() + "'");
+			SystemUser user = getByHql("from SystemUser where loginName = '" + sysUser.getLoginName() + "'");
 			if(user == null) {
 				user = new SystemUser();
 			}
-			user.setLoginName(sysUser.getLogin_name());
+			user.setLoginName(sysUser.getLoginName());
 			user.setPwd(MD5andKL.MD5("123456"));
 			user.setAge(Integer.valueOf(sysUser.getAge()));
 			user.setName(sysUser.getName());

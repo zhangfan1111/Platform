@@ -25,100 +25,100 @@ import org.springframework.data.redis.core.query.SortQuery;
 public class DefaultCommandRedisOperation extends StringRedisTemplate implements CommandRedisOperation {
 
 	@Override
-	public void DEL(String key) {
+	public void del(String key) {
 		delete(key);
 	}
 	
 	@Override
-	public void DEL(Collection<String> keys) {
+	public void del(Collection<String> keys) {
 		delete(keys);
 	}
 	
 	@Override
-	public byte[] DUMP(String key) {
+	public byte[] dump(String key) {
 		return dump(key);
 	}
 	
 	@Override
-	public Boolean EXISTS(String key) {
+	public Boolean exists(String key) {
 		return hasKey(key);
 	}
 	
 	@Override
-	public Boolean EXPIRE(String key, long timeout) {
+	public Boolean expire(String key, long timeout) {
 		return expire(key, timeout, TimeUnit.SECONDS);
 	}
 	
 	@Override
-	public Boolean EXPIREAT(String key, long timestamp) {
+	public Boolean expireAt(String key, long timestamp) {
 		long unixTimestamp = timestamp * 1000;
 		Date date = new Date(unixTimestamp);
 		return expireAt(key, date);
 	}
 	
 	@Override
-	public Set<String> KEYS(String pattern) {
+	public Set<String> keys(String pattern) {
 		return keys(pattern);
 	}
 
 	@Override
-	public Boolean MOVE(String key, int db) {
+	public Boolean move(String key, int db) {
 		return move(key, db);
 	}
 
 	@Override
-	public Boolean PERSIST(String key) {
+	public Boolean persist(String key) {
 		return persist(key);
 	}
 
 	@Override
-	public Boolean PEXPIRE(String key, long milliseconds) {
+	public Boolean pExpire(String key, long milliseconds) {
 		return expire(key, milliseconds, TimeUnit.MILLISECONDS);
 	}
 	
 	@Override
-	public Boolean PEXPIREAT(String key, long millisecondsTimestamp) {
+	public Boolean pExpireAt(String key, long millisecondsTimestamp) {
 		Date date = new Date(millisecondsTimestamp);
 		return expireAt(key, date);
 	}
 	
 	@Override
-	public Long PTTL(String key) {
+	public Long pTTL(String key) {
 		return getExpire(key, TimeUnit.MILLISECONDS);
 	}
 	
 	@Override
-	public String RANDOMKEY() {
+	public String randomKey() {
 		return randomKey();
 	}
 	
 	@Override
-	public void RENAME(String oldKey, String newKey) {
+	public void rename(String oldKey, String newKey) {
 		rename(oldKey, newKey);
 	}
 	
 	@Override
-	public Boolean RENAMENX(String oldKey, String newKey) {
+	public Boolean renameNX(String oldKey, String newKey) {
 		return renameIfAbsent(oldKey, newKey);
 	}
 	
 	@Override
-	public void RESTORE(String key, long timeToLive, byte[] serializedValue) {
+	public void sort(String key, long timeToLive, byte[] serializedValue) {
 		restore(key, serializedValue, timeToLive, TimeUnit.MILLISECONDS);
 	}
 
 	@Override
-	public List<String> SORT(SortQuery<String> sortQuery) {
+	public List<String> sort(SortQuery<String> sortQuery) {
 		return sort(sortQuery);
 	}
 
 	@Override
-	public Long TTL(String key) {
+	public Long ttl(String key) {
 		return getExpire(key);
 	}
 
 	@Override
-	public String TYPE(String key) {
+	public String redisType(String key) {
 		DataType dataType = type(key);
 		if(dataType != null) {
 			return dataType.code();

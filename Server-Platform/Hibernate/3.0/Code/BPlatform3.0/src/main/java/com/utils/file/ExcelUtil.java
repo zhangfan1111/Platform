@@ -38,7 +38,7 @@ import org.slf4j.LoggerFactory;
  * @modify by reason:{方法名}:{原因}
  */
 public class ExcelUtil {
-	private static final Logger logger = LoggerFactory.getLogger(ExcelUtil.class);
+	private static Logger logger = LoggerFactory.getLogger(ExcelUtil.class);
 
 	/**
 	 * 判断excel文件后缀名，生成不同的workbook

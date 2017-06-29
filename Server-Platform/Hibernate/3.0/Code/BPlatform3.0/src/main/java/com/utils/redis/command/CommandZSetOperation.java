@@ -27,7 +27,7 @@ public interface CommandZSetOperation {
 	 * @param member
 	 * @return
 	 */
-	Boolean ZADD(String key, double score, String member);
+	Boolean zAdd(String key, double score, String member);
 
 	/**
 	 * SortedSet（有序集合） 实现命令：ZADD key score member，将一个 member元素及其 score值加入到有序集 key当中。如果 key 不存在，则创建一个空的有序集并执行 ZADD 操作。
@@ -38,7 +38,7 @@ public interface CommandZSetOperation {
 	 *            {@link TypedTuple} String value, Double score
 	 * @return
 	 */
-	Long ZADD(String key, Set<TypedTuple<String>> tuples);
+	Long zAdd(String key, Set<TypedTuple<String>> tuples);
 
 	/**
 	 * SortedSet（有序集合） 实现命令：ZCARD key。返回有序集 key 的基数。
@@ -47,7 +47,7 @@ public interface CommandZSetOperation {
 	 * @param key
 	 * @return 当 key 存在且是有序集类型时，返回有序集的基数。当 key 不存在时，返回 0 。
 	 */
-	Long ZCARD(String key);
+	Long zCard(String key);
 
 	/**
 	 * SortedSet（有序集合） 实现命令：ZCOUNT key min max。关于参数 min 和 max 的详细使用方法，请参考 {@link ZRANGEBYSCORE} 命令。
@@ -58,7 +58,7 @@ public interface CommandZSetOperation {
 	 * @param max
 	 * @return 返回有序集 key 中， score 值在 min 和 max 之间(默认包括 score 值等于 min 或 max )的成员的数量。
 	 */
-	Long ZCOUNT(String key, double min, double max);
+	Long zCount(String key, double min, double max);
 
 	/**
 	 * SortedSet（有序集合） 实现命令：ZINCRBY key increment member。为有序集 key 的成员 member 的 score 值加上增量 increment 。
@@ -77,7 +77,7 @@ public interface CommandZSetOperation {
 	 * @param member
 	 * @return
 	 */
-	Double ZINCRBY(String key, double increment, String member);
+	Double zIncrBy(String key, double increment, String member);
 
 	/**
 	 * SortedSet（有序集合） 实现命令：ZRANGE key start stop，返回有序集 key中，指定区间内的成员。
@@ -105,7 +105,7 @@ public interface CommandZSetOperation {
 	 * @param stop
 	 * @return 其中成员的位置按 score 值递增(从小到大)来排序。
 	 */
-	Set<String> ZRANGE(String key, long start, long stop);
+	Set<String> zRange(String key, long start, long stop);
 
 	/**
 	 * SortedSet（有序集合） 实现命令：ZRANGE key start stop [WITHSCORES]，返回有序集 key中，指定区间内的成员。
@@ -133,7 +133,7 @@ public interface CommandZSetOperation {
 	 * @param stop
 	 * @return 其中成员的位置按 score 值递增(从小到大)来排序。
 	 */
-	Set<TypedTuple<String>> ZRANGEWITHSCORES(String key, long start, long stop);
+	Set<TypedTuple<String>> zRangeWITHSCORES(String key, long start, long stop);
 
 	/**
 	 * SortedSet（有序集合） 实现命令：ZRANGEBYSCORE key min max。
@@ -144,7 +144,7 @@ public interface CommandZSetOperation {
 	 * @param max
 	 * @return 返回有序集 key 中，所有 score 值介于 min 和 max 之间(包括等于 min 或 max )的成员。有序集成员按 score 值递增(从小到大)次序排列。
 	 */
-	Set<String> ZRANGEBYSCORE(String key, double min, double max);
+	Set<String> zRangeByScore(String key, double min, double max);
 
 	/**
 	 * SortedSet（有序集合） 实现命令：ZRANGEBYSCORE key min max [LIMIT offset count]。
@@ -162,7 +162,7 @@ public interface CommandZSetOperation {
 	 * @param count
 	 * @return
 	 */
-	Set<String> ZRANGEBYSCORE(String key, double min, double max, long offset, long count);
+	Set<String> zRangeByScore(String key, double min, double max, long offset, long count);
 
 	/**
 	 * SortedSet（有序集合） 实现命令：ZRANGEBYSCORE key min max [WITHSCORES]。
@@ -173,7 +173,7 @@ public interface CommandZSetOperation {
 	 * @param max
 	 * @return 返回有序集 key 中，所有 score 值介于 min 和 max 之间(包括等于 min 或 max )的成员。有序集成员按 score 值递增(从小到大)次序排列。
 	 */
-	Set<TypedTuple<String>> ZRANGEBYSCOREWITHSCORES(String key, double min, double max);
+	Set<TypedTuple<String>> zRangeByScoreWITHSCORES(String key, double min, double max);
 
 	/**
 	 * SortedSet（有序集合） 实现命令：ZRANGEBYSCORE key min max [WITHSCORES] [LIMIT offset count]。
@@ -191,5 +191,5 @@ public interface CommandZSetOperation {
 	 * @param count
 	 * @return 返回有序集 key
 	 */
-	Set<TypedTuple<String>> ZRANGEBYSCOREWITHSCORES(String key, double min, double max, long offset, long count);
+	Set<TypedTuple<String>> zRangeByScoreWITHSCORES(String key, double min, double max, long offset, long count);
 }

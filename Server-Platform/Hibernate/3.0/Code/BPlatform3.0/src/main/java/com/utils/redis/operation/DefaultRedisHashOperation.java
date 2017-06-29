@@ -16,7 +16,7 @@ import com.utils.redis.command.DefaultCommandHashOperation;
 import com.utils.redis.hash.BeanUtilsHashMapper2;
 
 public class DefaultRedisHashOperation extends DefaultCommandHashOperation implements RedisHashOperation{
-	private static final Logger logger = LoggerFactory.getLogger(DefaultRedisHashOperation.class);
+//	private static final Logger logger = LoggerFactory.getLogger(DefaultRedisHashOperation.class);
 	
 //	@Autowired
 //	private RedisTemplate redisTemplate;
@@ -42,28 +42,28 @@ public class DefaultRedisHashOperation extends DefaultCommandHashOperation imple
 		//重写BeanUtilsHashMapper（BeanUtilsHashMapper2），通过HashMapper实现同上功能
 		HashMapper<T, String, String> mapper = new DecoratingStringHashMapper<T>(new BeanUtilsHashMapper2<T>(clazz));
 		Map map = mapper.toHash(o);
-		HMSET(key, map);
+		hmSet(key, map);
 	}
 
 	@Override
 	public boolean saveValueIfAbsent(String key, String hashKey, String value) {
 		boolean flag = false;
 		if(StringUtil.isNotEmpty(key) && StringUtil.isNotEmpty(hashKey) && StringUtil.isNotEmpty(value)) {
-			flag = HSETNX(key, hashKey, value);
+			flag = hSetNX(key, hashKey, value);
 		}
 		return flag;
 	}
 
 	@Override
 	public void saveValue(String key, String hashKey, String value) {
-		HSET(key, hashKey, value);
+		hSet(key, hashKey, value);
 	}
 
 	@Override
 	public Long size(String key) {
 		Long len = 0l;
 		if(StringUtil.isNotEmpty(key)) {
-			len = HLEN(key);
+			len = hLen(key);
 		}
 		return len;
 	}
@@ -71,7 +71,7 @@ public class DefaultRedisHashOperation extends DefaultCommandHashOperation imple
 	@Override
 	public List<Object> valueList(String key) {
 		if(StringUtil.isNotEmpty(key)) {
-			List<Object> list = HVALS(key);
+			List<Object> list = hVals(key);
 			return list;
 		}
 		return null;
@@ -81,7 +81,7 @@ public class DefaultRedisHashOperation extends DefaultCommandHashOperation imple
 	public Map<Object, Object> getMapEntries(String key) {
 		Map<Object, Object> map = null;
 		if(StringUtil.isNotEmpty(key)) {
-			map = HGETALL(key);
+			map = hGetAll(key);
 		}
 		return map;
 	}
@@ -116,7 +116,7 @@ public class DefaultRedisHashOperation extends DefaultCommandHashOperation imple
 
 	@Override
 	public boolean hasKey(String key, Object hashKey) {
-		return HEXISTS(key, hashKey);
+		return hExists(key, hashKey);
 	}
 
 	@Override
@@ -124,9 +124,9 @@ public class DefaultRedisHashOperation extends DefaultCommandHashOperation imple
 		Object result = 0;
 		if(StringUtil.isNotEmpty(key) && StringUtil.isNotEmpty(hashKey)) {
 			if(delta instanceof Long) {
-				result = HINCRBY(key, hashKey, (long) delta);
+				result = hIncrBy(key, hashKey, (long) delta);
 			} else if(delta instanceof Double) {
-				result = HINCRBYFLOAT(key, hashKey, (double) delta);
+				result = hIncrByFloat(key, hashKey, (double) delta);
 			}
 		}
 		return result;

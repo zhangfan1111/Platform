@@ -17,7 +17,7 @@ public class MqttServerDemo {
 	public static final String HOST = "tcp://127.0.0.1:61613";
     public static final String TOPIC = "toclient/124";
     public static final String TOPIC125 = "toclient/125";
-    private static final String clientid = "server";
+    private static final String CLIENDID = "server";
 
     private MqttClient client;
     private MqttTopic topic;
@@ -29,7 +29,7 @@ public class MqttServerDemo {
 
     public MqttServerDemo() throws MqttException {
         // MemoryPersistence设置clientid的保存形式，默认为以内存保存
-        client = new MqttClient(HOST, clientid, new MemoryPersistence());
+        client = new MqttClient(HOST, CLIENDID, new MemoryPersistence());
         connect();
     }
 

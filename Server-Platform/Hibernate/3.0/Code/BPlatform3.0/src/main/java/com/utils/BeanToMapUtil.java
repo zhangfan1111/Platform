@@ -44,7 +44,7 @@ public class BeanToMapUtil {
 				Method setter = property.getWriteMethod();
 				// 得到property对应的getter方法
 				Method getter = property.getReadMethod();
-				String _o = getter.getGenericReturnType().toString();
+				final String _o = getter.getGenericReturnType().toString();
 				if (_o.contains("Integer")) {
 					Integer v = Integer.valueOf((String) value);
 					setter.invoke(obj, v);

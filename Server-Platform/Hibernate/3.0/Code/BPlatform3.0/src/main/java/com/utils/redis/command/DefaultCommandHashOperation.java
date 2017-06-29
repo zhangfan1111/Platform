@@ -28,72 +28,72 @@ public class DefaultCommandHashOperation extends DefaultCommandRedisOperation im
 	protected HashOperations<String, Object, Object> hashOps = super.opsForHash();
 
 	@Override
-	public void HDEL(String key, Object... fields) {
+	public void hDel(String key, Object... fields) {
 		hashOps.delete(key, fields);
 	}
 
 	@Override
-	public boolean HEXISTS(String key, Object field) {
+	public boolean hExists(String key, Object field) {
 		return hashOps.hasKey(key, field);
 	}
 
 	@Override
-	public Long HINCRBY(String key, Object hashKey, long increment) {
+	public Long hIncrBy(String key, Object hashKey, long increment) {
 		return hashOps.increment(key, hashKey, increment);
 	}
 
 	@Override
-	public Double HINCRBYFLOAT(String key, Object hashKey, double increment) {
+	public Double hIncrByFloat(String key, Object hashKey, double increment) {
 		return hashOps.increment(key, hashKey, increment);
 	}
 
 	@Override
-	public Set<Object> HKEYS(String key) {
+	public Set<Object> hKeys(String key) {
 		return hashOps.keys(key);
 	}
 
 	@Override
-	public Long HLEN(String key) {
+	public Long hLen(String key) {
 		return hashOps.size(key);
 	}
 
 	@Override
-	public List<Object> HMGET(String key, Collection<Object> hashKeys) {
+	public List<Object> hmGet(String key, Collection<Object> hashKeys) {
 		return hashOps.multiGet(key, hashKeys);
 	}
 
 	@Override
-	public void HMSET(String key, Map<Object, Object> map) {
+	public void hmSet(String key, Map<Object, Object> map) {
 		hashOps.putAll(key, map);
 	}
 
 	@Override
-	public List<Object> HVALS(String key) {
+	public List<Object> hVals(String key) {
 		return hashOps.values(key);
 	}
 
 	@Override
-	public void HSET(String key, Object field, Object value) {
+	public void hSet(String key, Object field, Object value) {
 		hashOps.put(key, field, value);
 	}
 
 	@Override
-	public boolean HSETNX(String key, Object field, Object value) {
+	public boolean hSetNX(String key, Object field, Object value) {
 		return hashOps.putIfAbsent(key, field, value);
 	}
 
 	@Override
-	public String HGET(String key, Object field) {
+	public String hGet(String key, Object field) {
 		return (String) hashOps.get(key, field);
 	}
 
 	@Override
-	public Map<Object, Object> HGETALL(String key) {
+	public Map<Object, Object> hGetAll(String key) {
 		return hashOps.entries(key);
 	}
 
 	@Override
-	public Cursor<Map.Entry<Object, Object>> HSCAN(String key, ScanOptions options) {
+	public Cursor<Map.Entry<Object, Object>> hScan(String key, ScanOptions options) {
 		return hashOps.scan(key, options);
 	}
 }

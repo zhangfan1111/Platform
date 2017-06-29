@@ -26,7 +26,7 @@ public interface CommandRedisOperation {
 	 * @author memory 2017年5月11日 上午11:27:40
 	 * @param key
 	 */
-	void DEL(String key);
+	void del(String key);
 
 	/**
 	 * Key（键），简单的key-value操作 实现命令：DEL [key ...]，删除多个key。不存在的 key 会被忽略。
@@ -34,7 +34,7 @@ public interface CommandRedisOperation {
 	 * @author memory 2017年5月12日 上午10:41:20
 	 * @param keys
 	 */
-	void DEL(Collection<String> keys);
+	void del(Collection<String> keys);
 
 	/**
 	 * Key（键），简单的key-value操作 实现命令：DUMP key。序列化给定 key ，并返回被序列化的值，使用 RESTORE 命令可以将这个值反序列化为 Redis 键。
@@ -48,7 +48,7 @@ public interface CommandRedisOperation {
 	 * @param key
 	 * @return 如果 key 不存在，那么返回 nil 。否则，返回序列化之后的值。
 	 */
-	byte[] DUMP(String key);
+	byte[] dump(String key);
 
 	/**
 	 * Key（键），简单的key-value操作 实现命令：EXISTS key。检查给定 key 是否存在。
@@ -57,7 +57,7 @@ public interface CommandRedisOperation {
 	 * @param key
 	 * @return
 	 */
-	Boolean EXISTS(String key);
+	Boolean exists(String key);
 	
 	/**
 	 * Key（键），简单的key-value操作 实现命令：EXPIRE key seconds。为给定 key 设置生存时间，当 key 过期时(生存时间为 0 )，它会被自动删除。
@@ -67,7 +67,7 @@ public interface CommandRedisOperation {
 	 * @param timeout
 	 * @return 当 key 不存在或者不能为 key 设置生存时间时(比如在低于 2.1.3 版本的 Redis 中你尝试更新 key 的生存时间)，返回 false 。
 	 */
-	Boolean EXPIRE(String key, long timeout);
+	Boolean expire(String key, long timeout);
 	
 	/**
 	 * Key（键），简单的key-value操作 实现命令：EXPIREAT key timestamp。
@@ -79,7 +79,7 @@ public interface CommandRedisOperation {
 	 * @param timestamp  单位：seconds，UNIX 时间戳(unix timestamp)，从格林威治时间1970年01月01日00时00分00秒起至现在的总秒数
 	 * @return 当 key 不存在或没办法设置生存时间，返回false
 	 */
-	Boolean EXPIREAT(String key, long timestamp);
+	Boolean expireAt(String key, long timestamp);
 	
 	/**
 	 * Key（键），简单的key-value操作 实现命令：KEYS pattern，查找所有符合给定模式 pattern的 key。
@@ -93,7 +93,7 @@ public interface CommandRedisOperation {
 	 * @param pattern
 	 * @return
 	 */
-	Set<String> KEYS(String pattern);
+	Set<String> keys(String pattern);
 	
 	/**
 	 * Key（键），简单的key-value操作 实现命令：MOVE key db。将当前数据库的 key 移动到给定的数据库 db 当中。
@@ -105,7 +105,7 @@ public interface CommandRedisOperation {
 	 * @param db
 	 * @return
 	 */
-	Boolean MOVE(String key, int db);
+	Boolean move(String key, int db);
 	
 	/**
 	 * Key（键），简单的key-value操作 实现命令：PERSIST key。
@@ -116,7 +116,7 @@ public interface CommandRedisOperation {
 	 * @param key
 	 * @return 如果 key 不存在或 key 没有设置生存时间，返回false。
 	 */
-	Boolean PERSIST(String key);
+	Boolean persist(String key);
 	
 	/**
 	 * Key（键），简单的key-value操作 实现命令：PEXPIRE key milliseconds。
@@ -128,7 +128,7 @@ public interface CommandRedisOperation {
 	 * @param milliseconds 毫秒
 	 * @return
 	 */
-	Boolean PEXPIRE(String key, long milliseconds);
+	Boolean pExpire(String key, long milliseconds);
 	
 	/**
 	 * Key（键），简单的key-value操作 实现命令：PEXPIREAT key milliseconds-timestamp。
@@ -140,7 +140,7 @@ public interface CommandRedisOperation {
 	 * @param millisecondsTimestamp 单位：milliseconds，UNIX 时间戳(unix timestamp)，从格林威治时间1970年01月01日00时00分00秒起至现在的总毫秒数。
 	 * @return
 	 */
-	Boolean PEXPIREAT(String key, long millisecondsTimestamp);
+	Boolean pExpireAt(String key, long millisecondsTimestamp);
 	
 	/**
 	 * Key（键），简单的key-value操作 实现命令：TTL key，以millseconds为单位，返回给定 key的剩余生存时间(TTL, time to live)
@@ -149,7 +149,7 @@ public interface CommandRedisOperation {
 	 * @param key
 	 * @return 返回毫秒millseconds
 	 */
-	Long PTTL(String key);
+	Long pTTL(String key);
 	
 	/**
 	 * Key（键），简单的key-value操作 实现命令：RANDOMKEY。从当前数据库中随机返回(不删除)一个 key 。
@@ -157,7 +157,7 @@ public interface CommandRedisOperation {
 	 * @author memory 2017年5月12日 下午1:29:40
 	 * @return当数据库为空时，返回 nil 。
 	 */
-	String RANDOMKEY();
+	String randomKey();
 	
 	/**
 	 * Key（键），简单的key-value操作 实现命令：RENAME key newkey。将 key 改名为 newkey 。
@@ -168,7 +168,7 @@ public interface CommandRedisOperation {
 	 * @param oldKey
 	 * @param newKey
 	 */
-	void RENAME(String oldKey, String newKey);
+	void rename(String oldKey, String newKey);
 	
 	/**
 	 * Key（键），简单的key-value操作 实现命令：RENAMENX key newkey。当且仅当 newkey 不存在时，将 key 改名为 newkey 。当 key 不存在时，返回一个错误。
@@ -177,7 +177,7 @@ public interface CommandRedisOperation {
 	 * @param newKey
 	 * @return 如果 newkey 已经存在，返回false
 	 */
-	Boolean RENAMENX(String oldKey, String newKey);
+	Boolean renameNX(String oldKey, String newKey);
 	
 	/**
 	 * Key（键），简单的key-value操作 实现命令：RESTORE key ttl serialized-value。反序列化给定的序列化值，并将它和给定的 key 关联。
@@ -187,7 +187,7 @@ public interface CommandRedisOperation {
 	 * @param timeToLive 参数 ttl 以毫秒为单位为 key 设置生存时间；如果 ttl 为 0 ，那么不设置生存时间。
 	 * @param serializedValue 序列化值
 	 */
-	void RESTORE(String key, long timeToLive, byte[] serializedValue);
+	void sort(String key, long timeToLive, byte[] serializedValue);
 	
 	/**
 	 * Key（键），简单的key-value操作 实现命令：SORT key [BY pattern] [LIMIT offset count] [GET pattern [GET pattern ...]] [ASC | DESC] [ALPHA] [STORE destination]。
@@ -198,7 +198,7 @@ public interface CommandRedisOperation {
 	 * @param sortQuery
 	 * @return 返回或保存给定列表、集合、有序集合 key 中经过排序的元素。
 	 */
-	List<String> SORT(SortQuery<String> sortQuery);
+	List<String> sort(SortQuery<String> sortQuery);
 	
 	
 	/**
@@ -208,7 +208,7 @@ public interface CommandRedisOperation {
 	 * @param key
 	 * @return 返回秒seconds
 	 */
-	Long TTL(String key);
+	Long ttl(String key);
 	
 	/**
 	 * Key（键），简单的key-value操作 实现命令：TYPE key。返回 key 所储存的值的类型。
@@ -216,5 +216,5 @@ public interface CommandRedisOperation {
 	 * @param key
 	 * @return null (key不存在)、string (字符串)、list (列表)、set (集合)、zset (有序集)、hash (哈希表)
 	 */
-	String TYPE(String key);
+	String redisType(String key);
 }

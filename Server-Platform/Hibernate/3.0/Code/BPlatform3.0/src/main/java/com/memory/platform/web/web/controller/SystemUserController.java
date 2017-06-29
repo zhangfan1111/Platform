@@ -63,7 +63,7 @@ import com.utils.file.model.SysUser;
 @RequestMapping("/system/systemUserController")
 public class SystemUserController {
 
-	private static final Logger logger = LoggerFactory.getLogger(SystemUserController.class);
+	private static Logger LOGGER = LoggerFactory.getLogger(SystemUserController.class);
 	@Autowired
 	@Qualifier("systemUserServiceImpl")
 	private ISystemUserService systemUserService;
@@ -119,7 +119,7 @@ public class SystemUserController {
 				return s;
 			}
 		} catch (Exception e) {
-			logger.error("Exception: ", e);
+			LOGGER.error("Exception: ", e);
 			return new ExceptionReturn(e);
 		}
 		return null;
@@ -142,7 +142,7 @@ public class SystemUserController {
 			}
 			systemUserService.saveOrUpdate(systemUser);
 		} catch (Exception e) {
-			logger.error("Exception: ", e);
+			LOGGER.error("Exception: ", e);
 			return new ExceptionReturn(e);
 		}
 		return true;
@@ -157,7 +157,7 @@ public class SystemUserController {
 			systemUserService.delete(user);
 			return true;
 		} catch (Exception e) {
-			logger.error("Exception: ", e);
+			LOGGER.error("Exception: ", e);
 			return new ExceptionReturn(e);
 		}
 	}
@@ -172,7 +172,7 @@ public class SystemUserController {
 			user.setPwd(MD5andKL.MD5(pwd));
 			systemUserService.update(user);
 		} catch (Exception e) {
-			logger.error("Exception: ", e);
+			LOGGER.error("Exception: ", e);
 			return new ExceptionReturn(e);
 		}
 		return true;
@@ -199,7 +199,7 @@ public class SystemUserController {
 			Map<String, Object> map = sResult.getEasyUIMap();
 			return map;
 		} catch (Exception e) {
-			logger.error("Exception: ", e);
+			LOGGER.error("Exception: ", e);
 			return new ExceptionReturn(e);
 		}
 	}
@@ -214,10 +214,9 @@ public class SystemUserController {
 		Map requestMap = request.getParameterMap();
 		model.addAllAttributes(requestMap);
 
-		List<SystemRole> userRoleList = null;
 		List<SystemRole> roleList = null;
 
-		userRoleList = systemBasedataLinkService.listLinkData(SystemRole.class, SystemUser.class, userId);
+		List<SystemRole> userRoleList = systemBasedataLinkService.listLinkData(SystemRole.class, SystemUser.class, userId);
 
 		if (parentRoleId != null && !"".equals(parentRoleId)) {
 			roleList = systemRoleService.find("From SystemRole s where s.parentId='" + parentRoleId + "'");
@@ -275,10 +274,9 @@ public class SystemUserController {
 		Map requestMap = request.getParameterMap();
 		model.addAllAttributes(requestMap);
 
-		List<SystemDept> userDeptList = null;
 		List<SystemDept> deptList = null;
 
-		userDeptList = systemBasedataLinkService.listLinkData(SystemDept.class, SystemUser.class, userId);
+		List<SystemDept> userDeptList = systemBasedataLinkService.listLinkData(SystemDept.class, SystemUser.class, userId);
 
 		if (parentDeptId != null && !"".equals(parentDeptId)) {
 			deptList = systemDeptService.find("From SystemDept s where s.parentId='" + parentDeptId + "'");
@@ -312,9 +310,8 @@ public class SystemUserController {
 		Map requestMap = request.getParameterMap();
 		model.addAllAttributes(requestMap);
 
-		System.out.println(userId);
-		System.out.println(Arrays.toString(addDeptIds));
-		System.out.println(Arrays.toString(delDeptIds));
+//		System.out.println(Arrays.toString(addDeptIds));
+//		System.out.println(Arrays.toString(delDeptIds));
 
 		try {
 			if (addDeptIds != null && addDeptIds.length > 0) {

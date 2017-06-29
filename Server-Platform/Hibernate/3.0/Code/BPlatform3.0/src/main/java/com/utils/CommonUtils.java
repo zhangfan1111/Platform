@@ -38,9 +38,9 @@ public class CommonUtils {
 		 * e) { // TODO Auto-generated catch block e.printStackTrace(); }
 		 */
 
-		System.out.println(new Date().getTime() + (60000 * 60 * 24 * 3));
-
-		System.out.println(CommonUtils.getTimeDifferenceOfDay(new Date(), 3, true));
+//		System.out.println(new Date().getTime() + (60000 * 60 * 24 * 3));
+//
+//		System.out.println(CommonUtils.getTimeDifferenceOfDay(new Date(), 3, true));
 	}
 
 	// 资源文件初始化加载
@@ -139,7 +139,7 @@ public class CommonUtils {
 	 * @param s
 	 * @return
 	 */
-	public static String[] jsonToArray(String arr) {
+	public static String[] jsonToArray(final String arr) {
 
 		JSONArray json = new JSONArray(arr); // 首先把字符串转成 JSONArray 对象
 		int jlen = json.length();
@@ -150,7 +150,7 @@ public class CommonUtils {
 			}
 			return resultArr;
 		}
-		return null;
+		return resultArr;
 	}
 
 	/**
@@ -159,7 +159,7 @@ public class CommonUtils {
 	 * @param s
 	 * @return
 	 */
-	public static Integer[] jsonToIntegerArray(String arr) {
+	public static Integer[] jsonToIntegerArray(final String arr) {
 
 		JSONArray json = new JSONArray(arr); // 首先把字符串转成 JSONArray 对象
 		int jlen = json.length();
@@ -170,7 +170,7 @@ public class CommonUtils {
 			}
 			return resultArr;
 		}
-		return null;
+		return resultArr;
 	}
 
 	/**
@@ -201,7 +201,7 @@ public class CommonUtils {
 	 * @return
 	 * @throws Exception
 	 */
-	public static List<String> JsonToList(String str) throws Exception {
+	public static List<String> jsonToList(final String str){
 		String strArray[] = jsonToArray(str);
 		List<String> result = new ArrayList<String>();
 		for (int i = 0; i < strArray.length; i++) {
@@ -355,8 +355,8 @@ public class CommonUtils {
 			arr.add(moneySum);
 		} else {
 			double a = moneySum / redNum; // 平均每个红包的金钱
-			long min_a = moneySum / redNum * 4; // 每个红包的最小金额
-			long max_a = moneySum * 4 / redNum; // 每个红包的最大金额
+			final long min_a = moneySum / redNum * 4; // 每个红包的最小金额
+			final long max_a = moneySum * 4 / redNum; // 每个红包的最大金额
 			Random random = new Random();
 			// 每次随机的总数
 			long total = 0;
@@ -368,17 +368,17 @@ public class CommonUtils {
 				list.add(k);
 				total += k;
 			}
-			List<Long> _h = new ArrayList<Long>();
+			List<Long> _hList = new ArrayList<Long>();
 			// 红包总数
-			long _y = 0;
+			long _y = 0l;
 			// 每个红包的金额
-			long _u = 0;
+			long _u = 0l;
 			for (int j = 0; j < list.size(); j++) {
 				_u = Math.round(list.get(j) * moneySum / total);
 				// u = u == 0 ? 1 : u;
 				_u = _u > max_a ? (max_a + random.nextInt((int) max_a) / 2 + redNum) : _u;
 				_u = _u < min_a ? (min_a - (random.nextInt((int) min_a) / 2 + redNum)) : _u;
-				_h.add(_u);
+				_hList.add(_u);
 				_y += _u;
 			}
 
@@ -386,13 +386,12 @@ public class CommonUtils {
 			long y = 0;
 			// 每个红包的金额
 			long u = 0;
-			for (int j = 0; j < _h.size() - 1; j++) {
-				u = Math.round(_h.get(j) * moneySum / _y);
+			for (int j = 0; j < _hList.size() - 1; j++) {
+				u = Math.round(_hList.get(j) * moneySum / _y);
 				u = u == 0 ? 1 : u;
 				h.add(u);
 				y += u;
 			}
-			System.out.println("***y***:" + y);
 			h.add(moneySum - y);
 			List<Long> eList = new ArrayList<Long>();
 			for (int k = 0; k < h.size(); k++) {
@@ -404,7 +403,7 @@ public class CommonUtils {
 				}
 			}
 			for (int i = 0; i < eList.size(); i++) {
-				long _ele = eList.get(i);
+				final long _ele = eList.get(i);
 				for (int j = 0; j < h.size(); j++) {
 					if (_ele < 0 && h.get(j) - _ele * (-1) > 0) {
 						h.set(j, h.get(j) - _ele * (-1));

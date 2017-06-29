@@ -33,7 +33,7 @@ public class SystemLogAspect {
 	@Resource
 	private ISystemLogService systemLogService;
 
-	private static final Logger logger = LoggerFactory.getLogger(SystemLogAspect.class);
+	private static Logger logger = LoggerFactory.getLogger(SystemLogAspect.class);
 
 	/**
 	 * 只针对带有@Log的方法

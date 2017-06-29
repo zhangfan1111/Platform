@@ -9,8 +9,6 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -41,7 +39,7 @@ import com.memory.platform.web.session.SessionInfo;
 @RequestMapping("/system/systemResourceController")
 public class SystemResourceController {
 
-	private static final Logger logger = LoggerFactory.getLogger(SystemResourceController.class);
+//	private static final Logger logger = LoggerFactory.getLogger(SystemResourceController.class);
 	@Autowired
 	@Qualifier("systemResourceServiceImpl")
 	private ISystemResourceService systemResourceService;

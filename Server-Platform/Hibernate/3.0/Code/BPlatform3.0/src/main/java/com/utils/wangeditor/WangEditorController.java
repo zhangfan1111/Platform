@@ -25,9 +25,9 @@ import com.utils.ImageHelper;
 
 @Controller
 @RequestMapping(value = "/manage/wangEditor")
-public class wangEditorController {
+public class WangEditorController {
 	
-	private static final Logger logger = LoggerFactory.getLogger(wangEditorController.class);
+	private static final Logger logger = LoggerFactory.getLogger(WangEditorController.class);
 	
 	/**
 	 * wangEditor图片上传 

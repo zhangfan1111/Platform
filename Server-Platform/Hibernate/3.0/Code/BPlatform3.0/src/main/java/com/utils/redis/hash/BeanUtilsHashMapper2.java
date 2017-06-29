@@ -69,12 +69,12 @@ public class BeanUtilsHashMapper2<T> implements HashMapper<T, String, String> {
 	            catch(ParseException e)    
 	            {    
 	            	SimpleDateFormat sd1 = new SimpleDateFormat("EEE MMM dd HH:mm:ss Z yyyy", Locale.UK);
-	            	try {
-	            		ts = new Timestamp(sd1.parse(str).getTime());
-		                return ts; 
+            		try {
+						ts = new Timestamp(sd1.parse(str).getTime());
 					} catch (ParseException e1) {
-						throw new RuntimeException(e1); 
+						e1.printStackTrace();
 					}
+	                return ts; 
 	            }  
 	                 
 	        }    

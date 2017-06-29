@@ -43,8 +43,8 @@ public class MqttClientDemo {
               
             client.connect(options);  
             //订阅消息  
-            int[] Qos  = {1};  
-            String[] topic1 = {TOPIC};  
+            final int[] Qos  = {1};  
+            final String[] topic1 = {TOPIC};  
             client.subscribe(topic1, Qos);  
             
         } catch (Exception e) {  

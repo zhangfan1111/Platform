@@ -27,7 +27,7 @@ public interface CommandHyperLogLogOperation {
 	 * @param values
 	 * @return 如果至少有个元素被添加返回 1， 否则返回 0。
 	 */
-	Long PFADD(String key, String... values);
+	Long pfAdd(String key, String... values);
 
 	/**
 	 * HyperLogLog 实现命令：PFCOUNT key [key ...]。返回给定 HyperLogLog 的基数估算值。
@@ -51,7 +51,7 @@ public interface CommandHyperLogLogOperation {
 	 * @param keys
 	 * @return 返回给定 HyperLogLog 的基数值，如果多个 HyperLogLog 则返回基数估值之和。Gets the current number of elements within the key.
 	 */
-	Long PFCOUNT(String... keys);
+	Long pfCount(String... keys);
 	
 	/**
 	 * HyperLogLog 实现命令：PFDEL key。根据key删除相关值。
@@ -59,7 +59,7 @@ public interface CommandHyperLogLogOperation {
 	 * @author memory 2017年6月6日 上午10:32:27
 	 * @param key
 	 */
-	void PFDEL(String key);
+	void pfDel(String key);
 	
 	/**
 	 * HyperLogLog 实现命令：PFMERGE destkey sourcekey [sourcekey ...]。Merges all values of given sourceKeys into destination key.
@@ -73,5 +73,5 @@ public interface CommandHyperLogLogOperation {
 	 * @param sourceKeys
 	 * @return
 	 */
-	Long PFMERGE(String destinationKey, String... sourceKeys);
+	Long pfMerge(String destinationKey, String... sourceKeys);
 }

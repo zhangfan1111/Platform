@@ -26,17 +26,17 @@ public class DefaultCommandValueOperation extends DefaultCommandRedisOperation i
 	protected ValueOperations<String, String> valOps = super.opsForValue();
 
 	@Override
-	public Integer APPEND(String key, String value) {
+	public Integer append(String key, String value) {
 		return valOps.append(key, value);
 	}
 
 	@Override
-	public Long DECR(String key) {
+	public Long decr(String key) {
 		return valOps.increment(key, -1l);
 	}
 
 	@Override
-	public Long DECRBY(String key, long decrement) {
+	public Long decrBy(String key, long decrement) {
 		if(decrement > 0l) {
 			return 0l;
 		}
@@ -44,7 +44,7 @@ public class DefaultCommandValueOperation extends DefaultCommandRedisOperation i
 	}
 
 	@Override
-	public Double DECRBYFloat(String key, double decrement) {
+	public Double decrByFloat(String key, double decrement) {
 		if(decrement > 0d) {
 			return 0d;
 		}
@@ -52,84 +52,84 @@ public class DefaultCommandValueOperation extends DefaultCommandRedisOperation i
 	}
 
 	@Override
-	public String GET(Object key) {
+	public String redisGet(Object key) {
 		return valOps.get(key);
 	}
 
 	@Override
-	public Boolean GETBIT(String key, long offset) {
+	public Boolean getBit(String key, long offset) {
 		return valOps.getBit(key, offset);
 	}
 
 	@Override
-	public String GETRANGE(String key, long start, long end) {
+	public String getRange(String key, long start, long end) {
 		return valOps.get(key, start, end);
 	}
 
 	@Override
-	public String GETSET(String key, String value) {
-		String oldValue = GET(key);
-		SET(key, value);
+	public String getSet(String key, String value) {
+		String oldValue = redisGet(key);
+		redisSet(key, value);
 		return oldValue;
 	}
 
 	@Override
-	public Long INCR(String key) {
+	public Long incr(String key) {
 		return valOps.increment(key, 1l);
 	}
 
 	@Override
-	public Long INCRBY(String key, long increment) {
+	public Long incrBy(String key, long increment) {
 		return valOps.increment(key, increment);
 	}
 
 	@Override
-	public Double INCRBYFLOAT(String key, double increment) {
+	public Double incrByFloat(String key, double increment) {
 		return valOps.increment(key, increment);
 	}
 
 	@Override
-	public List<String> MGET(Collection<String> keys) {
+	public List<String> mGet(Collection<String> keys) {
 		return valOps.multiGet(keys);
 	}
 
 	@Override
-	public void MSET(Map<String, String> map) {
+	public void mSet(Map<String, String> map) {
 		valOps.multiSet(map);
 	}
 	
 	@Override
-	public Boolean MSETNX(Map<String, String> map) {
+	public Boolean mSetNX(Map<String, String> map) {
 		return valOps.multiSetIfAbsent(map);
 	}
 	
 	@Override
-	public void SET(String key, String value) {
+	public void redisSet(String key, String value) {
 		valOps.set(key, value);
 	}
 
 	@Override
-	public Boolean SETBIT(String key, long offset, boolean value) {
+	public Boolean setBit(String key, long offset, boolean value) {
 		return valOps.setBit(key, offset, value);
 	}
 
 	@Override
-	public void SETEX(String key, long timeout, String value) {
+	public void setEx(String key, long timeout, String value) {
 		valOps.set(key, value, timeout, TimeUnit.SECONDS);
 	}
 
 	@Override
-	public void SETNX(String key, String value) {
+	public void setNx(String key, String value) {
 		valOps.setIfAbsent(key, value);
 	}
 
 	@Override
-	public void SETRANGE(String key, long offset, String value) {
+	public void setRange(String key, long offset, String value) {
 		valOps.set(key, value, offset);
 	}
 
 	@Override
-	public Long STRLEN(String key) {
+	public Long strLen(String key) {
 		return valOps.size(key);
 	}
 

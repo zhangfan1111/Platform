@@ -46,10 +46,10 @@ public class SystemResourceServiceImpl extends BaseServiceImpl<SystemResource> i
 	public List<SystemResource> loadTreeGrid(HqlFilter hqlFilter) {
 		List<SystemResource> l = new ArrayList<SystemResource>();
 		String hql = "select distinct t from SystemResource t join t.syroles role join role.syusers user";
-		List<SystemResource> resource_role = find(hql + hqlFilter.getWhereHql(), hqlFilter.getParams());
+		final List<SystemResource> resource_role = find(hql + hqlFilter.getWhereHql(), hqlFilter.getParams());
 		l.addAll(resource_role);
 		hql = "select distinct t from SystemResource t join t.syorganizations organization join organization.syusers user";
-		List<SystemResource> resource_organization = find(hql + hqlFilter.getWhereHql(), hqlFilter.getParams());
+		final List<SystemResource> resource_organization = find(hql + hqlFilter.getWhereHql(), hqlFilter.getParams());
 		l.addAll(resource_organization);
 		l = new ArrayList<SystemResource>(new HashSet<SystemResource>(l));// 去重
 		Collections.sort(l, new Comparator<SystemResource>() {// 排序
