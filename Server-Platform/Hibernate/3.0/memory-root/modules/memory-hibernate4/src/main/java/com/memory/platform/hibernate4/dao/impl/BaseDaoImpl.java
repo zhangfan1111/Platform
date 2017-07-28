@@ -11,6 +11,8 @@ import org.hibernate.Query;
 import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.engine.spi.PersistenceContext;
+import org.hibernate.event.spi.EventSource;
 import org.hibernate.transform.Transformers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -395,6 +397,13 @@ public class BaseDaoImpl<T> implements IBaseDao<T> {
 			q.setParameter(i, params[i]);
 		}
 		return (Long)q.uniqueResult();
+	}
+
+	@Override
+	public T removePersistent(T obj) {
+		EventSource source = (EventSource) sessionFactory.getCurrentSession();
+		PersistenceContext persistenceContext = source.getPersistenceContext();
+		return (T) persistenceContext.removeEntry(obj);
 	}
 	
 	

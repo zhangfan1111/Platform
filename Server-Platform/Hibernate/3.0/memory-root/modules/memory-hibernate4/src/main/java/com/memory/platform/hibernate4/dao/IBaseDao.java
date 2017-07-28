@@ -435,4 +435,13 @@ public interface IBaseDao<T> {
 	 * @return
 	 */
 	public abstract Long mathByHql(String hql, String... params);
+	
+	/**
+	 * 删除持久化
+	 * @author yangshaoping 2017年7月6日 下午12:04:08
+	 * @param obj
+	 * @return
+	 */
+	public abstract T removePersistent(T obj);
+	
 }
