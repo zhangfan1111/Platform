@@ -4,18 +4,15 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.codec.digest.DigestUtils;
-import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.memory.platform.common.util.IpUtil;
 import com.memory.platform.common.util.MD5andKL;
-import com.memory.platform.core.basic.BasicUHandler;
 import com.memory.platform.core.service.impl.BaseServiceImpl;
 import com.memory.platform.modules.online.Client;
 import com.memory.platform.modules.online.ClientManager;
@@ -29,7 +26,7 @@ import com.memory.platform.modules.system.base.service.ISystemUserService;
 import com.utils.file.model.SysUser;
 
 @Service("systemUserServiceImpl")
-public class SystemUserServiceImpl extends BaseServiceImpl<SystemUser> implements ISystemUserService, InitializingBean{
+public class SystemUserServiceImpl extends BaseServiceImpl<SystemUser> implements ISystemUserService{
 
 	@Autowired
 	@Qualifier("systemUserDaoImpl")
@@ -53,16 +50,6 @@ public class SystemUserServiceImpl extends BaseServiceImpl<SystemUser> implement
 		List<SystemRole> userRoleList = null;
 		userRoleList = systemBasedataLinkService.listLinkData(SystemRole.class, SystemUser.class, userId);
 		return userRoleList;
-	}
-	
-	@PostConstruct
-	public void userNeed() {
-		BasicUHandler.handlerAdapter();
-	}
-	
-	@Override
-	public void afterPropertiesSet() {
-		BasicUHandler.handlerAdapterTo();
 	}
 	
 	@Override

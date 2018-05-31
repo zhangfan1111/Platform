@@ -390,12 +390,9 @@
 	</dependencies>
 
 	<modules>
-		<module>modules/memory-core</module>
-		<module>modules/memory-hibernate4</module>
-		<!-- <module>modules/memory-web4easyui</module> -->
-
 		<module>modules/memory-common</module>
-		<module>modules/memory-orm-common</module>
+		<module>modules/memory-hibernate4</module>
+		<module>modules/memory-core</module>
 	</modules>
 	<build>
 		<plugins>

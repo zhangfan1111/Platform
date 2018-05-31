@@ -94,9 +94,6 @@
 	<!-- 注解方式配置事物 -->
 	<tx:annotation-driven transaction-manager="transactionManager" />
 
-	<!-- 注册基本监听-->
-	<bean id="springCoreAdapterListener" class="org.springframework.core.io.support.servlet.comm.SpringCoreAdapterListener"></bean>
-	
 	<!-- 拦截器方式配置事物 -->
 	<tx:advice id="transactionAdvice" transaction-manager="transactionManager">
 		<tx:attributes>
