@@ -1,0 +1,22 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://k2data:k2asset885976@localhost:8761/eureka
+  instance:
+      preferIpAddress: true
+      instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+
+#指定配置中心
+spring:
+  application:
+      name: k2asset-sys-base
+  profiles:
+      active: dev
+  cloud:
+    config:
+      label: master
+      discovery:
+        enabled: true
+        serviceId: k2asset-config
+      profile: conf
+

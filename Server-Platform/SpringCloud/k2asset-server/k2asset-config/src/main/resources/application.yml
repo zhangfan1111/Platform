@@ -1,0 +1,19 @@
+server:
+  port: 8765
+
+#关闭刷新安全认证
+management:
+  security:
+    enabled: false
+
+#修改配置后，先发送post请求http://{ip}:{config-port}/bus/refresh进行刷新  
+spring:
+  profiles:
+    active: dev
+  rabbitmq:
+    host: 192.168.254.130
+    #rabbitmq 默认端口，http默认端口15672
+    port: 5672
+    username: ubuntu
+    password: memory
+    

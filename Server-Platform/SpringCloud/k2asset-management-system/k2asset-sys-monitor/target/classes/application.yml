@@ -1,0 +1,20 @@
+server:
+  port: 8811
+
+spring:
+  sleuth:
+    sampler:
+#    日志记录发送给采集器的概率，0-1交给使用者自己配置。开发阶段和运行初期，一般配置成1全量收集日志，到了上线后可以慢慢降低这一概率
+      percentage: 1.0
+  zipkin:
+    base-url: http://localhost:9411
+  cloud:
+    bus:
+      trace:
+        enabled: true
+  rabbitmq:
+    host: 192.168.254.130
+    #rabbitmq 默认端口，http默认端口15672
+    port: 5672
+    username: ubuntu
+    password: memory

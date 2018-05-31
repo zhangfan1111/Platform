@@ -1,0 +1,110 @@
+server:
+  port: 8770
+
+spring:
+  sleuth:
+    sampler:
+#日志记录发送给采集器的概率，0-1交给使用者自己配置。开发阶段和运行初期，一般配置成1全量收集日志，到了上线后可以慢慢降低这一概率
+      percentage: 1.0
+  zipkin:
+    base-url: http://localhost:9411
+  redis:
+    database: 0
+    host: 10.1.10.15
+    port: 26379
+    password:
+  cloud:
+    bus:
+      trace:
+        enabled: true
+  rabbitmq:
+    host: 192.168.254.130
+    #rabbitmq 默认端口，http默认端口15672
+    port: 5672
+    username: ubuntu
+    password: memory
+
+zuul:
+  host:
+    max-total-connections: 500
+    socket-timeout-millis: 15000
+    connect-timeout-millis: 15000
+  semaphore:
+    max-semaphores: 500
+  routes:
+    api-sys-user:
+      path: /user/**
+      serviceId: k2asset-sys
+    api-sys-service:
+      path: /sys-service/**
+      service-id: k2asset-sys-service
+#    auth:
+#      path: /v1/login
+#    auth2:
+#      path: /v2/login
+#
+#    device:
+#      path: /v1/device/**
+#      serviceId: k2asset-DEVICE-V1
+#
+#    sys:
+#      path: /v1/sys/**
+#      serviceId: k2asset-SYS-V1
+#    analysis:
+#      path: /v1/analysis/**
+#      serviceId: k2asset-HEALTH-V1
+#    mail:
+#      path: /v1/msg/**
+#      serviceId: k2asset-MSG-V1
+#    websocket:
+#      path: /v1/websocket/**
+#      serviceId: k2asset-WEBSOCKET-V1
+#      customSensitiveHeaders: true
+#    static:
+#      path: /v1/static/**
+#      serviceId: k2asset-STATIC-V1
+#    static-public:
+#      path: /static/**
+#      serviceId: k2asset-STATIC-V1
+#
+#    device2:
+#      path: /v2/device/**
+#      serviceId: k2asset-DEVICE-V2
+#
+#    sys2:
+#      path: /v2/sys/**
+#      serviceId: k2asset-SYS-V1
+#    analysis2:
+#      path: /v2/analysis/**
+#      serviceId: k2asset-HEALTH-V1
+#    mail2:
+#      path: /v2/msg/**
+#      serviceId: k2asset-MSG-V1
+#    websocket2:
+#      path: /v2/websocket/**
+#      serviceId: k2asset-WEBSOCKET-V1
+#      customSensitiveHeaders: true
+#    static2:
+#      path: /v2/static/**
+#      serviceId: k2asset-STATIC-V1
+#
+#  ws:
+#    brokerages:
+#      websocket:
+#        end-points: /v1/real-time
+
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: true
+        isolation:
+          thread:
+            timeoutInMilliseconds: 15000
+
+ribbon:
+  ReadTimeout: 15000
+  ConnectTimeout: 15000
+  MaxAutoRetries: 1
+  MaxAutoRetriesNextServer: 1
