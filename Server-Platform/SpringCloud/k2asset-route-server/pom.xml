@@ -23,6 +23,10 @@
 	</properties>
 
 	<dependencies>
+		<dependency>
+			<groupId>de.codecentric</groupId>
+			<artifactId>spring-boot-admin-starter-client</artifactId>
+		</dependency>
 	</dependencies>
 	<modules>
 		<module>k2asset-zuul</module>

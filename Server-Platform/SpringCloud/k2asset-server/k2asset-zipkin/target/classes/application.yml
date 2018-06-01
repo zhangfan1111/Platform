@@ -1,2 +1,7 @@
 server:
   port: 9411
+  
+#关闭刷新安全认证
+management:
+  security:
+    enabled: false

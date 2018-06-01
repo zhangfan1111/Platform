@@ -14,4 +14,7 @@ turbine:
   #      metadata['cluster']时，假设想要监控的应用配置了eureka.instance.metadata-map.cluster: ABC，则需要配置，同时turbine.aggregator.clusterConfig: ABC
 
       
-      
+#关闭刷新安全认证
+management:
+  security:
+    enabled: false      

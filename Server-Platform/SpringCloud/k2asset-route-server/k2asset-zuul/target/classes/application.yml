@@ -23,6 +23,11 @@ spring:
     port: 5672
     username: ubuntu
     password: memory
+    
+#关闭刷新安全认证
+management:
+  security:
+    enabled: false
 
 zuul:
   host:

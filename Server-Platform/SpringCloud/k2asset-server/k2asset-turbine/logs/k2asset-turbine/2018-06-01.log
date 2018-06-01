@@ -1,0 +1,332 @@
+2018-06-01 09:50:43.707 [main] INFO  o.s.c.a.AnnotationConfigApplicationContext - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@b62d79: startup date [Fri Jun 01 09:50:43 CST 2018]; root of context hierarchy
+2018-06-01 09:50:43.912 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-06-01 09:50:43.946 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'configurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$df341d2a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-06-01 09:50:44.741 [main] INFO  com.k2data.k2app.TurbineApplication - The following profiles are active: dev
+2018-06-01 09:50:44.752 [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@68ad99fe: startup date [Fri Jun 01 09:50:44 CST 2018]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@b62d79
+2018-06-01 09:50:45.347 [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=abd33a79-47fd-37fc-baea-713f2d368510
+2018-06-01 09:50:45.357 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-06-01 09:50:45.403 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$df341d2a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-06-01 09:50:45.558 [main] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8767 (http)
+2018-06-01 09:50:45.566 [main] INFO  org.apache.catalina.core.StandardService - Starting service Tomcat
+2018-06-01 09:50:45.567 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.14
+2018-06-01 09:50:45.667 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2018-06-01 09:50:45.667 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 915 ms
+2018-06-01 09:50:45.869 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean - Mapping servlet: 'turbineStreamServlet' to [/turbine.stream]
+2018-06-01 09:50:45.870 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2018-06-01 09:50:45.873 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'metricsFilter' to: [/*]
+2018-06-01 09:50:45.873 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-06-01 09:50:45.873 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-06-01 09:50:45.873 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-06-01 09:50:45.873 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2018-06-01 09:50:45.873 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'webRequestLoggingFilter' to: [/*]
+2018-06-01 09:50:45.873 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'applicationContextIdFilter' to: [/*]
+2018-06-01 09:50:47.067 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - jolokia: No access restrictor found, access to any MBean is allowed
+2018-06-01 09:50:47.176 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@68ad99fe: startup date [Fri Jun 01 09:50:44 CST 2018]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@b62d79
+2018-06-01 09:50:47.232 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-06-01 09:50:47.232 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-06-01 09:50:47.254 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-01 09:50:47.254 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-01 09:50:47.282 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-01 09:50:47.593 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/jolokia/**]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.actuate.endpoint.mvc.JolokiaMvcEndpoint.handle(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
+2018-06-01 09:50:47.594 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/heapdump || /heapdump.json],methods=[GET],produces=[application/octet-stream]}" onto public void org.springframework.boot.actuate.endpoint.mvc.HeapdumpMvcEndpoint.invoke(boolean,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException,javax.servlet.ServletException
+2018-06-01 09:50:47.595 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/restart || /restart.json],methods=[POST]}" onto public java.lang.Object org.springframework.cloud.context.restart.RestartMvcEndpoint.invoke()
+2018-06-01 09:50:47.595 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/features || /features.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018-06-01 09:50:47.596 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/health || /health.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.HealthMvcEndpoint.invoke(javax.servlet.http.HttpServletRequest,java.security.Principal)
+2018-06-01 09:50:47.596 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/auditevents || /auditevents.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public org.springframework.http.ResponseEntity<?> org.springframework.boot.actuate.endpoint.mvc.AuditEventsMvcEndpoint.findByPrincipalAndAfterAndType(java.lang.String,java.util.Date,java.lang.String)
+2018-06-01 09:50:47.598 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/loggers/{name:.*}],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.LoggersMvcEndpoint.get(java.lang.String)
+2018-06-01 09:50:47.598 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/loggers/{name:.*}],methods=[POST],consumes=[application/vnd.spring-boot.actuator.v1+json || application/json],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.LoggersMvcEndpoint.set(java.lang.String,java.util.Map<java.lang.String, java.lang.String>)
+2018-06-01 09:50:47.598 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/loggers || /loggers.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018-06-01 09:50:47.598 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/mappings || /mappings.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018-06-01 09:50:47.599 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/info || /info.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018-06-01 09:50:47.600 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/archaius || /archaius.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018-06-01 09:50:47.601 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/metrics/{name:.*}],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.MetricsMvcEndpoint.value(java.lang.String)
+2018-06-01 09:50:47.601 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/metrics || /metrics.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018-06-01 09:50:47.601 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/env],methods=[POST]}" onto public java.lang.Object org.springframework.cloud.context.environment.EnvironmentManagerMvcEndpoint.value(java.util.Map<java.lang.String, java.lang.String>)
+2018-06-01 09:50:47.601 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/env/reset],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> org.springframework.cloud.context.environment.EnvironmentManagerMvcEndpoint.reset()
+2018-06-01 09:50:47.602 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/dump || /dump.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018-06-01 09:50:47.603 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/autoconfig || /autoconfig.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018-06-01 09:50:47.603 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/trace || /trace.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018-06-01 09:50:47.603 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/refresh || /refresh.json],methods=[POST]}" onto public java.lang.Object org.springframework.cloud.endpoint.GenericPostableMvcEndpoint.invoke()
+2018-06-01 09:50:47.604 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/env/{name:.*}],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EnvironmentMvcEndpoint.value(java.lang.String)
+2018-06-01 09:50:47.604 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/env || /env.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018-06-01 09:50:47.605 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/pause || /pause.json],methods=[POST]}" onto public java.lang.Object org.springframework.cloud.endpoint.GenericPostableMvcEndpoint.invoke()
+2018-06-01 09:50:47.606 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/resume || /resume.json],methods=[POST]}" onto public java.lang.Object org.springframework.cloud.endpoint.GenericPostableMvcEndpoint.invoke()
+2018-06-01 09:50:47.606 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/beans || /beans.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018-06-01 09:50:47.606 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/configprops || /configprops.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018-06-01 09:50:47.704 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-06-01 09:50:47.704 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2018-06-01 09:50:47.707 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-06-01 09:50:47.707 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2018-06-01 09:50:47.756 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2018-06-01 09:50:47.763 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'environmentManager' has been autodetected for JMX exposure
+2018-06-01 09:50:47.765 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'configurationPropertiesRebinder' has been autodetected for JMX exposure
+2018-06-01 09:50:47.765 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'refreshEndpoint' has been autodetected for JMX exposure
+2018-06-01 09:50:47.767 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'restartEndpoint' has been autodetected for JMX exposure
+2018-06-01 09:50:47.767 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'refreshScope' has been autodetected for JMX exposure
+2018-06-01 09:50:47.768 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Located managed bean 'environmentManager': registering with JMX server as MBean [org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager]
+2018-06-01 09:50:47.778 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Located managed bean 'restartEndpoint': registering with JMX server as MBean [org.springframework.cloud.context.restart:name=restartEndpoint,type=RestartEndpoint]
+2018-06-01 09:50:47.785 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Located managed bean 'refreshScope': registering with JMX server as MBean [org.springframework.cloud.context.scope.refresh:name=refreshScope,type=RefreshScope]
+2018-06-01 09:50:47.792 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Located managed bean 'configurationPropertiesRebinder': registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=68ad99fe,type=ConfigurationPropertiesRebinder]
+2018-06-01 09:50:47.796 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Located managed bean 'refreshEndpoint': registering with JMX server as MBean [org.springframework.cloud.endpoint:name=refreshEndpoint,type=RefreshEndpoint]
+2018-06-01 09:50:48.173 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - jolokia: No access restrictor found, access to any MBean is allowed
+2018-06-01 09:50:48.176 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - jolokia: jolokia:type=Config is already registered. Adding it with jolokia:type=Config,uuid=addfb8e1-209c-4f72-92de-3f7a49cfebaf, but you should revise your setup in order to either use a qualifier or ensure, that only a single agent gets registered (otherwise history functionality might not work)
+2018-06-01 09:50:48.176 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - jolokia: Cannot register (legacy) MBean handler for config store with name jmx4perl:type=Config since it already exists. This is the case if another agent has been already started within the same JVM. The registration is skipped.
+2018-06-01 09:50:48.177 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - jolokia: Jolokia Discovery MBean registration is skipped because there is already one registered.
+2018-06-01 09:50:48.220 [main] INFO  o.s.context.support.DefaultLifecycleProcessor - Starting beans in phase 0
+2018-06-01 09:50:48.232 [main] INFO  o.s.cloud.netflix.turbine.SpringAggregatorFactory - Could not find monitors: []
+2018-06-01 09:50:48.321 [main] INFO  com.netflix.turbine.monitor.cluster.ClusterMonitor - Registering event handler for cluster monitor: StaticListener_For_Aggregator
+2018-06-01 09:50:48.322 [main] INFO  com.netflix.turbine.handler.TurbineDataDispatcher - 
+
+Just added and starting handler tuple: StaticListener_For_Aggregator
+2018-06-01 09:50:48.322 [main] INFO  com.netflix.turbine.monitor.cluster.ClusterMonitor - All event handlers for cluster monitor: [StaticListener_For_Aggregator]
+2018-06-01 09:50:48.322 [main] INFO  com.netflix.turbine.monitor.cluster.ClusterMonitor - Starting up the cluster monitor for default_agg
+2018-06-01 09:50:48.324 [main] INFO  com.netflix.turbine.discovery.InstanceObservable - Starting InstanceObservable at frequency: 60000 millis
+2018-06-01 09:50:48.325 [Timer-0] INFO  o.s.cloud.netflix.turbine.CommonsInstanceDiscovery - Fetching instance list for apps: [k2asset-sys-base, k2asset-sys-monitor]
+2018-06-01 09:50:48.325 [Timer-0] INFO  o.s.cloud.netflix.turbine.EurekaInstanceDiscovery - Fetching instances for app: k2asset-sys-base
+2018-06-01 09:50:48.329 [main] INFO  o.s.cloud.netflix.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2018-06-01 09:50:48.849 [Timer-0] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+2018-06-01 09:50:48.849 [Timer-0] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+2018-06-01 09:50:48.913 [Timer-0] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+2018-06-01 09:50:48.913 [Timer-0] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+2018-06-01 09:50:49.045 [Timer-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2018-06-01 09:50:49.461 [Timer-0] INFO  com.netflix.discovery.DiscoveryClient - Disable delta property : false
+2018-06-01 09:50:49.461 [Timer-0] INFO  com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2018-06-01 09:50:49.461 [Timer-0] INFO  com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2018-06-01 09:50:49.461 [Timer-0] INFO  com.netflix.discovery.DiscoveryClient - Application is null : false
+2018-06-01 09:50:49.461 [Timer-0] INFO  com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2018-06-01 09:50:49.461 [Timer-0] INFO  com.netflix.discovery.DiscoveryClient - Application version is -1: true
+2018-06-01 09:50:49.461 [Timer-0] INFO  com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2018-06-01 09:50:49.584 [Timer-0] INFO  com.netflix.discovery.DiscoveryClient - The response status is 200
+2018-06-01 09:50:49.585 [Timer-0] INFO  com.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2018-06-01 09:50:49.588 [Timer-0] INFO  com.netflix.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2018-06-01 09:50:49.590 [Timer-0] INFO  com.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1527817849590 with initial instances count: 3
+2018-06-01 09:50:49.603 [Timer-0] WARN  o.s.cloud.netflix.turbine.EurekaInstanceDiscovery - Eureka returned null for app: k2asset-sys-base
+2018-06-01 09:50:49.604 [Timer-0] INFO  o.s.cloud.netflix.turbine.EurekaInstanceDiscovery - Fetching instances for app: k2asset-sys-monitor
+2018-06-01 09:50:49.603 [main] INFO  o.s.c.n.eureka.EurekaDiscoveryClientConfiguration - Registering application k2asset-turbine with eureka with status UP
+2018-06-01 09:50:49.604 [Timer-0] WARN  o.s.cloud.netflix.turbine.EurekaInstanceDiscovery - Eureka returned null for app: k2asset-sys-monitor
+2018-06-01 09:50:49.604 [Timer-0] INFO  com.netflix.turbine.discovery.InstanceObservable - Retrieved hosts from InstanceDiscovery: 0
+2018-06-01 09:50:49.604 [Timer-0] INFO  com.netflix.turbine.discovery.InstanceObservable - Found hosts that have been previously terminated: 0
+2018-06-01 09:50:49.604 [Timer-0] INFO  com.netflix.turbine.discovery.InstanceObservable - Hosts up:0, hosts down: 0
+2018-06-01 09:50:49.605 [main] INFO  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1527817849605, current=UP, previous=STARTING]
+2018-06-01 09:50:49.606 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_K2ASSET-TURBINE/192.168.254.1:8767: registering service...
+2018-06-01 09:50:49.637 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_K2ASSET-TURBINE/192.168.254.1:8767 - registration status: 204
+2018-06-01 09:50:49.684 [main] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8767 (http)
+2018-06-01 09:50:49.685 [main] INFO  o.s.c.n.eureka.EurekaDiscoveryClientConfiguration - Updating port to 8767
+2018-06-01 09:50:49.688 [main] INFO  com.k2data.k2app.TurbineApplication - Started TurbineApplication in 6.909 seconds (JVM running for 7.681)
+2018-06-01 09:51:15.648 [http-nio-8767-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-06-01 09:51:15.649 [http-nio-8767-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2018-06-01 09:51:15.671 [http-nio-8767-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 22 ms
+2018-06-01 09:51:22.867 [http-nio-8767-exec-3] INFO  o.s.b.a.e.mvc.MvcEndpointSecurityInterceptor - Full authentication is required to access actuator endpoints. Consider adding Spring Security or set 'management.security.enabled' to false.
+2018-06-01 09:51:48.326 [Timer-0] INFO  o.s.cloud.netflix.turbine.CommonsInstanceDiscovery - Fetching instance list for apps: [k2asset-sys-base, k2asset-sys-monitor]
+2018-06-01 09:51:48.326 [Timer-0] INFO  o.s.cloud.netflix.turbine.EurekaInstanceDiscovery - Fetching instances for app: k2asset-sys-base
+2018-06-01 09:51:48.327 [Timer-0] WARN  o.s.cloud.netflix.turbine.EurekaInstanceDiscovery - Eureka returned null for app: k2asset-sys-base
+2018-06-01 09:51:48.327 [Timer-0] INFO  o.s.cloud.netflix.turbine.EurekaInstanceDiscovery - Fetching instances for app: k2asset-sys-monitor
+2018-06-01 09:51:48.327 [Timer-0] WARN  o.s.cloud.netflix.turbine.EurekaInstanceDiscovery - Eureka returned null for app: k2asset-sys-monitor
+2018-06-01 09:51:48.327 [Timer-0] INFO  com.netflix.turbine.discovery.InstanceObservable - Retrieved hosts from InstanceDiscovery: 0
+2018-06-01 09:51:48.328 [Timer-0] INFO  com.netflix.turbine.discovery.InstanceObservable - Found hosts that have been previously terminated: 0
+2018-06-01 09:51:48.328 [Timer-0] INFO  com.netflix.turbine.discovery.InstanceObservable - Hosts up:0, hosts down: 0
+2018-06-01 09:52:48.326 [Timer-0] INFO  o.s.cloud.netflix.turbine.CommonsInstanceDiscovery - Fetching instance list for apps: [k2asset-sys-base, k2asset-sys-monitor]
+2018-06-01 09:52:48.326 [Timer-0] INFO  o.s.cloud.netflix.turbine.EurekaInstanceDiscovery - Fetching instances for app: k2asset-sys-base
+2018-06-01 09:52:48.326 [Timer-0] WARN  o.s.cloud.netflix.turbine.EurekaInstanceDiscovery - Eureka returned null for app: k2asset-sys-base
+2018-06-01 09:52:48.326 [Timer-0] INFO  o.s.cloud.netflix.turbine.EurekaInstanceDiscovery - Fetching instances for app: k2asset-sys-monitor
+2018-06-01 09:52:48.326 [Timer-0] WARN  o.s.cloud.netflix.turbine.EurekaInstanceDiscovery - Eureka returned null for app: k2asset-sys-monitor
+2018-06-01 09:52:48.326 [Timer-0] INFO  com.netflix.turbine.discovery.InstanceObservable - Retrieved hosts from InstanceDiscovery: 0
+2018-06-01 09:52:48.326 [Timer-0] INFO  com.netflix.turbine.discovery.InstanceObservable - Found hosts that have been previously terminated: 0
+2018-06-01 09:52:48.326 [Timer-0] INFO  com.netflix.turbine.discovery.InstanceObservable - Hosts up:0, hosts down: 0
+2018-06-01 09:53:48.327 [Timer-0] INFO  o.s.cloud.netflix.turbine.CommonsInstanceDiscovery - Fetching instance list for apps: [k2asset-sys-base, k2asset-sys-monitor]
+2018-06-01 09:53:48.327 [Timer-0] INFO  o.s.cloud.netflix.turbine.EurekaInstanceDiscovery - Fetching instances for app: k2asset-sys-base
+2018-06-01 09:53:48.327 [Timer-0] WARN  o.s.cloud.netflix.turbine.EurekaInstanceDiscovery - Eureka returned null for app: k2asset-sys-base
+2018-06-01 09:53:48.327 [Timer-0] INFO  o.s.cloud.netflix.turbine.EurekaInstanceDiscovery - Fetching instances for app: k2asset-sys-monitor
+2018-06-01 09:53:48.327 [Timer-0] WARN  o.s.cloud.netflix.turbine.EurekaInstanceDiscovery - Eureka returned null for app: k2asset-sys-monitor
+2018-06-01 09:53:48.327 [Timer-0] INFO  com.netflix.turbine.discovery.InstanceObservable - Retrieved hosts from InstanceDiscovery: 0
+2018-06-01 09:53:48.327 [Timer-0] INFO  com.netflix.turbine.discovery.InstanceObservable - Found hosts that have been previously terminated: 0
+2018-06-01 09:53:48.327 [Timer-0] INFO  com.netflix.turbine.discovery.InstanceObservable - Hosts up:0, hosts down: 0
+2018-06-01 09:54:48.327 [Timer-0] INFO  o.s.cloud.netflix.turbine.CommonsInstanceDiscovery - Fetching instance list for apps: [k2asset-sys-base, k2asset-sys-monitor]
+2018-06-01 09:54:48.327 [Timer-0] INFO  o.s.cloud.netflix.turbine.EurekaInstanceDiscovery - Fetching instances for app: k2asset-sys-base
+2018-06-01 09:54:48.328 [Timer-0] WARN  o.s.cloud.netflix.turbine.EurekaInstanceDiscovery - Eureka returned null for app: k2asset-sys-base
+2018-06-01 09:54:48.328 [Timer-0] INFO  o.s.cloud.netflix.turbine.EurekaInstanceDiscovery - Fetching instances for app: k2asset-sys-monitor
+2018-06-01 09:54:48.328 [Timer-0] WARN  o.s.cloud.netflix.turbine.EurekaInstanceDiscovery - Eureka returned null for app: k2asset-sys-monitor
+2018-06-01 09:54:48.328 [Timer-0] INFO  com.netflix.turbine.discovery.InstanceObservable - Retrieved hosts from InstanceDiscovery: 0
+2018-06-01 09:54:48.328 [Timer-0] INFO  com.netflix.turbine.discovery.InstanceObservable - Found hosts that have been previously terminated: 0
+2018-06-01 09:54:48.328 [Timer-0] INFO  com.netflix.turbine.discovery.InstanceObservable - Hosts up:0, hosts down: 0
+2018-06-01 09:55:48.327 [Timer-0] INFO  o.s.cloud.netflix.turbine.CommonsInstanceDiscovery - Fetching instance list for apps: [k2asset-sys-base, k2asset-sys-monitor]
+2018-06-01 09:55:48.327 [Timer-0] INFO  o.s.cloud.netflix.turbine.EurekaInstanceDiscovery - Fetching instances for app: k2asset-sys-base
+2018-06-01 09:55:48.327 [Timer-0] WARN  o.s.cloud.netflix.turbine.EurekaInstanceDiscovery - Eureka returned null for app: k2asset-sys-base
+2018-06-01 09:55:48.327 [Timer-0] INFO  o.s.cloud.netflix.turbine.EurekaInstanceDiscovery - Fetching instances for app: k2asset-sys-monitor
+2018-06-01 09:55:48.327 [Timer-0] WARN  o.s.cloud.netflix.turbine.EurekaInstanceDiscovery - Eureka returned null for app: k2asset-sys-monitor
+2018-06-01 09:55:48.327 [Timer-0] INFO  com.netflix.turbine.discovery.InstanceObservable - Retrieved hosts from InstanceDiscovery: 0
+2018-06-01 09:55:48.327 [Timer-0] INFO  com.netflix.turbine.discovery.InstanceObservable - Found hosts that have been previously terminated: 0
+2018-06-01 09:55:48.327 [Timer-0] INFO  com.netflix.turbine.discovery.InstanceObservable - Hosts up:0, hosts down: 0
+2018-06-01 09:55:49.464 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2018-06-01 09:56:48.327 [Timer-0] INFO  o.s.cloud.netflix.turbine.CommonsInstanceDiscovery - Fetching instance list for apps: [k2asset-sys-base, k2asset-sys-monitor]
+2018-06-01 09:56:48.327 [Timer-0] INFO  o.s.cloud.netflix.turbine.EurekaInstanceDiscovery - Fetching instances for app: k2asset-sys-base
+2018-06-01 09:56:48.327 [Timer-0] WARN  o.s.cloud.netflix.turbine.EurekaInstanceDiscovery - Eureka returned null for app: k2asset-sys-base
+2018-06-01 09:56:48.328 [Timer-0] INFO  o.s.cloud.netflix.turbine.EurekaInstanceDiscovery - Fetching instances for app: k2asset-sys-monitor
+2018-06-01 09:56:48.328 [Timer-0] WARN  o.s.cloud.netflix.turbine.EurekaInstanceDiscovery - Eureka returned null for app: k2asset-sys-monitor
+2018-06-01 09:56:48.328 [Timer-0] INFO  com.netflix.turbine.discovery.InstanceObservable - Retrieved hosts from InstanceDiscovery: 0
+2018-06-01 09:56:48.328 [Timer-0] INFO  com.netflix.turbine.discovery.InstanceObservable - Found hosts that have been previously terminated: 0
+2018-06-01 09:56:48.328 [Timer-0] INFO  com.netflix.turbine.discovery.InstanceObservable - Hosts up:0, hosts down: 0
+2018-06-01 09:56:49.905 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2018-06-01 09:56:49.906 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@68ad99fe: startup date [Fri Jun 01 09:50:44 CST 2018]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@b62d79
+2018-06-01 09:56:49.906 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.c.n.eureka.EurekaDiscoveryClientConfiguration - Unregistering application k2asset-turbine with eureka with status DOWN
+2018-06-01 09:56:49.906 [RMI TCP Connection(2)-127.0.0.1] WARN  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1527818209906, current=DOWN, previous=UP]
+2018-06-01 09:56:49.907 [RMI TCP Connection(2)-127.0.0.1] INFO  com.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
+2018-06-01 09:56:49.907 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_K2ASSET-TURBINE/192.168.254.1:8767: registering service...
+2018-06-01 09:56:49.908 [RMI TCP Connection(2)-127.0.0.1] INFO  com.netflix.discovery.DiscoveryClient - Unregistering ...
+2018-06-01 09:56:49.912 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_K2ASSET-TURBINE/192.168.254.1:8767 - registration status: 204
+2018-06-01 09:56:49.914 [RMI TCP Connection(2)-127.0.0.1] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_K2ASSET-TURBINE/192.168.254.1:8767 - deregister  status: 200
+2018-06-01 09:56:49.916 [RMI TCP Connection(2)-127.0.0.1] INFO  com.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient
+2018-06-01 09:56:49.917 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.context.support.DefaultLifecycleProcessor - Stopping beans in phase 0
+2018-06-01 09:56:49.920 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+2018-06-01 09:56:49.920 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Unregistering JMX-exposed beans
+2018-06-01 09:56:50.200 [RMI TCP Connection(2)-127.0.0.1] INFO  org.apache.catalina.core.StandardService - Stopping service Tomcat
+2018-06-01 09:56:50.205 [localhost-startStop-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2018-06-01 10:11:05.367 [main] INFO  o.s.c.a.AnnotationConfigApplicationContext - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@b62d79: startup date [Fri Jun 01 10:11:05 CST 2018]; root of context hierarchy
+2018-06-01 10:11:05.528 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-06-01 10:11:05.556 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'configurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$df341d2a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-06-01 10:11:06.308 [main] INFO  com.k2data.k2app.TurbineApplication - The following profiles are active: dev
+2018-06-01 10:11:06.319 [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5553d0f5: startup date [Fri Jun 01 10:11:06 CST 2018]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@b62d79
+2018-06-01 10:11:06.919 [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=abd33a79-47fd-37fc-baea-713f2d368510
+2018-06-01 10:11:06.929 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-06-01 10:11:06.974 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$df341d2a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-06-01 10:11:07.130 [main] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8767 (http)
+2018-06-01 10:11:07.137 [main] INFO  org.apache.catalina.core.StandardService - Starting service Tomcat
+2018-06-01 10:11:07.138 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.14
+2018-06-01 10:11:07.229 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2018-06-01 10:11:07.229 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 910 ms
+2018-06-01 10:11:07.413 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean - Mapping servlet: 'turbineStreamServlet' to [/turbine.stream]
+2018-06-01 10:11:07.414 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2018-06-01 10:11:07.416 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'metricsFilter' to: [/*]
+2018-06-01 10:11:07.416 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-06-01 10:11:07.416 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-06-01 10:11:07.416 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-06-01 10:11:07.417 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2018-06-01 10:11:07.417 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'webRequestLoggingFilter' to: [/*]
+2018-06-01 10:11:07.417 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'applicationContextIdFilter' to: [/*]
+2018-06-01 10:11:08.524 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - jolokia: No access restrictor found, access to any MBean is allowed
+2018-06-01 10:11:08.637 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5553d0f5: startup date [Fri Jun 01 10:11:06 CST 2018]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@b62d79
+2018-06-01 10:11:08.696 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-06-01 10:11:08.697 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-06-01 10:11:08.718 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-01 10:11:08.719 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-01 10:11:08.756 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-01 10:11:09.143 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/env],methods=[POST]}" onto public java.lang.Object org.springframework.cloud.context.environment.EnvironmentManagerMvcEndpoint.value(java.util.Map<java.lang.String, java.lang.String>)
+2018-06-01 10:11:09.144 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/env/reset],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> org.springframework.cloud.context.environment.EnvironmentManagerMvcEndpoint.reset()
+2018-06-01 10:11:09.144 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/resume || /resume.json],methods=[POST]}" onto public java.lang.Object org.springframework.cloud.endpoint.GenericPostableMvcEndpoint.invoke()
+2018-06-01 10:11:09.145 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/env/{name:.*}],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EnvironmentMvcEndpoint.value(java.lang.String)
+2018-06-01 10:11:09.145 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/env || /env.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018-06-01 10:11:09.146 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/metrics/{name:.*}],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.MetricsMvcEndpoint.value(java.lang.String)
+2018-06-01 10:11:09.147 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/metrics || /metrics.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018-06-01 10:11:09.148 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/autoconfig || /autoconfig.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018-06-01 10:11:09.148 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/beans || /beans.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018-06-01 10:11:09.149 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/trace || /trace.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018-06-01 10:11:09.150 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/jolokia/**]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.actuate.endpoint.mvc.JolokiaMvcEndpoint.handle(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
+2018-06-01 10:11:09.151 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/dump || /dump.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018-06-01 10:11:09.151 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/archaius || /archaius.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018-06-01 10:11:09.152 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/pause || /pause.json],methods=[POST]}" onto public java.lang.Object org.springframework.cloud.endpoint.GenericPostableMvcEndpoint.invoke()
+2018-06-01 10:11:09.152 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/restart || /restart.json],methods=[POST]}" onto public java.lang.Object org.springframework.cloud.context.restart.RestartMvcEndpoint.invoke()
+2018-06-01 10:11:09.152 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/info || /info.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018-06-01 10:11:09.153 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/refresh || /refresh.json],methods=[POST]}" onto public java.lang.Object org.springframework.cloud.endpoint.GenericPostableMvcEndpoint.invoke()
+2018-06-01 10:11:09.154 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/health || /health.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.HealthMvcEndpoint.invoke(javax.servlet.http.HttpServletRequest,java.security.Principal)
+2018-06-01 10:11:09.154 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/mappings || /mappings.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018-06-01 10:11:09.155 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/configprops || /configprops.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018-06-01 10:11:09.155 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/features || /features.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018-06-01 10:11:09.155 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/heapdump || /heapdump.json],methods=[GET],produces=[application/octet-stream]}" onto public void org.springframework.boot.actuate.endpoint.mvc.HeapdumpMvcEndpoint.invoke(boolean,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException,javax.servlet.ServletException
+2018-06-01 10:11:09.156 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/auditevents || /auditevents.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public org.springframework.http.ResponseEntity<?> org.springframework.boot.actuate.endpoint.mvc.AuditEventsMvcEndpoint.findByPrincipalAndAfterAndType(java.lang.String,java.util.Date,java.lang.String)
+2018-06-01 10:11:09.157 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/loggers/{name:.*}],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.LoggersMvcEndpoint.get(java.lang.String)
+2018-06-01 10:11:09.157 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/loggers/{name:.*}],methods=[POST],consumes=[application/vnd.spring-boot.actuator.v1+json || application/json],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.LoggersMvcEndpoint.set(java.lang.String,java.util.Map<java.lang.String, java.lang.String>)
+2018-06-01 10:11:09.157 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/loggers || /loggers.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018-06-01 10:11:09.272 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-06-01 10:11:09.272 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2018-06-01 10:11:09.275 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-06-01 10:11:09.275 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2018-06-01 10:11:09.328 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2018-06-01 10:11:09.334 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'environmentManager' has been autodetected for JMX exposure
+2018-06-01 10:11:09.336 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'configurationPropertiesRebinder' has been autodetected for JMX exposure
+2018-06-01 10:11:09.336 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'refreshEndpoint' has been autodetected for JMX exposure
+2018-06-01 10:11:09.336 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'restartEndpoint' has been autodetected for JMX exposure
+2018-06-01 10:11:09.337 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'refreshScope' has been autodetected for JMX exposure
+2018-06-01 10:11:09.338 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Located managed bean 'environmentManager': registering with JMX server as MBean [org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager]
+2018-06-01 10:11:09.348 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Located managed bean 'restartEndpoint': registering with JMX server as MBean [org.springframework.cloud.context.restart:name=restartEndpoint,type=RestartEndpoint]
+2018-06-01 10:11:09.354 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Located managed bean 'refreshScope': registering with JMX server as MBean [org.springframework.cloud.context.scope.refresh:name=refreshScope,type=RefreshScope]
+2018-06-01 10:11:09.360 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Located managed bean 'configurationPropertiesRebinder': registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=5553d0f5,type=ConfigurationPropertiesRebinder]
+2018-06-01 10:11:09.364 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Located managed bean 'refreshEndpoint': registering with JMX server as MBean [org.springframework.cloud.endpoint:name=refreshEndpoint,type=RefreshEndpoint]
+2018-06-01 10:11:09.710 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - jolokia: No access restrictor found, access to any MBean is allowed
+2018-06-01 10:11:09.713 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - jolokia: jolokia:type=Config is already registered. Adding it with jolokia:type=Config,uuid=1988d4b4-2224-4bca-90c1-804c10b6120f, but you should revise your setup in order to either use a qualifier or ensure, that only a single agent gets registered (otherwise history functionality might not work)
+2018-06-01 10:11:09.714 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - jolokia: Cannot register (legacy) MBean handler for config store with name jmx4perl:type=Config since it already exists. This is the case if another agent has been already started within the same JVM. The registration is skipped.
+2018-06-01 10:11:09.714 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - jolokia: Jolokia Discovery MBean registration is skipped because there is already one registered.
+2018-06-01 10:11:09.754 [main] INFO  o.s.context.support.DefaultLifecycleProcessor - Starting beans in phase 0
+2018-06-01 10:11:09.764 [main] INFO  o.s.cloud.netflix.turbine.SpringAggregatorFactory - Could not find monitors: []
+2018-06-01 10:11:09.820 [main] INFO  com.netflix.turbine.monitor.cluster.ClusterMonitor - Registering event handler for cluster monitor: StaticListener_For_Aggregator
+2018-06-01 10:11:09.820 [main] INFO  com.netflix.turbine.handler.TurbineDataDispatcher - 
+
+Just added and starting handler tuple: StaticListener_For_Aggregator
+2018-06-01 10:11:09.821 [main] INFO  com.netflix.turbine.monitor.cluster.ClusterMonitor - All event handlers for cluster monitor: [StaticListener_For_Aggregator]
+2018-06-01 10:11:09.821 [main] INFO  com.netflix.turbine.monitor.cluster.ClusterMonitor - Starting up the cluster monitor for default_agg
+2018-06-01 10:11:09.823 [main] INFO  com.netflix.turbine.discovery.InstanceObservable - Starting InstanceObservable at frequency: 60000 millis
+2018-06-01 10:11:09.823 [Timer-0] INFO  o.s.cloud.netflix.turbine.CommonsInstanceDiscovery - Fetching instance list for apps: [k2asset-sys-base, k2asset-sys-monitor]
+2018-06-01 10:11:09.823 [Timer-0] INFO  o.s.cloud.netflix.turbine.EurekaInstanceDiscovery - Fetching instances for app: k2asset-sys-base
+2018-06-01 10:11:09.828 [main] INFO  o.s.cloud.netflix.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2018-06-01 10:11:10.340 [Timer-0] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+2018-06-01 10:11:10.341 [Timer-0] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+2018-06-01 10:11:10.431 [Timer-0] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+2018-06-01 10:11:10.431 [Timer-0] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+2018-06-01 10:11:10.567 [Timer-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2018-06-01 10:11:10.841 [Timer-0] INFO  com.netflix.discovery.DiscoveryClient - Disable delta property : false
+2018-06-01 10:11:10.841 [Timer-0] INFO  com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2018-06-01 10:11:10.841 [Timer-0] INFO  com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2018-06-01 10:11:10.841 [Timer-0] INFO  com.netflix.discovery.DiscoveryClient - Application is null : false
+2018-06-01 10:11:10.841 [Timer-0] INFO  com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2018-06-01 10:11:10.841 [Timer-0] INFO  com.netflix.discovery.DiscoveryClient - Application version is -1: true
+2018-06-01 10:11:10.841 [Timer-0] INFO  com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2018-06-01 10:11:10.955 [Timer-0] INFO  com.netflix.discovery.DiscoveryClient - The response status is 200
+2018-06-01 10:11:10.955 [Timer-0] INFO  com.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2018-06-01 10:11:10.957 [Timer-0] INFO  com.netflix.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2018-06-01 10:11:10.958 [Timer-0] INFO  com.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1527819070958 with initial instances count: 3
+2018-06-01 10:11:10.972 [Timer-0] WARN  o.s.cloud.netflix.turbine.EurekaInstanceDiscovery - Eureka returned null for app: k2asset-sys-base
+2018-06-01 10:11:10.972 [main] INFO  o.s.c.n.eureka.EurekaDiscoveryClientConfiguration - Registering application k2asset-turbine with eureka with status UP
+2018-06-01 10:11:10.972 [Timer-0] INFO  o.s.cloud.netflix.turbine.EurekaInstanceDiscovery - Fetching instances for app: k2asset-sys-monitor
+2018-06-01 10:11:10.972 [Timer-0] WARN  o.s.cloud.netflix.turbine.EurekaInstanceDiscovery - Eureka returned null for app: k2asset-sys-monitor
+2018-06-01 10:11:10.972 [Timer-0] INFO  com.netflix.turbine.discovery.InstanceObservable - Retrieved hosts from InstanceDiscovery: 0
+2018-06-01 10:11:10.972 [Timer-0] INFO  com.netflix.turbine.discovery.InstanceObservable - Found hosts that have been previously terminated: 0
+2018-06-01 10:11:10.973 [Timer-0] INFO  com.netflix.turbine.discovery.InstanceObservable - Hosts up:0, hosts down: 0
+2018-06-01 10:11:10.973 [main] INFO  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1527819070973, current=UP, previous=STARTING]
+2018-06-01 10:11:10.974 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_K2ASSET-TURBINE/192.168.254.1:8767: registering service...
+2018-06-01 10:11:11.003 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_K2ASSET-TURBINE/192.168.254.1:8767 - registration status: 204
+2018-06-01 10:11:11.045 [main] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8767 (http)
+2018-06-01 10:11:11.046 [main] INFO  o.s.c.n.eureka.EurekaDiscoveryClientConfiguration - Updating port to 8767
+2018-06-01 10:11:11.048 [main] INFO  com.k2data.k2app.TurbineApplication - Started TurbineApplication in 6.688 seconds (JVM running for 7.435)
+2018-06-01 10:11:38.802 [http-nio-8767-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-06-01 10:11:38.802 [http-nio-8767-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2018-06-01 10:11:38.830 [http-nio-8767-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 28 ms
+2018-06-01 10:12:09.824 [Timer-0] INFO  o.s.cloud.netflix.turbine.CommonsInstanceDiscovery - Fetching instance list for apps: [k2asset-sys-base, k2asset-sys-monitor]
+2018-06-01 10:12:09.824 [Timer-0] INFO  o.s.cloud.netflix.turbine.EurekaInstanceDiscovery - Fetching instances for app: k2asset-sys-base
+2018-06-01 10:12:09.824 [Timer-0] WARN  o.s.cloud.netflix.turbine.EurekaInstanceDiscovery - Eureka returned null for app: k2asset-sys-base
+2018-06-01 10:12:09.824 [Timer-0] INFO  o.s.cloud.netflix.turbine.EurekaInstanceDiscovery - Fetching instances for app: k2asset-sys-monitor
+2018-06-01 10:12:09.824 [Timer-0] WARN  o.s.cloud.netflix.turbine.EurekaInstanceDiscovery - Eureka returned null for app: k2asset-sys-monitor
+2018-06-01 10:12:09.824 [Timer-0] INFO  com.netflix.turbine.discovery.InstanceObservable - Retrieved hosts from InstanceDiscovery: 0
+2018-06-01 10:12:09.824 [Timer-0] INFO  com.netflix.turbine.discovery.InstanceObservable - Found hosts that have been previously terminated: 0
+2018-06-01 10:12:09.824 [Timer-0] INFO  com.netflix.turbine.discovery.InstanceObservable - Hosts up:0, hosts down: 0
+2018-06-01 10:13:09.825 [Timer-0] INFO  o.s.cloud.netflix.turbine.CommonsInstanceDiscovery - Fetching instance list for apps: [k2asset-sys-base, k2asset-sys-monitor]
+2018-06-01 10:13:09.825 [Timer-0] INFO  o.s.cloud.netflix.turbine.EurekaInstanceDiscovery - Fetching instances for app: k2asset-sys-base
+2018-06-01 10:13:09.825 [Timer-0] WARN  o.s.cloud.netflix.turbine.EurekaInstanceDiscovery - Eureka returned null for app: k2asset-sys-base
+2018-06-01 10:13:09.825 [Timer-0] INFO  o.s.cloud.netflix.turbine.EurekaInstanceDiscovery - Fetching instances for app: k2asset-sys-monitor
+2018-06-01 10:13:09.825 [Timer-0] WARN  o.s.cloud.netflix.turbine.EurekaInstanceDiscovery - Eureka returned null for app: k2asset-sys-monitor
+2018-06-01 10:13:09.825 [Timer-0] INFO  com.netflix.turbine.discovery.InstanceObservable - Retrieved hosts from InstanceDiscovery: 0
+2018-06-01 10:13:09.825 [Timer-0] INFO  com.netflix.turbine.discovery.InstanceObservable - Found hosts that have been previously terminated: 0
+2018-06-01 10:13:09.825 [Timer-0] INFO  com.netflix.turbine.discovery.InstanceObservable - Hosts up:0, hosts down: 0
+2018-06-01 10:13:58.400 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2018-06-01 10:13:58.400 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5553d0f5: startup date [Fri Jun 01 10:11:06 CST 2018]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@b62d79
+2018-06-01 10:13:58.401 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.c.n.eureka.EurekaDiscoveryClientConfiguration - Unregistering application k2asset-turbine with eureka with status DOWN
+2018-06-01 10:13:58.401 [RMI TCP Connection(2)-127.0.0.1] WARN  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1527819238401, current=DOWN, previous=UP]
+2018-06-01 10:13:58.401 [RMI TCP Connection(2)-127.0.0.1] INFO  com.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
+2018-06-01 10:13:58.401 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_K2ASSET-TURBINE/192.168.254.1:8767: registering service...
+2018-06-01 10:13:58.401 [RMI TCP Connection(2)-127.0.0.1] INFO  com.netflix.discovery.DiscoveryClient - Unregistering ...
+2018-06-01 10:13:58.406 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_K2ASSET-TURBINE/192.168.254.1:8767 - registration status: 204
+2018-06-01 10:13:58.406 [RMI TCP Connection(2)-127.0.0.1] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_K2ASSET-TURBINE/192.168.254.1:8767 - deregister  status: 200
+2018-06-01 10:13:58.409 [RMI TCP Connection(2)-127.0.0.1] INFO  com.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient
+2018-06-01 10:13:58.410 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.context.support.DefaultLifecycleProcessor - Stopping beans in phase 0
+2018-06-01 10:13:58.413 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+2018-06-01 10:13:58.413 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Unregistering JMX-exposed beans
+2018-06-01 10:13:58.689 [RMI TCP Connection(2)-127.0.0.1] INFO  org.apache.catalina.core.StandardService - Stopping service Tomcat
+2018-06-01 10:13:58.691 [localhost-startStop-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Destroying Spring FrameworkServlet 'dispatcherServlet'

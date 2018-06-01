@@ -1,0 +1,18 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://k2data:k2asset885976@localhost:8761/eureka
+  instance:
+      preferIpAddress: true
+      instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+
+spring:
+  application:
+      name: k2asset-admin-server
+  profiles:
+      active: dev
+  boot:
+    admin:
+     routes:
+       endpoints: env,metrics,trace,dump,jolokia,info,configprops,trace,logfile,refresh,flyway,liquibase,heapdump,hystrix.stream
+  
