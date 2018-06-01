@@ -6,7 +6,7 @@ k2asset-dependencies整体项目依赖，位于最顶层。
 #### 软件架构
 软件架构说明
 
-![输入图片说明](https://gitee.com/uploads/images/2018/0525/175454_1158fc95_1922807.png "服务说明.png")
+![输入图片说明](https://gitee.com/uploads/images/2018/0601/102831_5666825c_1922807.png "服务说明.png")
 
 #### 使用说明
 
